@@ -1,0 +1,57 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:VisualJsonEditor.Controls"
+                    xmlns:converters="clr-namespace:MyToolkit.Converters;assembly=MyToolkit.Extended">
+    
+    <Style TargetType="{x:Type controls:ExpandingGroupBox}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ExpandingGroupBox}">
+                    <GroupBox BorderBrush="{TemplateBinding BorderBrush}" 
+                              Header="{TemplateBinding Header}" x:Name="gr"
+                              Background="{TemplateBinding Background}">
+                        <GroupBox.Resources>
+                            <converters:VisibilityConverter x:Key="VisibilityConverter" />
+                            <converters:NotConverter x:Key="NotConverter" />
+                        </GroupBox.Resources>
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Margin="-2,1,6,0" VerticalAlignment="Center" Width="18" Height="18">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Grid>
+                                                    <Ellipse Stroke="Black" StrokeThickness="1" Fill="White" />
+                                                    <ContentPresenter Content="{TemplateBinding Content}" 
+                                                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+
+                                        <StackPanel>
+                                            <TextBlock FontFamily="Webdings" FontSize="14" Text="5" 
+                                                       HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,-2,0,0"
+                                                       Visibility="{Binding RelativeSource={RelativeSource AncestorType=controls:ExpandingGroupBox}, 
+                                                                            Path=IsExpanded, Converter={StaticResource VisibilityConverter}}" />
+                                            <TextBlock FontFamily="Webdings" FontSize="14" Text="6" 
+                                                       HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,0,0,0"
+                                                       Visibility="{Binding RelativeSource={RelativeSource AncestorType=controls:ExpandingGroupBox}, 
+                                                                            Path=IsExpanded, Converter={StaticResource NotConverter}}" />
+                                        </StackPanel>
+                                    </Button>
+                                    <ContentPresenter Content="{Binding}" Margin="0,1,0,0"
+                                                      ContentTemplate="{Binding RelativeSource={RelativeSource AncestorType=controls:ExpandingGroupBox}, 
+                                                                                Path=HeaderTemplate}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <ContentPresenter Content="{TemplateBinding Content}" x:Name="Content"
+                                          Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, 
+                                                               Path=IsExpanded, Converter={StaticResource VisibilityConverter}}" />
+                    </GroupBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

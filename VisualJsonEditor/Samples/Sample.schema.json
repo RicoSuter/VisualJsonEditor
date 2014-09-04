@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "title": "Person",
+  "properties": {
+    "StringValue": {
+      "required": true,
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "n/a"
+    },
+    "BoolValue": {
+      "required": true,
+      "type": "boolean"
+    },
+    "NumberValue": {
+      "required": true,
+      "type": "number",
+      "minimum": -1
+    },
+    "DateTimeValue": {
+      "required": true,
+      "type": "string", 
+      "format": "date-time"
+    },
+    "DateValue": {
+      "required": true,
+      "type": "string", 
+      "format": "date"
+    },
+    "TimeValue": {
+      "required": true,
+      "type": "string", 
+      "format": "time"
+    },
+    "IntegerValue": {
+      "required": true,
+      "type": "integer", 
+      "minimum": 0
+    },
+    "Test": {
+      "required": false,
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "Abc": {
+          "required": true,
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Def": {
+          "required": true,
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Geh": {
+          "required": true,
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "List": {
+      "required": true,
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "Abc": {
+            "required": true,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "Def": {
+            "required": true,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "Geh": {
+            "required": true,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

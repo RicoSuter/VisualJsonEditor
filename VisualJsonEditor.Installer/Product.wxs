@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="Visual JSON Editor" Language="1033" 
+             Version="!(bind.FileVersion.fil7C2CB8648E5AC2C4AFC4BE9A16445461)"
+             Manufacturer="Rico Suter" UpgradeCode="8d53cbf3-a345-48f3-b794-49ed73c3ca44">
+
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+        <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
+
+        <Feature Id="ProductFeature" Title="Installer" Level="1">
+            <ComponentGroupRef Id="SourceComponentGroup" />
+            <ComponentRef Id="ApplicationComponent" />
+        </Feature>
+    </Product>
+
+    <Fragment>
+        <Icon Id="ApplicationIcon" SourceFile="$(var.SourcePath)\ApplicationIcon.ico" />
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="INSTALLFOLDER" Name="Rico Suter" />
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder"
+                           Name="Rico Suter"/>
+            </Directory>
+        </Directory>
+
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Directory Id="RootDirectory" Name="Visual JSON Editor" />
+        </DirectoryRef>
+
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationComponent">
+                <Shortcut Id="ApplicationStartMenuShortcut"
+                          Name="Visual JSON Editor"
+                          Description="JSON editor to visually edit JSON files based on JSON schema. "
+                          Target="[#fil7C2CB8648E5AC2C4AFC4BE9A16445461]"
+                          Icon="ApplicationIcon"
+                          WorkingDirectory="RootDirectory"/>
+
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                <RemoveFolder Id="ManufacturerProgramsFolder" On="uninstall"/>
+
+                <RegistryValue Root="HKCU"
+                               Key="Software\RicoSuter\VisualJSONEditor"
+                               Name="installed" Type="integer"
+                               Value="1" KeyPath="yes"/>
+
+                <ProgId Id='JsonFile' Description='JSON file' Icon='fil682A648A9FE07615A18A3968C96B1396'>
+                    <Extension Id='json' ContentType='application/json'>
+                        <Verb Id='open' Command='Open'
+                              TargetFile='fil7C2CB8648E5AC2C4AFC4BE9A16445461'
+                              Argument='"%1"' />
+                    </Extension>
+                </ProgId>
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

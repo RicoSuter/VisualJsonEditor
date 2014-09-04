@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="VisualJsonEditor.Controls.JsonEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:VisualJsonEditor.Views"
+             xmlns:converters="clr-namespace:MyToolkit.Converters;assembly=MyToolkit.Extended"
+             xmlns:converters1="clr-namespace:VisualJsonEditor.Converters"
+             xmlns:controls="clr-namespace:VisualJsonEditor.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:ui="clr-namespace:MyToolkit.UI;assembly=MyToolkit.Extended"
+             xmlns:localization="clr-namespace:VisualJsonEditor.Localization"
+             Focusable="False" mc:Ignorable="d" x:Name="Self" d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <converters:VisibilityConverter x:Key="VisibilityConverter" />
+        <converters:NotConverter x:Key="NotConverter" />
+        <converters1:NumberConverter x:Key="NumberConverter" />
+        <converters1:IntegerConverter x:Key="IntegerConverter" />
+        <converters1:IndexConverter x:Key="IndexConverter" />
+        <converters1:JTokenListConverter x:Key="JTokenListConverter" />
+        <converters1:TimeConverter x:Key="TimeConverter" />
+        <converters1:DateConverter x:Key="DateConverter" />
+        <converters1:DoubleUpDownRangeConverter x:Key="DoubleUpDownRangeConverter" />
+        <converters1:IntegerUpDownRangeConverter x:Key="IntegerUpDownRangeConverter" />
+    </UserControl.Resources>
+
+    <ItemsControl ItemsSource="{Binding Properties}" DataContext="{Binding ElementName=Self}" Focusable="False">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <ContentPresenter Content="{Binding}">
+                    <ContentPresenter.Resources>
+                        <DataTemplate x:Key="StringTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="DateTimeTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" AutoCloseCalendar="True"
+                                                     Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}}" />
+                                <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Converter={StaticResource DateConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="DateTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" Format="LongDate" 
+                                                     TimePickerVisibility="Collapsed" TimeFormat="Custom" AutoCloseCalendar="True"
+                                                     Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}}" />
+                                <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Converter={StaticResource DateConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="TimeTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <xctk:TimePicker Margin="0,0,0,8" HorizontalAlignment="Stretch" 
+                                                 Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource TimeConverter}}" />
+                                <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Converter={StaticResource TimeConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="NumberTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                           Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <xctk:DoubleUpDown Margin="0,0,0,8" TextAlignment="Left"
+                                                   Minimum="{Binding Schema.Minimum, Converter={StaticResource DoubleUpDownRangeConverter}, ConverterParameter=min}"
+                                                   Maximum="{Binding Schema.Maximum, Converter={StaticResource DoubleUpDownRangeConverter}, ConverterParameter=max}"
+                                                   Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NumberConverter}}" />
+                                <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Converter={StaticResource NumberConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="IntegerTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                           Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <xctk:IntegerUpDown Margin="0,0,0,8" TextAlignment="Left" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                                    Minimum="{Binding Schema.Minimum, Converter={StaticResource IntegerUpDownRangeConverter}, ConverterParameter=min}"
+                                                    Maximum="{Binding Schema.Maximum, Converter={StaticResource IntegerUpDownRangeConverter}, ConverterParameter=max}"
+                                                    Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerConverter}}" />
+                                <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
+                                         Text="{Binding Value, Converter={StaticResource IntegerConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="EnumTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                                           Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                                <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.Enum, Converter={StaticResource JTokenListConverter}}"
+                                          SelectedItem="{Binding Value, Mode=TwoWay}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="BooleanTemplate">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                                <CheckBox Content="{Binding Schema.Description}" IsThreeState="False"
+                                          IsChecked="{Binding Value, Mode=TwoWay, FallbackValue=false}" Margin="0,0,0,8" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate x:Key="ObjectTemplate">
+                            <controls:ExpandingGroupBox Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36"
+                                                        BorderBrush="Black" Background="#0F000000">
+                                <controls:ExpandingGroupBox.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (object)" />
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </controls:ExpandingGroupBox.HeaderTemplate>
+                                <StackPanel>
+                                    <CheckBox IsChecked="{Binding HasValue, Mode=OneWay}" 
+                                                Visibility="{Binding Schema.Required, Converter={StaticResource NotConverter}}"
+                                                Margin="4,8,4,4" Content="Specify values" 
+                                                Checked="OnCreateObject" Unchecked="OnRemoveObject" Tag="{Binding}" />
+                                        
+                                    <controls:JsonEditor Visibility="{Binding HasValue, Converter={StaticResource VisibilityConverter}}" 
+                                                         Data="{Binding Value}" Margin="4" />
+                                </StackPanel>
+                            </controls:ExpandingGroupBox>
+                        </DataTemplate>
+                        <DataTemplate x:Key="ArrayTemplate">
+                            <controls:ExpandingGroupBox Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36"
+                                                        BorderBrush="Black" Background="#0F00FF00">
+                                <controls:ExpandingGroupBox.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (array)" />
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </controls:ExpandingGroupBox.HeaderTemplate>
+                                <StackPanel Margin="0,8,0,0">
+                                    <CheckBox IsChecked="{Binding HasValue, Mode=OneWay}" 
+                                                Visibility="{Binding Schema.Required, Converter={StaticResource NotConverter}}"
+                                                Margin="4,0,4,4" Content="Specify values" 
+                                                Checked="OnCreateArray" Unchecked="OnRemoveArray" Tag="{Binding}" />
+
+                                    <StackPanel Visibility="{Binding HasValue, Converter={StaticResource VisibilityConverter}}">
+                                        <ItemsControl ItemsSource="{Binding Value}" Focusable="False">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Margin="4,0,4,0">
+                                                        <controls:ExpandingGroupBox BorderBrush="Black" Margin="0,0,0,8" 
+                                                                                    Background="#0F000000" MinHeight="36">
+                                                            <controls:ExpandingGroupBox.Header>
+                                                                <MultiBinding Converter="{StaticResource IndexConverter}">
+                                                                    <Binding />
+                                                                    <Binding Path="ItemsSource" RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                                                                </MultiBinding>
+                                                            </controls:ExpandingGroupBox.Header>
+                                                            <controls:ExpandingGroupBox.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock>
+                                                                        <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (object)" />
+                                                                    </TextBlock>
+                                                                </DataTemplate>
+                                                            </controls:ExpandingGroupBox.HeaderTemplate>
+                                                            <controls:JsonEditor Data="{Binding}" Margin="4,8,4,0" />
+                                                        </controls:ExpandingGroupBox>
+
+                                                        <Button Content="{x:Static localization:Strings.ButtonRemove}" HorizontalAlignment="Right" 
+                                                                Padding="8,4,8,4" VerticalAlignment="Top"
+                                                                Click="OnRemoveArrayObject" Tag="{Binding}" Margin="4,0,12,4" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <Button Content="{x:Static localization:Strings.ButtonAdd}" HorizontalAlignment="Left" Padding="8,4,8,4" 
+                                                Click="OnAddArrayObject" Tag="{Binding}" Margin="4,8,4,4" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </controls:ExpandingGroupBox>
+                        </DataTemplate>
+                    </ContentPresenter.Resources>
+                    <ContentPresenter.ContentTemplateSelector>
+                        <controls:JsonObjectTypeTemplateSelector />
+                    </ContentPresenter.ContentTemplateSelector>
+                </ContentPresenter>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

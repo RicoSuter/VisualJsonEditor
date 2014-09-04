@@ -1,0 +1,38 @@
+﻿<Window x:Class="VisualJsonEditor.Views.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="clr-namespace:VisualJsonEditor.Localization"
+        Title="{x:Static localization:Strings.HeaderAboutWindow}"
+        Height="260" Width="500" WindowStartupLocation="CenterScreen" 
+        ShowInTaskbar="False" ResizeMode="NoResize">
+
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Margin="0,0,0,4" FontSize="16">
+                <Run Text="{x:Static localization:Strings.LabelAbout1}" /><Hyperlink NavigateUri="http://www.rsuter.com" Click="OnOpenHyperlink"><Run Text="Rico Suter"/></Hyperlink>.
+            </TextBlock>
+
+            <TextBlock Text="{x:Static localization:Strings.LabelAboutComponents}" FontWeight="Bold" Margin="0,8,0,4" />
+            <TextBlock Margin="0,0,0,4">
+                - <Hyperlink NavigateUri="http://mytoolkit.codeplex.com" Click="OnOpenHyperlink"><Run Text="MyToolkit"/></Hyperlink>: <Run Text="{x:Static localization:Strings.LabelAboutComponentMyToolkit}" />
+            </TextBlock>
+            <TextBlock Margin="0,0,0,4">
+                - <Hyperlink NavigateUri="http://json.net" Click="OnOpenHyperlink"><Run Text="Json.NET"/></Hyperlink>: <Run Text="{x:Static localization:Strings.LabelAboutComponentJsonNet}" />
+            </TextBlock>
+            <TextBlock Margin="0,0,0,4">
+                - <Hyperlink NavigateUri="http://wpftoolkit.codeplex.com" Click="OnOpenHyperlink"><Run Text="Extended WPF Toolkit™ Community Edition"/></Hyperlink>: <Run Text="{x:Static localization:Strings.LabelAboutComponentWpfToolkit}" />
+            </TextBlock>
+            <TextBlock Margin="0,0,0,4">
+                - <Hyperlink NavigateUri="http://avalondock.codeplex.com" Click="OnOpenHyperlink"><Run Text="AvalonDock"/></Hyperlink>: <Run Text="{x:Static localization:Strings.LabelAboutComponentAvalonDock}" />
+            </TextBlock>
+
+            <TextBlock x:Name="Version" Margin="0,8,0,4" />
+        </StackPanel>
+        <Button Content="{x:Static localization:Strings.ButtonClose}" IsDefault="True" Grid.Row="1" Click="OnClose" />
+    </Grid>
+</Window>
