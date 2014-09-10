@@ -54,7 +54,7 @@ namespace VisualJsonEditor.Views
         /// <summary>Gets the configuration file name. </summary>
         public string ConfigurationFileName
         {
-            get { return "VisualJsonEditorConfig"; }
+            get { return "VisualJsonEditor/Config"; }
         }
 
         private void RegisterFileOpenHandler()

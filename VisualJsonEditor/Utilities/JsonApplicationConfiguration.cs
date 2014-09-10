@@ -46,7 +46,13 @@ namespace VisualJsonEditor.Utilities
             if (storeInAppData)
             {
                 var appDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                return Path.Combine(appDataDirectory, fileNameWithoutExtension) + extension;
+                var filePath = Path.Combine(appDataDirectory, fileNameWithoutExtension) + extension;
+
+                var directoryPath = Path.GetDirectoryName(filePath);
+                if (directoryPath != null && !Directory.Exists(directoryPath))
+                    Directory.CreateDirectory(directoryPath);
+                
+                return filePath;
             }
             return fileNameWithoutExtension + extension;
         }
