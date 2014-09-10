@@ -122,7 +122,7 @@ namespace VisualJsonEditor.Views
         private async void CheckForApplicationUpdate()
         {
             var updater = new ApplicationUpdater(GetType().Assembly, "http://rsuter.com/Projects/VisualJsonEditor/updates.xml");
-            await updater.CheckForUpdate();
+            await updater.CheckForUpdate(this);
         }
 
         private async void OnDocumentClosing(object sender, DocumentClosingEventArgs args)
