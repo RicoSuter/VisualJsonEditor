@@ -22,11 +22,13 @@ namespace VisualJsonEditor.Controls
             Properties = new ObservableCollection<JsonProperty>();
         }
 
-        public ObservableCollection<JsonProperty> Properties { get; set; }
+        /// <summary>Gets the list of JSON properties to create the editor for. </summary>
+        public ObservableCollection<JsonProperty> Properties { get; private set; }
 
         public static readonly DependencyProperty DataProperty = DependencyProperty.Register(
             "Data", typeof(JsonObject), typeof(JsonEditor), new PropertyMetadata(default(JsonObject), PropertyChanged));
 
+        /// <summary>Gets or sets the JSON data object to edit with the editor. </summary>
         public JsonObject Data
         {
             get { return (JsonObject)GetValue(DataProperty); }

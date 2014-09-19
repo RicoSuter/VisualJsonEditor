@@ -22,6 +22,7 @@ namespace VisualJsonEditor.Controls
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             "Header", typeof (object), typeof (ExpandingGroupBox), new PropertyMetadata(default(object)));
 
+        /// <summary>Gets or sets the header object (data context of header template). </summary>
         public object Header
         {
             get { return (object) GetValue(HeaderProperty); }
@@ -31,6 +32,7 @@ namespace VisualJsonEditor.Controls
         public static readonly DependencyProperty HeaderTemplateProperty = DependencyProperty.Register(
             "HeaderTemplate", typeof (DataTemplate), typeof (ExpandingGroupBox), new PropertyMetadata(default(DataTemplate)));
 
+        /// <summary>Gets or sets the header template (always visible). </summary>
         public DataTemplate HeaderTemplate
         {
             get { return (DataTemplate) GetValue(HeaderTemplateProperty); }
@@ -40,6 +42,7 @@ namespace VisualJsonEditor.Controls
         public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(
             "IsExpanded", typeof (bool), typeof (ExpandingGroupBox), new PropertyMetadata(true));
 
+        /// <summary>Gets or sets a value indicating whether the group box is expanded. </summary>
         public bool IsExpanded
         {
             get { return (bool) GetValue(IsExpandedProperty); }
