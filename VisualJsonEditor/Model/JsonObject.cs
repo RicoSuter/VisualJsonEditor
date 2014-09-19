@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 
-namespace VisualJsonEditor.Domain
+namespace VisualJsonEditor.Model
 {
     public class JsonObject : ObservableDictionary<string, object>
     {

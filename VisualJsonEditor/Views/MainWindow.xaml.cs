@@ -6,30 +6,21 @@
 // <author>Rico Suter, mail@rsuter.com</author>
 //-----------------------------------------------------------------------
 
-using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Xml.Linq;
 using MyToolkit.Mvvm;
-using MyToolkit.Networking;
 using MyToolkit.UI;
 using MyToolkit.Utilities;
-using VisualJsonEditor.Domain;
+using VisualJsonEditor.Model;
 using VisualJsonEditor.Utilities;
 using VisualJsonEditor.ViewModels;
 using Xceed.Wpf.AvalonDock;
 
 namespace VisualJsonEditor.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// <summary>Interaction logic for MainWindow.xaml</summary>
     public partial class MainWindow
     {
         private ApplicationConfiguration _configuration;

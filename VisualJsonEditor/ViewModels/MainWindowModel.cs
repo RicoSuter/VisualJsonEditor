@@ -20,9 +20,9 @@ using MyToolkit.Data;
 using MyToolkit.Messaging;
 using MyToolkit.Model;
 using MyToolkit.Mvvm;
-using VisualJsonEditor.Domain;
 using VisualJsonEditor.Localization;
 using VisualJsonEditor.Messages;
+using VisualJsonEditor.Model;
 
 namespace VisualJsonEditor.ViewModels
 {

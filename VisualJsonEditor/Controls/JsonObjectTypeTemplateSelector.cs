@@ -9,7 +9,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json.Schema;
-using VisualJsonEditor.Domain;
+using VisualJsonEditor.Model;
 
 namespace VisualJsonEditor.Controls
 {

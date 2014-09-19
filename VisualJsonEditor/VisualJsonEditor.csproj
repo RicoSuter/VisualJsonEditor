@@ -102,8 +102,8 @@
     <Compile Include="Converters\JTokenListConverter.cs" />
     <Compile Include="Converters\NumberConverter.cs" />
     <Compile Include="Converters\TimeConverter.cs" />
-    <Compile Include="Domain\JsonDocument.cs" />
-    <Compile Include="Domain\JsonObject.cs" />
+    <Compile Include="Model\JsonDocument.cs" />
+    <Compile Include="Model\JsonObject.cs" />
     <Compile Include="Localization\LocalizationHelper.cs" />
     <Compile Include="Localization\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -121,7 +121,7 @@
     <Compile Include="Controls\JsonEditor.xaml.cs">
       <DependentUpon>JsonEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Domain\JsonProperty.cs" />
+    <Compile Include="Model\JsonProperty.cs" />
     <Compile Include="Controls\JsonObjectTypeTemplateSelector.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -9,7 +9,7 @@
 using MyToolkit.Model;
 using Newtonsoft.Json.Schema;
 
-namespace VisualJsonEditor.Domain
+namespace VisualJsonEditor.Model
 {
     public class JsonProperty : ObservableObject
     {

@@ -16,7 +16,7 @@ using MyToolkit.Mvvm;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Schema;
 
-namespace VisualJsonEditor.Domain
+namespace VisualJsonEditor.Model
 {
     public class JsonDocument : ObservableObject
     {
