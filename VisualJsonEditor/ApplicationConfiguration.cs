@@ -37,6 +37,7 @@ namespace VisualJsonEditor
     /// <summary>Describes a recently opened file. </summary>
     public class RecentFile
     {
+        /// <summary>Gets or sets the file path. </summary>
         public string FilePath { get; set; }
 
         [JsonIgnore]
