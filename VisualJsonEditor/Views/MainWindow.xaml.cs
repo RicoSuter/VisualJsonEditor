@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Fluent;
 using MyToolkit.Mvvm;
 using MyToolkit.UI;
 using MyToolkit.Utilities;
@@ -148,6 +149,11 @@ namespace VisualJsonEditor.Views
         private void OnExitApplication(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void OnOpenDocument(object sender, RoutedEventArgs e)
+        {
+            ((Backstage) Ribbon.Menu).IsOpen = false; 
         }
     }
 }

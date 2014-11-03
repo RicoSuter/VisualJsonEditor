@@ -39,6 +39,9 @@
     <ApplicationIcon>ApplicationIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fluent">
+      <HintPath>..\packages\Fluent.Ribbon.3.0.3\lib\net45\Fluent.dll</HintPath>
+    </Reference>
     <Reference Include="MyToolkit, Version=2.3.15.0, Culture=neutral, PublicKeyToken=3e349a1360994d26, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MyToolkit.2.3.15.0\lib\portable-net45+wp8+win8+wpa81\MyToolkit.dll</HintPath>
@@ -56,6 +59,9 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluent.Ribbon.3.0.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />

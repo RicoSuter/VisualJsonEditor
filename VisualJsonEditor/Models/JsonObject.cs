@@ -30,9 +30,9 @@ namespace VisualJsonEditor.Models
                     foreach (var propertyInfo in Schema.Properties)
                     {
                         var property = new JsonProperty(propertyInfo.Key, this, propertyInfo.Value);
-                        if (property.Value is ObservableCollection<JsonObject>)
+                        if (property.Value is ObservableCollection<JsonToken>)
                         {
-                            foreach (var obj in (ObservableCollection<JsonObject>)property.Value)
+                            foreach (var obj in (ObservableCollection<JsonToken>)property.Value)
                                 obj.Schema = propertyInfo.Value.Items.First();
                         }
                         properties.Add(property);
@@ -59,7 +59,7 @@ namespace VisualJsonEditor.Models
                     else if (property.Value.Type.Value.HasFlag(JsonSchemaType.Array))
                     {
                         if (property.Value.Required == true)
-                            obj[property.Key] = new ObservableCollection<JsonObject>();
+                            obj[property.Key] = new ObservableCollection<JsonToken>();
                         else
                             obj[property.Key] = null;
                     }

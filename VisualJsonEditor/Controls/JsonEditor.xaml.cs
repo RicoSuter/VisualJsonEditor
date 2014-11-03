@@ -83,7 +83,7 @@ namespace VisualJsonEditor.Controls
             var property = (JsonProperty)((CheckBox)sender).Tag;
             if (property.Parent[property.Key] == null)
             {
-                property.Parent[property.Key] = new ObservableCollection<JsonObject>();
+                property.Parent[property.Key] = new ObservableCollection<JsonToken>();
                 property.RaisePropertyChanged<JsonProperty>(i => i.HasValue);
             }
         }

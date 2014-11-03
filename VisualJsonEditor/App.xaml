@@ -3,5 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Fluent;Component/Themes/office2013/generic.xaml" />
     </Application.Resources>
 </Application>

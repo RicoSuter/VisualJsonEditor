@@ -147,7 +147,7 @@
             </DataTemplate>
             <DataTemplate x:Key="ArrayTemplate">
                 <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonProperty}"
-                                            Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
+                                            Header="{Binding}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
                                             BorderBrush="Black" Background="#0F00FF00">
                     <controls:ExpandingGroupBox.HeaderTemplate>
                         <DataTemplate>
