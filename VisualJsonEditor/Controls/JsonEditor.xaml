@@ -9,6 +9,7 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:ui="clr-namespace:MyToolkit.UI;assembly=MyToolkit.Extended"
              xmlns:localization="clr-namespace:VisualJsonEditor.Localization"
+             xmlns:models="clr-namespace:VisualJsonEditor.Models"
              Focusable="False" mc:Ignorable="d" x:Name="Self" d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.Resources>
@@ -27,7 +28,8 @@
     <ContentPresenter x:Name="Presenter">
         <ContentPresenter.Resources>
             <DataTemplate x:Key="RootTemplate">
-                <ItemsControl ItemsSource="{Binding Properties}" Focusable="False">
+                <ItemsControl d:DataContext="{d:DesignInstance Type=models:JsonObject}" 
+                              ItemsSource="{Binding Properties}" Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <controls:JsonEditor Data="{Binding}" />
@@ -36,7 +38,7 @@
                 </ItemsControl>
             </DataTemplate>
             <DataTemplate x:Key="StringTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -45,7 +47,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="DateTimeTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -56,7 +58,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="DateTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -68,7 +70,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="TimeTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -79,7 +81,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="NumberTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -92,7 +94,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="IntegerTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -105,7 +107,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="EnumTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -114,19 +116,21 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="BooleanTemplate">
-                <StackPanel>
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <CheckBox Content="{Binding Schema.Description}" IsThreeState="False"
                               IsChecked="{Binding Value, Mode=TwoWay, FallbackValue=false}" Margin="0,0,0,8" />
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="ObjectTemplate">
-                <controls:ExpandingGroupBox Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
+                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonProperty}"
+                                            Header="{Binding}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
                                             BorderBrush="Black" Background="#0F000000">
                     <controls:ExpandingGroupBox.HeaderTemplate>
                         <DataTemplate>
                             <TextBlock>
-                                <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (object)" />
+                                <Run Text="{Binding Key, Mode=OneWay}" FontWeight="Bold" />
+                                <Run Text="{Binding Schema.Description}" /><Run Text=" (object) " />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>
@@ -142,12 +146,14 @@
                 </controls:ExpandingGroupBox>
             </DataTemplate>
             <DataTemplate x:Key="ArrayTemplate">
-                <controls:ExpandingGroupBox Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
+                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonProperty}"
+                                            Header="{Binding Key}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
                                             BorderBrush="Black" Background="#0F00FF00">
                     <controls:ExpandingGroupBox.HeaderTemplate>
                         <DataTemplate>
                             <TextBlock>
-                                <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (array)" />
+                                <Run Text="{Binding Key, Mode=OneWay}" FontWeight="Bold" />
+                                <Run Text="{Binding Schema.Description}" /><Run Text=" (array)" />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>
