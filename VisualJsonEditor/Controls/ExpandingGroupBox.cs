@@ -57,7 +57,7 @@ namespace VisualJsonEditor.Controls
 
             Loaded += delegate
             {
-                var button = DependencyObjectHelper.FindVisualChild<Button>(this);
+                var button = this.FindVisualChild<Button>();
                 button.Click += OnToggleExpanded;
             };
         }
