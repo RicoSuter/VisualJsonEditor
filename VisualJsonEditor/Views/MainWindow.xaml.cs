@@ -13,7 +13,7 @@ using System.Windows.Input;
 using MyToolkit.Mvvm;
 using MyToolkit.UI;
 using MyToolkit.Utilities;
-using VisualJsonEditor.Model;
+using VisualJsonEditor.Models;
 using VisualJsonEditor.Utilities;
 using VisualJsonEditor.ViewModels;
 using Xceed.Wpf.AvalonDock;

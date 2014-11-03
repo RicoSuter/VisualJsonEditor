@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using VisualJsonEditor.Model;
+using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.Controls
 {
@@ -19,44 +19,21 @@ namespace VisualJsonEditor.Controls
         public JsonEditor()
         {
             InitializeComponent();
-            Properties = new ObservableCollection<JsonProperty>();
         }
-
-        /// <summary>Gets the list of JSON properties to create the editor for. </summary>
-        public ObservableCollection<JsonProperty> Properties { get; private set; }
 
         public static readonly DependencyProperty DataProperty = DependencyProperty.Register(
-            "Data", typeof(JsonObject), typeof(JsonEditor), new PropertyMetadata(default(JsonObject), PropertyChanged));
+            "Data", typeof(object), typeof(JsonEditor), new PropertyMetadata(default(object), (o, args) => { ((JsonEditor)o).Update(); }));
 
-        /// <summary>Gets or sets the JSON data object to edit with the editor. </summary>
-        public JsonObject Data
+        /// <summary>Gets or sets the <see cref="JsonObject"/> to edit with the editor. </summary>
+        public object Data
         {
-            get { return (JsonObject)GetValue(DataProperty); }
+            get { return GetValue(DataProperty); }
             set { SetValue(DataProperty, value); }
         }
-        
-        private static void PropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            ((JsonEditor)obj).UpdateProperties();
-        }
 
-        private void UpdateProperties()
+        private void Update()
         {
-            Properties.Clear();
-            if (Data != null && Data.Schema.Properties != null)
-            {
-                foreach (var propertyInfo in Data.Schema.Properties)
-                {
-                    var property = new JsonProperty(propertyInfo.Key, Data, propertyInfo.Value);
-                    if (property.Value is ObservableCollection<JsonObject>)
-                    {
-                        foreach (var obj in (ObservableCollection<JsonObject>)property.Value)
-                            obj.Schema = propertyInfo.Value.Items.First();
-                    }
-
-                    Properties.Add(property);
-                }
-            }
+            Presenter.Content = Data;
         }
 
         private void OnAddArrayObject(object sender, RoutedEventArgs e)
@@ -64,12 +41,12 @@ namespace VisualJsonEditor.Controls
             var property = (JsonProperty)((Button)sender).Tag;
 
             if (property.Value == null)
-                property.Value = new ObservableCollection<JsonObject>();
+                property.Value = new ObservableCollection<JsonToken>();
 
-            var list = (ObservableCollection<JsonObject>)property.Value;
+            var list = (ObservableCollection<JsonToken>)property.Value;
             var schema = property.Schema.Items.First();
 
-            var obj = JsonObject.FromSchema(schema);
+            var obj = schema.Properties == null ? (JsonToken)new JsonValue { Schema = schema } : JsonObject.FromSchema(schema);
             obj.ParentList = list;
 
             list.Add(obj);
@@ -77,7 +54,7 @@ namespace VisualJsonEditor.Controls
 
         private void OnRemoveArrayObject(object sender, RoutedEventArgs e)
         {
-            var obj = (JsonObject)((Button)sender).Tag;
+            var obj = (JsonToken)((Button)sender).Tag;
             obj.ParentList.Remove(obj);
         }
 
@@ -97,7 +74,7 @@ namespace VisualJsonEditor.Controls
             if (property.Parent.ContainsKey(property.Key) && property.Parent[property.Key] != null)
             {
                 property.Parent[property.Key] = null;
-                property.RaisePropertyChanged<JsonProperty>(i => i.HasValue);        
+                property.RaisePropertyChanged<JsonProperty>(i => i.HasValue);
             }
         }
 
@@ -117,7 +94,7 @@ namespace VisualJsonEditor.Controls
             if (property.Parent.ContainsKey(property.Key) && property.Parent[property.Key] != null)
             {
                 property.Parent[property.Key] = null;
-                property.RaisePropertyChanged<JsonProperty>(i => i.HasValue);                
+                property.RaisePropertyChanged<JsonProperty>(i => i.HasValue);
             }
         }
     }

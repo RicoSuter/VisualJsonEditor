@@ -12,21 +12,34 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using MyToolkit.Collections;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 
-namespace VisualJsonEditor.Model
+namespace VisualJsonEditor.Models
 {
-    public class JsonObject : ObservableDictionary<string, object>
+    public class JsonObject : JsonToken
     {
-        public JsonSchema Schema { get; set; }
-        public ObservableCollection<JsonObject> ParentList { get; set; }
-
-        public string ToJson()
+        public IEnumerable<JsonProperty> Properties
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            get
+            {
+                var properties = new List<JsonProperty>();
+                if (Schema.Properties != null)
+                {
+                    foreach (var propertyInfo in Schema.Properties)
+                    {
+                        var property = new JsonProperty(propertyInfo.Key, this, propertyInfo.Value);
+                        if (property.Value is ObservableCollection<JsonObject>)
+                        {
+                            foreach (var obj in (ObservableCollection<JsonObject>)property.Value)
+                                obj.Schema = propertyInfo.Value.Items.First();
+                        }
+                        properties.Add(property);
+                    }
+                }
+                return properties; 
+            }
         }
 
         public static JsonObject FromSchema(JsonSchema schema)
@@ -98,9 +111,10 @@ namespace VisualJsonEditor.Model
                     if (property.Value.Type.Value.HasFlag(JsonSchemaType.Array))
                     {
                         var propertySchema = property.Value.Items.First();
-                        var objects = obj[property.Key].Select(o => FromJson((JObject)o, propertySchema));
+                        var objects = obj[property.Key].Select(o => o is JObject ? 
+                            (JsonToken)FromJson((JObject)o, propertySchema) : FromJson((JValue)o, propertySchema));
                         
-                        var list = new ObservableCollection<JsonObject>(objects);
+                        var list = new ObservableCollection<JsonToken>(objects);
                         foreach (var item in list)
                             item.ParentList = list;
 
@@ -124,6 +138,15 @@ namespace VisualJsonEditor.Model
             return result;
         }
 
+        public static JsonValue FromJson(JValue value, JsonSchema schema)
+        {
+            return new JsonValue
+            {
+                Schema = schema,
+                Value = value.Value
+            };
+        }
+
         public Task<bool> IsValidAsync()
         {
             return Task.Run(() =>
@@ -132,6 +155,27 @@ namespace VisualJsonEditor.Model
                 var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(jsonData)));
                 return obj.IsValid(Schema);
             });
+        }
+
+        public override JToken ToJToken()
+        {
+            var obj = new JObject();
+            foreach (var pair in this)
+            {
+                if (pair.Value is ObservableCollection<JsonToken>)
+                {
+                    var array = (ObservableCollection<JsonToken>) pair.Value;
+                    var jArray = new JArray();
+                    foreach (var item in array)
+                        jArray.Add(item.ToJToken());
+                    obj[pair.Key] = jArray;
+                }
+                else if (pair.Value is JsonToken)
+                    obj[pair.Key] = ((JsonToken)pair.Value).ToJToken();
+                else
+                    obj[pair.Key] = new JValue(pair.Value);
+            }
+            return obj; 
         }
     }
 }

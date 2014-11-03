@@ -13,10 +13,9 @@ using System.Threading.Tasks;
 using MyToolkit.Data;
 using MyToolkit.Model;
 using MyToolkit.Mvvm;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Schema;
 
-namespace VisualJsonEditor.Model
+namespace VisualJsonEditor.Models
 {
     public class JsonDocument : ObservableObject
     {
@@ -125,7 +124,7 @@ namespace VisualJsonEditor.Model
 
             await Task.Run(() =>
             {
-                var jsonData = JsonConvert.SerializeObject(Data, Formatting.Indented);
+                var jsonData = Data.ToJson();
                 File.WriteAllText(FilePath, jsonData, Encoding.UTF8);
 
                 if (saveSchema)

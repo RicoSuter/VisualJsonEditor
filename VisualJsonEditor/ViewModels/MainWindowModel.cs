@@ -13,7 +13,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using MyToolkit.Command;
 using MyToolkit.Composition;
 using MyToolkit.Data;
@@ -22,7 +21,7 @@ using MyToolkit.Model;
 using MyToolkit.Mvvm;
 using VisualJsonEditor.Localization;
 using VisualJsonEditor.Messages;
-using VisualJsonEditor.Model;
+using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.ViewModels
 {

@@ -12,11 +12,11 @@ namespace VisualJsonEditor.Messages
 {
     public class SaveJsonDocumentMessage : CallbackMessage<string>
     {
-        public string FileName { get; private set; }
-
         public SaveJsonDocumentMessage(string fileName)
         {
             FileName = fileName;
         }
+
+        public string FileName { get; private set; }
     }
 }
