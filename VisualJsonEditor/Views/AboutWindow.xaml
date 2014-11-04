@@ -6,7 +6,7 @@
         Height="260" Width="500" WindowStartupLocation="CenterScreen" 
         ShowInTaskbar="False" ResizeMode="NoResize">
 
-    <Grid Margin="8">
+    <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>

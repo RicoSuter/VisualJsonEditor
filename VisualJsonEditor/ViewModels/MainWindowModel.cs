@@ -45,11 +45,6 @@ namespace VisualJsonEditor.ViewModels
 
             UndoCommand = new RelayCommand<JsonDocument>(d => d.UndoRedoManager.Undo(), d => d != null && d.UndoRedoManager.CanUndo);
             RedoCommand = new RelayCommand<JsonDocument>(d => d.UndoRedoManager.Redo(), d => d != null && d.UndoRedoManager.CanRedo);
-
-#if DEBUG
-            if (Debugger.IsAttached)
-                OpenDocumentAsync(@"Samples/Sample.json");
-#endif
         }
 
         public Strings Strings
@@ -164,10 +159,11 @@ namespace VisualJsonEditor.ViewModels
         /// <summary>Opens a document from a given file name. </summary>
         /// <param name="fileName">The file name. </param>
         /// <returns>The task. </returns>
-        public Task OpenDocumentAsync(string fileName)
+        public async Task OpenDocumentAsync(string fileName)
         {
-            var isReadOnly = File.GetAttributes(fileName).HasFlag(FileAttributes.ReadOnly);
-            return OpenDocumentAsync(fileName, isReadOnly);
+            var isReadOnly = false; 
+            await RunTaskAsync(() => { isReadOnly = File.GetAttributes(fileName).HasFlag(FileAttributes.ReadOnly); });
+            await OpenDocumentAsync(fileName, isReadOnly);
         }
 
         /// <summary>Opens a document from a given file name. </summary>

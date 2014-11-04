@@ -7,7 +7,9 @@
 //-----------------------------------------------------------------------
 
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Fluent;
@@ -38,6 +40,12 @@ namespace VisualJsonEditor.Views
             CheckForApplicationUpdate();
 
             Closing += OnWindowClosing;
+
+#if DEBUG
+            if (Debugger.IsAttached)
+                Dispatcher.InvokeAsync(delegate { Model.OpenDocumentAsync(@"Samples/Sample.json"); });
+#endif
+
         }
 
         /// <summary>Gets the view model. </summary>

@@ -40,17 +40,19 @@
                                        Command="{Binding CreateDocumentCommand}" 
                                        ToolTip="{Binding Strings.ShortcutCtrlN}"
                                        Icon="/Images/ButtonCreateLarge.png" />
-                        <Fluent:Button Header="{Binding Strings.ButtonOpen}" Command="{Binding OpenDocumentCommand}" 
+                        <Fluent:Button Header="{Binding Strings.ButtonOpen}" 
+                                       Command="{Binding OpenDocumentCommand}" 
                                        ToolTip="{Binding Strings.ShortcutCtrlO}"
                                        Icon="/Images/ButtonOpenLarge.png" />
-                        <Fluent:Button Header="{Binding Strings.ButtonSave}" CanAddToQuickAccessToolBar="True" 
+                        <Fluent:Button Header="{Binding Strings.ButtonSave}"  
                                        Command="{Binding SaveDocumentCommand}" CommandParameter="{Binding SelectedDocument}"
                                        ToolTip="{Binding Strings.ShortcutCtrlS}"
                                        Icon="/Images/ButtonSaveLarge.png" />
-                        <Fluent:Button Header="{Binding Strings.ButtonSaveAs}" CanAddToQuickAccessToolBar="True" 
+                        
+                        <Fluent:Button Header="{Binding Strings.ButtonSaveAs}" 
                                        Command="{Binding SaveDocumentAsCommand}" CommandParameter="{Binding SelectedDocument}"
                                        Icon="/Images/ButtonSaveLarge.png" />
-                        <Fluent:Button Header="{Binding Strings.ButtonSaveSchemaAs}" CanAddToQuickAccessToolBar="True"
+                        <Fluent:Button Header="{Binding Strings.ButtonSaveSchemaAs}" 
                                        Command="{Binding SaveDocumentSchemaAsCommand}" CommandParameter="{Binding SelectedDocument}"
                                        Icon="/Images/ButtonSaveLarge.png" />
                         
@@ -91,7 +93,7 @@
             </Fluent:Ribbon.Menu>
             
             <Fluent:Ribbon.QuickAccessItems>
-                <Fluent:QuickAccessMenuItem Icon="/Images/ButtonSaveLarge.png"
+                <Fluent:QuickAccessMenuItem Icon="/Images/ButtonSaveLarge.png" 
                                             Command="{Binding SaveDocumentCommand}" CommandParameter="{Binding SelectedDocument}" />
                 <Fluent:QuickAccessMenuItem Icon="/Images/ButtonUndoSmall.png" 
                                             Command="{Binding UndoCommand}" CommandParameter="{Binding SelectedDocument}" />
@@ -182,18 +184,16 @@
 
         <!-- status bar -->
         <Fluent:StatusBar Grid.Row="2">
-            <Fluent:StatusBarItem HorizontalAlignment="Left">
-                <ProgressBar IsIndeterminate="{Binding IsLoading}" IsEnabled="{Binding IsLoading}"
-                             VerticalAlignment="Stretch" Width="150" Height="14" Margin="2" />
-            </Fluent:StatusBarItem>
-
-            <Separator HorizontalAlignment="Left" Visibility="{Binding SelectedDocument, Converter={StaticResource VisibilityConverter}}" />
-            <Fluent:StatusBarItem HorizontalAlignment="Left" Foreground="White"
+            <Fluent:StatusBarItem HorizontalAlignment="Left" Foreground="White" Margin="4,0,0,0"
                                   Content="{Binding SelectedDocument.FilePath}" />
-
-            <Separator HorizontalAlignment="Left" Visibility="{Binding SelectedDocument, Converter={StaticResource VisibilityConverter}}" />
-            <Fluent:StatusBarItem HorizontalAlignment="Left" Foreground="White"
+            
+            <Fluent:StatusBarItem HorizontalAlignment="Left" Foreground="White" Margin="8,0,0,0"
                                   Content="{Binding SelectedDocument.SchemaPath}" />
+
+            <Fluent:StatusBarItem HorizontalAlignment="Right" Margin="4,0,0,0"
+                                  Visibility="{Binding IsLoading, Converter={StaticResource VisibilityConverter}}">
+                <ProgressBar IsIndeterminate="{Binding IsLoading}" IsEnabled="{Binding IsLoading}" Width="100" Height="14" />
+            </Fluent:StatusBarItem>
         </Fluent:StatusBar>
     </Grid>
 </Fluent:RibbonWindow>
