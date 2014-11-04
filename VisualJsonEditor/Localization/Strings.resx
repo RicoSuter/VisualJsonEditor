@@ -239,4 +239,7 @@
   <data name="ShortcutCtrlW" xml:space="preserve">
     <value>Ctrl-W</value>
   </data>
+  <data name="LabelAboutComponentFluentRibbon" xml:space="preserve">
+    <value>Library with ribbon UI implementation. </value>
+  </data>
 </root>

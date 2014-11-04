@@ -223,6 +223,15 @@ namespace VisualJsonEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Library with ribbon UI implementation. .
+        /// </summary>
+        public static string LabelAboutComponentFluentRibbon {
+            get {
+                return ResourceManager.GetString("LabelAboutComponentFluentRibbon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Popular high-performance JSON framework for .NET..
         /// </summary>
         public static string LabelAboutComponentJsonNet {

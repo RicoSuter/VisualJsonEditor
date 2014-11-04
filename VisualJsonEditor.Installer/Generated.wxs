@@ -389,9 +389,6 @@
             <Component Id="cmp43C002B3FBF6948A5D52EBAAB507F47B" Directory="RootDirectory" Guid="*">
                 <File Id="fil858BFCF42246FF8FADB0CA6EE9F88942" KeyPath="yes" Source="$(var.SourcePath)\VisualJsonEditor.vshost.exe.config" />
             </Component>
-            <Component Id="cmpCD280A8895B1E9F60A65D0CDE8FF28D9" Directory="RootDirectory" Guid="*">
-                <File Id="filEE6F615DEC24829CB293328ED81272CC" KeyPath="yes" Source="$(var.SourcePath)\VisualJsonEditor.vshost.exe.manifest" />
-            </Component>
             <Component Id="cmpEAAEB76AE9A33003FB8599D0DA4712D8" Directory="RootDirectory" Guid="*">
                 <File Id="filFB7A95F6F1CD1966E430B3A075C4E656" KeyPath="yes" Source="$(var.SourcePath)\Xceed.Wpf.AvalonDock.dll" />
             </Component>
