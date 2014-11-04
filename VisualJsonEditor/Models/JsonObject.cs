@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
+using VisualJsonEditor.Utilities;
 
 namespace VisualJsonEditor.Models
 {
@@ -51,14 +52,14 @@ namespace VisualJsonEditor.Models
                 {
                     if (property.Value.Type.Value.HasFlag(JsonSchemaType.Object))
                     {
-                        if (property.Value.Required == true)
+                        if (property.Value.IsRequired())
                             obj[property.Key] = FromSchema(property.Value);
                         else
                             obj[property.Key] = null;
                     }
                     else if (property.Value.Type.Value.HasFlag(JsonSchemaType.Array))
                     {
-                        if (property.Value.Required == true)
+                        if (property.Value.IsRequired())
                             obj[property.Key] = new ObservableCollection<JsonToken>();
                         else
                             obj[property.Key] = null;
@@ -81,7 +82,7 @@ namespace VisualJsonEditor.Models
                 if (property.Value.Type.Value.HasFlag(JsonSchemaType.Boolean))
                     return false;
 
-                if (property.Value.Required == true)
+                if (property.Value.IsRequired() && property.Value.Type.HasValue)
                 {
                     if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "date-time")
                         return new DateTime();
@@ -122,7 +123,11 @@ namespace VisualJsonEditor.Models
                     }
                     else if (property.Value.Type.Value.HasFlag(JsonSchemaType.Object))
                     {
-                        result[property.Key] = FromJson((JObject)obj[property.Key], property.Value);
+                        var token = obj[property.Key];
+                        if (token is JObject)
+                            result[property.Key] = FromJson((JObject)token, property.Value);
+                        else
+                            result[property.Key] = null;
                     }
                     else
                     {
@@ -147,13 +152,14 @@ namespace VisualJsonEditor.Models
             };
         }
 
-        public Task<bool> IsValidAsync()
+        public Task<string[]> ValidateAsync()
         {
             return Task.Run(() =>
             {
-                var jsonData = JsonConvert.SerializeObject(this, Formatting.Indented);
-                var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(jsonData)));
-                return obj.IsValid(Schema);
+                var errors = new List<string>();
+                var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(ToJson())));
+                obj.Validate(Schema, (sender, args) => errors.Add(string.Format("{0}: {1}", args.Path, args.Message)));
+                return errors.ToArray();
             });
         }
 

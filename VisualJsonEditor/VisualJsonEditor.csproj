@@ -124,6 +124,7 @@
     <Compile Include="Messages\SaveJsonDocumentMessage.cs" />
     <Compile Include="Models\JsonToken.cs" />
     <Compile Include="Models\JsonValue.cs" />
+    <Compile Include="Utilities\JsonSchemaExtensions.cs" />
     <Compile Include="ViewModels\MainWindowModel.cs" />
     <Compile Include="ApplicationConfiguration.cs" />
     <Compile Include="Utilities\JsonApplicationConfiguration.cs" />

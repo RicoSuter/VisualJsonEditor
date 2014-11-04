@@ -219,13 +219,20 @@ namespace VisualJsonEditor.ViewModels
 
         private async Task ValidateDocumentAsync(JsonDocument document)
         {
-            var result = await document.Data.IsValidAsync();
-            if (result)
+            var errors = await document.Data.ValidateAsync();
+            if (errors.Length == 0)
+            {
                 await Messenger.Default.SendAsync(
-                    new TextMessage(string.Format(Strings.MessageValidDocumentText, document.DisplayTitle), Strings.MessageValidDocumentTitle));
+                    new TextMessage(string.Format(Strings.MessageValidDocumentText, document.DisplayTitle),
+                        Strings.MessageValidDocumentTitle));
+            }
             else
+            {
                 await Messenger.Default.SendAsync(
-                    new TextMessage(string.Format(Strings.MessageNotValidDocumentText, document.DisplayTitle), Strings.MessageNotValidDocumentTitle));
+                    new TextMessage(
+                        string.Format(Strings.MessageNotValidDocumentText, document.DisplayTitle, string.Join("\n", errors)),
+                        Strings.MessageNotValidDocumentTitle));
+            }
         }
 
         private void UndoRedoManagerOnPropertyChanged(object sender, PropertyChangedEventArgs args)

@@ -286,7 +286,9 @@ namespace VisualJsonEditor.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The document &apos;{0}&apos; is NOT valid. .
+        ///   Looks up a localized string similar to The document &apos;{0}&apos; is NOT valid. 
+        ///
+        ///{1}.
         /// </summary>
         public static string MessageNotValidDocumentText {
             get {

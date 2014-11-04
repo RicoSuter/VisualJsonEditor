@@ -8,6 +8,7 @@
 
 using MyToolkit.Model;
 using Newtonsoft.Json.Schema;
+using VisualJsonEditor.Utilities;
 
 namespace VisualJsonEditor.Models
 {
@@ -27,6 +28,11 @@ namespace VisualJsonEditor.Models
         public JsonObject Parent { get; private set; }
 
         public JsonSchema Schema { get; private set; }
+
+        public bool IsRequired
+        {
+            get { return Schema.IsRequired(); }
+        }
 
         public object Value
         {

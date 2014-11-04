@@ -136,7 +136,7 @@
                     </controls:ExpandingGroupBox.HeaderTemplate>
                     <StackPanel>
                         <CheckBox IsChecked="{Binding HasValue, Mode=OneWay}" 
-                                  Visibility="{Binding Schema.Required, Converter={StaticResource NotConverter}}"
+                                  Visibility="{Binding IsRequired, Converter={StaticResource NotConverter}}"
                                   Margin="4,8,4,4" Content="Specify values" 
                                   Checked="OnCreateObject" Unchecked="OnRemoveObject" Tag="{Binding}" />
 
@@ -159,7 +159,7 @@
                     </controls:ExpandingGroupBox.HeaderTemplate>
                     <StackPanel Margin="0,8,0,0">
                         <CheckBox IsChecked="{Binding HasValue, Mode=OneWay}" 
-                                  Visibility="{Binding Schema.Required, Converter={StaticResource NotConverter}}"
+                                  Visibility="{Binding IsRequired, Converter={StaticResource NotConverter}}"
                                   Margin="4,0,4,4" Content="Specify values" 
                                   Checked="OnCreateArray" Unchecked="OnRemoveArray" Tag="{Binding}" />
 
