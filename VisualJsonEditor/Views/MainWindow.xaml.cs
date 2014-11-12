@@ -9,7 +9,6 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Fluent;
@@ -109,14 +108,6 @@ namespace VisualJsonEditor.Views
             _configuration.WindowState = WindowState;
 
             JsonApplicationConfiguration.Save(ConfigurationFileName, _configuration, true);
-        }
-
-        private void OnRibbonsLoaded(object sender, RoutedEventArgs e)
-        {
-            // HACK: Used to hide the quick access bar in the ribbon control
-            //var child = VisualTreeHelper.GetChild((DependencyObject)sender, 0) as Grid;
-            //if (child != null)
-            //    child.RowDefinitions[0].Height = new GridLength(0);
         }
 
         private async void CheckForApplicationUpdate()

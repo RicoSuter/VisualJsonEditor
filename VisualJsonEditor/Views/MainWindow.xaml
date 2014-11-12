@@ -36,14 +36,43 @@
             <Fluent:Ribbon.Menu>
                 <Fluent:Backstage>
                     <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="{Binding Strings.HeaderRecentDocuments}">
+                            <Grid Margin="8,0,0,0">
+                                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                                    <ItemsControl ItemsSource="{Binding Configuration.RecentFiles}" Margin="0,0,8,0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Click="OnOpenDocument" HorizontalContentAlignment="Left" 
+                                                        Background="Transparent" BorderThickness="0" Margin="0,8,0,0"
+                                                        Command="{Binding OpenDocumentFromPathCommand, Source={StaticResource ViewModel}}"
+                                                        CommandParameter="{Binding FilePath}">
+                                                    <Button.Content>
+                                                        <StackPanel Orientation="Horizontal" Margin="4">
+                                                            <Image Source="/Images/ButtonCreateLarge.png" Margin="0,0,4,0" />
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding FileName}" FontSize="16" />
+                                                                <TextBlock Text="{Binding FilePath}" FontSize="10" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </Button.Content>
+                                                </Button>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </Grid>
+                        </Fluent:BackstageTabItem>
+
                         <Fluent:Button Header="{Binding Strings.ButtonNew}" Width="200"
                                        Command="{Binding CreateDocumentCommand}" 
                                        ToolTip="{Binding Strings.ShortcutCtrlN}"
                                        Icon="/Images/ButtonCreateLarge.png" />
+
                         <Fluent:Button Header="{Binding Strings.ButtonOpen}" 
                                        Command="{Binding OpenDocumentCommand}" 
                                        ToolTip="{Binding Strings.ShortcutCtrlO}"
                                        Icon="/Images/ButtonOpenLarge.png" />
+
                         <Fluent:Button Header="{Binding Strings.ButtonSave}"  
                                        Command="{Binding SaveDocumentCommand}" CommandParameter="{Binding SelectedDocument}"
                                        ToolTip="{Binding Strings.ShortcutCtrlS}"
@@ -58,36 +87,6 @@
                         
                         <Fluent:Button Header="{Binding Strings.ButtonExit}" 
                                        Click="OnExitApplication" Icon="/Images/ButtonExitSmall.png" KeyTip="X" />
-
-                        <Grid Margin="8,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="{Binding Strings.HeaderRecentDocuments}" FontWeight="Bold" Margin="8,16,0,16" />
-                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
-                                <ItemsControl ItemsSource="{Binding Configuration.RecentFiles}" Margin="0,0,8,0">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Button Click="OnOpenDocument" HorizontalContentAlignment="Left" 
-                                                    Background="Transparent" BorderThickness="0" Margin="0,0,0,8"
-                                                    Command="{Binding OpenDocumentFromPathCommand, Source={StaticResource ViewModel}}"
-                                                    CommandParameter="{Binding FilePath}">
-                                                <Button.Content>
-                                                    <StackPanel Orientation="Horizontal" Margin="4">
-                                                        <Image Source="/Images/ButtonCreateLarge.png" Margin="0,0,4,0" />
-                                                        <StackPanel>
-                                                            <TextBlock Text="{Binding FileName}" FontSize="16" />
-                                                            <TextBlock Text="{Binding FilePath}" FontSize="10" />
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Button.Content>
-                                            </Button>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </Grid>
                     </Fluent:BackstageTabControl>
                 </Fluent:Backstage>
             </Fluent:Ribbon.Menu>

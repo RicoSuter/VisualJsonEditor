@@ -117,10 +117,11 @@ namespace VisualJsonEditor.Models
             });
         }
 
+        /// <exception cref="IOException">The document has no file location</exception>
         public async Task SaveAsync(bool saveSchema)
         {
             if (!HasFileLocation)
-                throw new Exception("Document has no file location");
+                throw new IOException("The document has no file location");
 
             await Task.Run(() =>
             {

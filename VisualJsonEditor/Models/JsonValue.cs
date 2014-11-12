@@ -12,6 +12,11 @@ namespace VisualJsonEditor.Models
 {
     public class JsonValue : JsonToken
     {
+        public JsonValue()
+        {
+            this["Value"] = null;
+        }
+
         public object Value
         {
             get { return ContainsKey("Value") ? this["Value"] : null; }
