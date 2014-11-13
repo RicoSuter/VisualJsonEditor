@@ -14,8 +14,10 @@ using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.Controls
 {
+    /// <summary>A JSON editor control. </summary>
     public partial class JsonEditor
     {
+        /// <summary>Initializes a new instance of the <see cref="JsonEditor"/> class. </summary>
         public JsonEditor()
         {
             InitializeComponent();

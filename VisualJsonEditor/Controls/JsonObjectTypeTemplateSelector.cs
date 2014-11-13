@@ -13,6 +13,7 @@ using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.Controls
 {
+    /// <summary>Template selector which selects the template based on the given JSON object type. </summary>
     public class JsonObjectTypeTemplateSelector : DataTemplateSelector
     {
         public override DataTemplate SelectTemplate(object item, DependencyObject container)

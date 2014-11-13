@@ -12,6 +12,7 @@ using MyToolkit.Utilities;
 
 namespace VisualJsonEditor.Controls
 {
+    /// <summary>A group box with expander. </summary>
     public class ExpandingGroupBox : ContentControl
     {
         static ExpandingGroupBox()

@@ -40,6 +40,15 @@ namespace VisualJsonEditor.Views
 
             Closing += OnWindowClosing;
 
+            foreach (QuickAccessMenuItem menuItem in Ribbon.QuickAccessItems)
+            {
+                // TWA Change start
+                if (!Ribbon.IsInQuickAccessToolBar(menuItem))
+                    Ribbon.AddToQuickAccessToolBar(menuItem);
+                // TWA Change end
+            }
+
+
 #if DEBUG
             if (Debugger.IsAttached)
                 Dispatcher.InvokeAsync(delegate { Model.OpenDocumentAsync(@"Samples/Sample.json"); });

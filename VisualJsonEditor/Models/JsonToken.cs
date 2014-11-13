@@ -14,18 +14,25 @@ using Newtonsoft.Json.Schema;
 
 namespace VisualJsonEditor.Models
 {
+    /// <summary>Represents a JSON token which may be an object or a single value. </summary>
     public abstract class JsonToken : ObservableDictionary<string, object>
     {
+        /// <summary>Gets or sets the schema of the token. </summary>
         public JsonSchema Schema { get; set; }
 
+        /// <summary>Gets or sets the parent list if applicable (may be null). </summary>
         public ObservableCollection<JsonToken> ParentList { get; set; }
 
+        /// <summary>Converts the token to a JSON string. </summary>
+        /// <returns>The JSON string. </returns>
         public string ToJson()
         {
             var token = ToJToken();
             return JsonConvert.SerializeObject(token, Formatting.Indented);
         }
 
+        /// <summary>Converts the <see cref="JsonToken"/> to a <see cref="JToken"/>. </summary>
+        /// <returns>The <see cref="JToken"/>. </returns>
         public abstract JToken ToJToken();
     }
 }

@@ -10,13 +10,17 @@ using MyToolkit.Messaging;
 
 namespace VisualJsonEditor.Messages
 {
+    /// <summary>Message to show the file open dialog to open a JSON document. </summary>
     public class OpenJsonDocumentMessage : CallbackMessage<string>
     {
+        /// <summary>Initializes a new instance of the <see cref="OpenJsonDocumentMessage"/> class. </summary>
+        /// <param name="title">The title to show in the dialog. </param>
         public OpenJsonDocumentMessage(string title)
         {
             Title = title; 
         }
 
+        /// <summary>Gets or sets the file name. </summary>
         public string Title { get; private set; }
     }
 }

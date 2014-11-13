@@ -17,14 +17,17 @@ using Newtonsoft.Json.Schema;
 
 namespace VisualJsonEditor.Models
 {
+    /// <summary>Represents a JSON document. </summary>
     public class JsonDocument : ObservableObject
     {
         private string _filePath;
         private JsonObject _data;
         private bool _isReadOnly;
 
+        /// <summary>Initializes a new instance of the <see cref="JsonDocument"/> class. </summary>
         protected JsonDocument() { }
 
+        /// <summary>Gets or sets the document's file path. </summary>
         public string FilePath
         {
             get { return _filePath; }
@@ -38,8 +41,10 @@ namespace VisualJsonEditor.Models
             }
         }
 
+        /// <summary>Gets the path of the schema file. </summary>
         public string SchemaPath { get; private set; }
 
+        /// <summary>Gets the document's display title. </summary>
         public string DisplayTitle
         {
             get
@@ -50,37 +55,41 @@ namespace VisualJsonEditor.Models
             }
         }
 
+        /// <summary>Gets a value indicating whether the document has a file location. </summary>
         public bool HasFileLocation
         {
             get { return _filePath != null; }
         }
 
+        /// <summary>Gets the JSON data. </summary>
         public JsonObject Data
         {
             get { return _data; }
             private set { Set(ref _data, value); }
         }
 
-        public void Initialize(JsonObject data, IDispatcher dispatcher)
-        {
-            UndoRedoManager = new UndoRedoManager(data, dispatcher);
-            Data = data; 
-        }
-
+        /// <summary>Gets or sets the undo/redo manager. </summary>
         public UndoRedoManager UndoRedoManager { get; set; }
 
+        /// <summary>Gets a value indicating whether the document is read only. </summary>
         public bool IsReadOnly
         {
             get { return _isReadOnly; }
             set { Set(ref _isReadOnly, value); }
         }
 
-        public static Task<JsonDocument> LoadAsync(string filePath, IDispatcher dispatcher)
+        /// <summary>Initializes the document. </summary>
+        /// <param name="data">The JSON data. </param>
+        /// <param name="dispatcher">The UI dispatcher. </param>
+        public void Initialize(JsonObject data, IDispatcher dispatcher)
         {
-            var schemaPath = GetDefaultSchemaPath(filePath);
-            return LoadAsync(filePath, schemaPath, dispatcher);
+            UndoRedoManager = new UndoRedoManager(data, dispatcher);
+            Data = data;
         }
 
+        /// <summary>Generates the default schema file path for a given JSON file path. </summary>
+        /// <param name="filePath">The JSON document file path. </param>
+        /// <returns>The path to the schema file. </returns>
         public static string GetDefaultSchemaPath(string filePath)
         {
             var directoryName = Path.GetDirectoryName(filePath);
@@ -89,6 +98,21 @@ namespace VisualJsonEditor.Models
             return Path.Combine(directoryName, Path.GetFileNameWithoutExtension(filePath) + ".schema" + Path.GetExtension(filePath));
         }
 
+        /// <summary>Loads a <see cref="JsonDocument"/> from a file path. The schema path is automatically determined. </summary>
+        /// <param name="filePath">The file path. </param>
+        /// <param name="dispatcher">The UI dispatcher. </param>
+        /// <returns>The <see cref="JsonDocument"/>. </returns>
+        public static Task<JsonDocument> LoadAsync(string filePath, IDispatcher dispatcher)
+        {
+            var schemaPath = GetDefaultSchemaPath(filePath);
+            return LoadAsync(filePath, schemaPath, dispatcher);
+        }
+
+        /// <summary>Loads a <see cref="JsonDocument"/> from a file path and schema path. </summary>
+        /// <param name="filePath">The file path. </param>
+        /// <param name="schemaPath">The schema path. </param>
+        /// <param name="dispatcher">The UI dispatcher. </param>
+        /// <returns>The <see cref="JsonDocument"/>. </returns>
         public static Task<JsonDocument> LoadAsync(string filePath, string schemaPath, IDispatcher dispatcher)
         {
             return Task.Run(() =>
@@ -104,6 +128,10 @@ namespace VisualJsonEditor.Models
             });
         }
 
+        /// <summary>Creates a new <see cref="JsonDocument"/> based on a given schema file path. </summary>
+        /// <param name="schemaPath">The schema file path. </param>
+        /// <param name="dispatcher">The UI dispatcher. </param>
+        /// <returns>The <see cref="JsonDocument"/>. </returns>
         public static Task<JsonDocument> CreateAsync(string schemaPath, IDispatcher dispatcher)
         {
             return Task.Run(() =>
@@ -117,6 +145,9 @@ namespace VisualJsonEditor.Models
             });
         }
 
+        /// <summary>Saves the document. </summary>
+        /// <param name="saveSchema">Defines if the schema file should be saved too. </param>
+        /// <returns>The task. </returns>
         /// <exception cref="IOException">The document has no file location</exception>
         public async Task SaveAsync(bool saveSchema)
         {

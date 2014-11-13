@@ -19,30 +19,12 @@ using VisualJsonEditor.Utilities;
 
 namespace VisualJsonEditor.Models
 {
+    /// <summary>Represents a JSON object. </summary>
     public class JsonObject : JsonToken
     {
-        public IEnumerable<JsonProperty> Properties
-        {
-            get
-            {
-                var properties = new List<JsonProperty>();
-                if (Schema.Properties != null)
-                {
-                    foreach (var propertyInfo in Schema.Properties)
-                    {
-                        var property = new JsonProperty(propertyInfo.Key, this, propertyInfo.Value);
-                        if (property.Value is ObservableCollection<JsonToken>)
-                        {
-                            foreach (var obj in (ObservableCollection<JsonToken>)property.Value)
-                                obj.Schema = propertyInfo.Value.Items.First();
-                        }
-                        properties.Add(property);
-                    }
-                }
-                return properties; 
-            }
-        }
-
+        /// <summary>Creates a default <see cref="JsonObject"/> from the given schema. </summary>
+        /// <param name="schema">The <see cref="JsonSchema"/>. </param>
+        /// <returns>The <see cref="JsonObject"/>. </returns>
         public static JsonObject FromSchema(JsonSchema schema)
         {
             var obj = new JsonObject();
@@ -72,36 +54,20 @@ namespace VisualJsonEditor.Models
             return obj;
         }
 
-        private static object GetDefaultValue(KeyValuePair<string, JsonSchema> property)
-        {
-            if (property.Value.Default != null)
-                return ((JValue) property.Value.Default).Value;
-
-            if (property.Value.Type.HasValue)
-            {
-                if (property.Value.Type.Value.HasFlag(JsonSchemaType.Boolean))
-                    return false;
-
-                if (property.Value.IsRequired() && property.Value.Type.HasValue)
-                {
-                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "date-time")
-                        return new DateTime();
-                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "date")
-                        return new DateTime();
-                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "time")
-                        return new TimeSpan();
-                }
-            }
-
-            return null;
-        }
-
+        /// <summary>Creates a <see cref="JsonObject"/> from the given JSON data and <see cref="JsonSchema"/>. </summary>
+        /// <param name="jsonData">The JSON data. </param>
+        /// <param name="schema">The <see cref="JsonSchema"/>. </param>
+        /// <returns>The <see cref="JsonObject"/>. </returns>
         public static JsonObject FromJson(string jsonData, JsonSchema schema)
         {
             var json = JsonConvert.DeserializeObject(jsonData);
             return FromJson((JObject)json, schema);
         }
 
+        /// <summary>Creates a <see cref="JsonObject"/> from the given <see cref="JObject"/> and <see cref="JsonSchema"/>. </summary>
+        /// <param name="obj">The <see cref="JObject"/>. </param>
+        /// <param name="schema">The <see cref="JsonSchema"/>. </param>
+        /// <returns>The <see cref="JsonObject"/>. </returns>
         public static JsonObject FromJson(JObject obj, JsonSchema schema)
         {
             var result = new JsonObject();
@@ -113,7 +79,7 @@ namespace VisualJsonEditor.Models
                     {
                         var propertySchema = property.Value.Items.First();
                         var objects = obj[property.Key].Select(o => o is JObject ? 
-                            (JsonToken)FromJson((JObject)o, propertySchema) : FromJson((JValue)o, propertySchema));
+                            (JsonToken)FromJson((JObject)o, propertySchema) : JsonValue.FromJson((JValue)o, propertySchema));
                         
                         var list = new ObservableCollection<JsonToken>(objects);
                         foreach (var item in list)
@@ -143,15 +109,55 @@ namespace VisualJsonEditor.Models
             return result;
         }
 
-        public static JsonValue FromJson(JValue value, JsonSchema schema)
+        private static object GetDefaultValue(KeyValuePair<string, JsonSchema> property)
         {
-            return new JsonValue
+            if (property.Value.Default != null)
+                return ((JValue) property.Value.Default).Value;
+
+            if (property.Value.Type.HasValue)
             {
-                Schema = schema,
-                Value = value.Value
-            };
+                if (property.Value.Type.Value.HasFlag(JsonSchemaType.Boolean))
+                    return false;
+
+                if (property.Value.IsRequired() && property.Value.Type.HasValue)
+                {
+                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "date-time")
+                        return new DateTime();
+                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "date")
+                        return new DateTime();
+                    if (property.Value.Type.Value.HasFlag(JsonSchemaType.String) && property.Value.Format == "time")
+                        return new TimeSpan();
+                }
+            }
+
+            return null;
         }
 
+        /// <summary>Gets the object's properties. </summary>
+        public IEnumerable<JsonProperty> Properties
+        {
+            get
+            {
+                var properties = new List<JsonProperty>();
+                if (Schema.Properties != null)
+                {
+                    foreach (var propertyInfo in Schema.Properties)
+                    {
+                        var property = new JsonProperty(propertyInfo.Key, this, propertyInfo.Value);
+                        if (property.Value is ObservableCollection<JsonToken>)
+                        {
+                            foreach (var obj in (ObservableCollection<JsonToken>)property.Value)
+                                obj.Schema = propertyInfo.Value.Items.First();
+                        }
+                        properties.Add(property);
+                    }
+                }
+                return properties;
+            }
+        }
+
+        /// <summary>Validates the data of the <see cref="JsonObject"/>. </summary>
+        /// <returns>The list of validation errors. </returns>
         public Task<string[]> ValidateAsync()
         {
             return Task.Run(() =>
@@ -163,6 +169,8 @@ namespace VisualJsonEditor.Models
             });
         }
 
+        /// <summary>Converts the <see cref="JsonToken"/> to a <see cref="JToken"/>. </summary>
+        /// <returns>The <see cref="JToken"/>. </returns>
         public override JToken ToJToken()
         {
             var obj = new JObject();

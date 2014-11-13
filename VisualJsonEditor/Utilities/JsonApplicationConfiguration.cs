@@ -14,11 +14,19 @@ using Newtonsoft.Json.Schema;
 
 namespace VisualJsonEditor.Utilities
 {
+    /// <summary>Provides methods to load and save the application configuration. </summary>
     public static class JsonApplicationConfiguration
     {
         private const string ConfigExtension = ".json";
         private const string SchemaExtension = ".schema.json";
 
+        /// <summary>Loads the application configuration. </summary>
+        /// <typeparam name="T">The type of the application configuration. </typeparam>
+        /// <param name="fileNameWithoutExtension">The configuration file name without extension. </param>
+        /// <param name="alwaysCreateNewSchemaFile">Defines if the schema file should always be generated and overwritten. </param>
+        /// <param name="storeInAppData">Defines if the configuration file should be loaded from the user's AppData directory. </param>
+        /// <returns>The configuration object. </returns>
+        /// <exception cref="IOException">An I/O error occurred while opening the file. </exception>
         public static T Load<T>(string fileNameWithoutExtension, bool alwaysCreateNewSchemaFile, bool storeInAppData) where T : new()
         {
             var configPath = CreateFilePath(fileNameWithoutExtension, ConfigExtension, storeInAppData);
@@ -33,6 +41,11 @@ namespace VisualJsonEditor.Utilities
             return JsonConvert.DeserializeObject<T>(File.ReadAllText(configPath, Encoding.UTF8));
         }
 
+        /// <summary>Saves the configuration. </summary>
+        /// <param name="fileNameWithoutExtension">The configuration file name without extension. </param>
+        /// <param name="configuration">The configuration object to store. </param>
+        /// <param name="storeInAppData">Defines if the configuration file should be stored in the user's AppData directory. </param>
+        /// <exception cref="IOException">An I/O error occurred while opening the file. </exception>
         public static void Save<T>(string fileNameWithoutExtension, T configuration, bool storeInAppData) where T : new()
         {
             CreateSchemaFile<T>(fileNameWithoutExtension, storeInAppData);
