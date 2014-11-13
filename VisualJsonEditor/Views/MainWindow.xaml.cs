@@ -40,14 +40,15 @@ namespace VisualJsonEditor.Views
 
             Closing += OnWindowClosing;
 
-            foreach (QuickAccessMenuItem menuItem in Ribbon.QuickAccessItems)
-            {
-                // TWA Change start
-                if (!Ribbon.IsInQuickAccessToolBar(menuItem))
-                    Ribbon.AddToQuickAccessToolBar(menuItem);
-                // TWA Change end
-            }
-
+            // TODO: How to implement this
+            //Loaded += delegate
+            //{
+            //    foreach (QuickAccessMenuItem menuItem in Ribbon.QuickAccessItems)
+            //    {
+            //        if (!Ribbon.IsInQuickAccessToolBar(menuItem))
+            //            Ribbon.AddToQuickAccessToolBar(menuItem);
+            //    }
+            //};
 
 #if DEBUG
             if (Debugger.IsAttached)
