@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="JsonApplicationConfiguration.cs" company="Visual JSON Editor">
 //     Copyright (c) Rico Suter. All rights reserved.
 // </copyright>
@@ -10,7 +10,6 @@ using System;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Schema;
 
 namespace VisualJsonEditor.Utilities
 {
@@ -51,7 +50,7 @@ namespace VisualJsonEditor.Utilities
             CreateSchemaFile<T>(fileNameWithoutExtension, storeInAppData);
 
             var configPath = CreateFilePath(fileNameWithoutExtension, ConfigExtension, storeInAppData);
-            File.WriteAllText(configPath, JsonConvert.SerializeObject(configuration), Encoding.UTF8);
+            File.WriteAllText(configPath, JsonConvert.SerializeObject(configuration, Formatting.Indented), Encoding.UTF8);
         }
 
         private static string CreateFilePath(string fileNameWithoutExtension, string extension, bool storeInAppData)
@@ -64,7 +63,7 @@ namespace VisualJsonEditor.Utilities
                 var directoryPath = Path.GetDirectoryName(filePath);
                 if (directoryPath != null && !Directory.Exists(directoryPath))
                     Directory.CreateDirectory(directoryPath);
-                
+
                 return filePath;
             }
             return fileNameWithoutExtension + extension;
@@ -73,19 +72,18 @@ namespace VisualJsonEditor.Utilities
         private static T CreateDefaultConfigurationFile<T>(string fileNameWithoutExtension, bool storeInAppData) where T : new()
         {
             var config = new T();
-            var configData = JsonConvert.SerializeObject(config);
+            var configData = JsonConvert.SerializeObject(config, Formatting.Indented);
             var configPath = CreateFilePath(fileNameWithoutExtension, ConfigExtension, storeInAppData);
 
             File.WriteAllText(configPath, configData, Encoding.UTF8);
-
             return config;
         }
 
         private static void CreateSchemaFile<T>(string fileNameWithoutExtension, bool storeInAppData) where T : new()
         {
             var schemaPath = CreateFilePath(fileNameWithoutExtension, SchemaExtension, storeInAppData);
-            var generator = new JsonSchemaGenerator();
-            var schema = generator.Generate(typeof (T));
+            var generator = new JsonSchemaGeneratorWithAnnotations();
+            var schema = generator.Generate(typeof(T));
 
             File.WriteAllText(schemaPath, schema.ToString(), Encoding.UTF8);
         }
