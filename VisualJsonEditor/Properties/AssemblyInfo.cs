@@ -1,15 +1,13 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
 [assembly: AssemblyTitle("VisualJsonEditor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Rico Suter")]
 [assembly: AssemblyProduct("VisualJsonEditor")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © Rico Suter, 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,4 +18,4 @@ using System.Windows;
     ResourceDictionaryLocation.SourceAssembly 
 )]
 
-[assembly: AssemblyVersion("0.1.*")]
+[assembly: AssemblyVersion("0.2.*")]
