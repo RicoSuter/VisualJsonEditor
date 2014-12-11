@@ -161,8 +161,7 @@ namespace VisualJsonEditor.ViewModels
         /// <returns>The task. </returns>
         public async Task OpenDocumentAsync(string fileName)
         {
-            var isReadOnly = false; 
-            await RunTaskAsync(() => { isReadOnly = File.GetAttributes(fileName).HasFlag(FileAttributes.ReadOnly); });
+            var isReadOnly = await RunTaskAsync(() => File.GetAttributes(fileName).HasFlag(FileAttributes.ReadOnly));
             await OpenDocumentAsync(fileName, isReadOnly);
         }
 
@@ -179,7 +178,17 @@ namespace VisualJsonEditor.ViewModels
             {
                 await RunTaskAsync(async token =>
                 {
-                    var document = await JsonDocument.LoadAsync(fileName, ServiceLocator.Default.Resolve<IDispatcher>());
+                    var schemaPath = JsonDocument.GetDefaultSchemaPath(fileName);
+                    if (!File.Exists(schemaPath))
+                    {
+                        var result = await Messenger.Default.SendAsync(new OpenJsonDocumentMessage(Strings.OpenJsonSchemaDocumentDialog));
+                        if (!result.Success)
+                            return;
+
+                        schemaPath = result.Result;
+                    }
+
+                    var document = await JsonDocument.LoadAsync(fileName, schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
                     document.IsReadOnly = isReadOnly;
 
                     AddDocument(document);
