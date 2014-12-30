@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------
-// <copyright file="JsonProperty.cs" company="Visual JSON Editor">
+// <copyright file="JsonPropertyModel.cs" company="Visual JSON Editor">
 //     Copyright (c) Rico Suter. All rights reserved.
 // </copyright>
 // <license>http://visualjsoneditor.codeplex.com/license</license>
@@ -7,19 +7,18 @@
 //-----------------------------------------------------------------------
 
 using MyToolkit.Model;
-using Newtonsoft.Json.Schema;
-using VisualJsonEditor.Utilities;
+using NJsonSchema;
 
 namespace VisualJsonEditor.Models
 {
     /// <summary>Describes a JSON property. </summary>
-    public class JsonProperty : ObservableObject
+    public class JsonPropertyModel : ObservableObject
     {
-        /// <summary>Initializes a new instance of the <see cref="JsonProperty"/> class. </summary>
+        /// <summary>Initializes a new instance of the <see cref="JsonPropertyModel"/> class. </summary>
         /// <param name="key">The key of the property. </param>
         /// <param name="parent">The parent object. </param>
         /// <param name="schema">The property type as schema object. </param>
-        public JsonProperty(string key, JsonObject parent, JsonSchema schema)
+        public JsonPropertyModel(string key, JsonObjectModel parent, JsonProperty schema)
         {
             Key = key;
             Parent = parent;
@@ -32,15 +31,15 @@ namespace VisualJsonEditor.Models
         public string Key { get; private set; }
 
         /// <summary>Gets the parent object. </summary>
-        public JsonObject Parent { get; private set; }
+        public JsonObjectModel Parent { get; private set; }
 
         /// <summary>Gets the property type as schema. </summary>
-        public JsonSchema Schema { get; private set; }
+        public JsonProperty Schema { get; private set; }
 
         /// <summary>Gets a value indicating whether the property is required. </summary>
         public bool IsRequired
         {
-            get { return Schema.IsRequired(); }
+            get { return Schema.IsRequired; }
         }
 
         /// <summary>Gets or sets the value of the property. </summary>

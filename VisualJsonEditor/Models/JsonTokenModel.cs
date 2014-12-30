@@ -10,18 +10,18 @@ using System.Collections.ObjectModel;
 using MyToolkit.Collections;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
+using NJsonSchema;
 
 namespace VisualJsonEditor.Models
 {
     /// <summary>Represents a JSON token which may be an object or a single value. </summary>
-    public abstract class JsonToken : ObservableDictionary<string, object>
+    public abstract class JsonTokenModel : ObservableDictionary<string, object>
     {
         /// <summary>Gets or sets the schema of the token. </summary>
-        public JsonSchema Schema { get; set; }
+        public JsonSchema4 Schema { get; set; }
 
         /// <summary>Gets or sets the parent list if applicable (may be null). </summary>
-        public ObservableCollection<JsonToken> ParentList { get; set; }
+        public ObservableCollection<JsonTokenModel> ParentList { get; set; }
 
         /// <summary>Converts the token to a JSON string. </summary>
         /// <returns>The JSON string. </returns>
@@ -31,7 +31,7 @@ namespace VisualJsonEditor.Models
             return JsonConvert.SerializeObject(token, Formatting.Indented);
         }
 
-        /// <summary>Converts the <see cref="JsonToken"/> to a <see cref="JToken"/>. </summary>
+        /// <summary>Converts the <see cref="JsonTokenModel"/> to a <see cref="JToken"/>. </summary>
         /// <returns>The <see cref="JToken"/>. </returns>
         public abstract JToken ToJToken();
     }

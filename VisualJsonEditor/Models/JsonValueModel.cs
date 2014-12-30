@@ -7,26 +7,26 @@
 //-----------------------------------------------------------------------
 
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
+using NJsonSchema;
 
 namespace VisualJsonEditor.Models
 {
     /// <summary>Represents a single JSON value. </summary>
-    public class JsonValue : JsonToken
+    public class JsonValueModel : JsonTokenModel
     {
-        /// <summary>Initializes a new instance of the <see cref="JsonValue"/> class. </summary>
-        public JsonValue()
+        /// <summary>Initializes a new instance of the <see cref="JsonValueModel"/> class. </summary>
+        public JsonValueModel()
         {
             this["Value"] = null;
         }
 
-        /// <summary>Creates a <see cref="JsonValue"/> from a <see cref="JValue"/> and a given schema. </summary>
+        /// <summary>Creates a <see cref="JsonValueModel"/> from a <see cref="JValue"/> and a given schema. </summary>
         /// <param name="value">The value. </param>
         /// <param name="schema">The schema. </param>
-        /// <returns>The <see cref="JsonValue"/>. </returns>
-        public static JsonValue FromJson(JValue value, JsonSchema schema)
+        /// <returns>The <see cref="JsonValueModel"/>. </returns>
+        public static JsonValueModel FromJson(JValue value, JsonSchema4 schema)
         {
-            return new JsonValue
+            return new JsonValueModel
             {
                 Schema = schema,
                 Value = value.Value
@@ -40,7 +40,7 @@ namespace VisualJsonEditor.Models
             set { this["Value"] = value; }
         }
         
-        /// <summary>Converts the <see cref="JsonToken"/> to a <see cref="JToken"/>. </summary>
+        /// <summary>Converts the <see cref="JsonTokenModel"/> to a <see cref="JToken"/>. </summary>
         /// <returns>The <see cref="JToken"/>. </returns>
         public override JToken ToJToken()
         {

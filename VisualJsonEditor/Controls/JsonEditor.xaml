@@ -18,7 +18,6 @@
         <myConverters:NumberConverter x:Key="NumberConverter" />
         <myConverters:IntegerConverter x:Key="IntegerConverter" />
         <myConverters:IndexConverter x:Key="IndexConverter" />
-        <myConverters:JTokenListConverter x:Key="JTokenListConverter" />
         <myConverters:TimeConverter x:Key="TimeConverter" />
         <myConverters:DateConverter x:Key="DateConverter" />
         <myConverters:DoubleUpDownRangeConverter x:Key="DoubleUpDownRangeConverter" />
@@ -28,7 +27,7 @@
     <ContentPresenter x:Name="Presenter">
         <ContentPresenter.Resources>
             <DataTemplate x:Key="RootTemplate">
-                <ItemsControl d:DataContext="{d:DesignInstance Type=models:JsonObject}" 
+                <ItemsControl d:DataContext="{d:DesignInstance Type=models:JsonObjectModel}" 
                               ItemsSource="{Binding Properties}" Focusable="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -38,7 +37,7 @@
                 </ItemsControl>
             </DataTemplate>
             <DataTemplate x:Key="StringTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -47,7 +46,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="DateTimeTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -58,7 +57,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="DateTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -70,7 +69,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="TimeTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -81,7 +80,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="NumberTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -94,7 +93,7 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="IntegerTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
@@ -107,23 +106,23 @@
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="EnumTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
-                    <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.Enum, Converter={StaticResource JTokenListConverter}}"
+                    <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.Enumeration}"
                               SelectedItem="{Binding Value, Mode=TwoWay}" />
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="BooleanTemplate">
-                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonProperty}">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
                     <CheckBox Content="{Binding Schema.Description}" IsThreeState="False"
                               IsChecked="{Binding Value, Mode=TwoWay, FallbackValue=false}" Margin="0,0,0,8" />
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="ObjectTemplate">
-                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonProperty}"
+                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}"
                                             Header="{Binding}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
                                             BorderBrush="Black" Background="#0F000000">
                     <controls:ExpandingGroupBox.HeaderTemplate>
@@ -146,7 +145,7 @@
                 </controls:ExpandingGroupBox>
             </DataTemplate>
             <DataTemplate x:Key="ArrayTemplate">
-                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonProperty}"
+                <controls:ExpandingGroupBox d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}"
                                             Header="{Binding}" Margin="0,0,0,8" MinHeight="36" IsExpanded="False"
                                             BorderBrush="Black" Background="#0F00FF00">
                     <controls:ExpandingGroupBox.HeaderTemplate>

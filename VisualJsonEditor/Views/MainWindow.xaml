@@ -129,7 +129,7 @@
             <!-- document template -->
             <xcad:DockingManager.LayoutItemTemplate>
                 <DataTemplate>
-                    <ScrollViewer Margin="-1" d:DataContext="{d:DesignInstance Type=models:JsonDocument}" Focusable="False">
+                    <ScrollViewer Margin="-1" d:DataContext="{d:DesignInstance Type=models:JsonDocumentModel}" Focusable="False">
                         <Border IsEnabled="{Binding IsLoading, Source={StaticResource ViewModel}, Converter={StaticResource NotConverter}}">
                             <controls:JsonEditor Margin="8" Data="{Binding Data}" 
                                                  IsEnabled="{Binding IsReadOnly, Converter={StaticResource NotConverter}}" />
@@ -142,7 +142,7 @@
                 <DataTemplate>
                     <Border d:DataContext="{d:DesignInstance Type=xcad:LayoutDocument}" Margin="6,0,0,0">
                         <StackPanel Orientation="Horizontal" DataContext="{Binding Content}" 
-                                    d:DataContext="{d:DesignInstance Type=models:JsonDocument}">
+                                    d:DataContext="{d:DesignInstance Type=models:JsonDocumentModel}">
                             <TextBlock Text="{Binding DisplayTitle}" />
                             <TextBlock Text="{Binding Strings.LabelReadOnly, Source={StaticResource ViewModel}}" 
                                        Visibility="{Binding IsReadOnly, Converter={StaticResource VisibilityConverter}}" />
@@ -157,7 +157,7 @@
                 <DataTemplate>
                     <Border d:DataContext="{d:DesignInstance Type=xcad:LayoutDocument}" Margin="6,2,0,0">
                         <StackPanel Orientation="Horizontal" DataContext="{Binding Content}" 
-                                    ToolTip="{Binding FilePath}" d:DataContext="{d:DesignInstance Type=models:JsonDocument}">
+                                    ToolTip="{Binding FilePath}" d:DataContext="{d:DesignInstance Type=models:JsonDocumentModel}">
                             <TextBlock Text="{Binding DisplayTitle}" />
                             <TextBlock Text="{Binding Strings.LabelReadOnly, Source={StaticResource ViewModel}}" 
                                        Visibility="{Binding IsReadOnly, Converter={StaticResource VisibilityConverter}}" />
@@ -171,7 +171,7 @@
                 <DataTemplate>
                     <Border d:DataContext="{d:DesignInstance Type=xcad:LayoutDocument}">
                         <StackPanel Orientation="Horizontal" DataContext="{Binding Content}" 
-                                    d:DataContext="{d:DesignInstance Type=models:JsonDocument}">
+                                    d:DataContext="{d:DesignInstance Type=models:JsonDocumentModel}">
                             <TextBlock Text="{Binding DisplayTitle}" />
                             <TextBlock Text=" *" Width="8" Visibility="{Binding UndoRedoManager.CanUndo, Converter={StaticResource VisibilityConverter}}" />
                             <TextBlock Width="8" Visibility="{Binding UndoRedoManager.CanUndo, Converter={StaticResource NotConverter}}" />

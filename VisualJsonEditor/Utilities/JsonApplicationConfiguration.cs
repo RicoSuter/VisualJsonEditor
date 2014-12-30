@@ -10,6 +10,8 @@ using System;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using NJsonSchema;
 
 namespace VisualJsonEditor.Utilities
 {
@@ -49,8 +51,11 @@ namespace VisualJsonEditor.Utilities
         {
             CreateSchemaFile<T>(fileNameWithoutExtension, storeInAppData);
 
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new StringEnumConverter());
+
             var configPath = CreateFilePath(fileNameWithoutExtension, ConfigExtension, storeInAppData);
-            File.WriteAllText(configPath, JsonConvert.SerializeObject(configuration, Formatting.Indented), Encoding.UTF8);
+            File.WriteAllText(configPath, JsonConvert.SerializeObject(configuration, Formatting.Indented, settings), Encoding.UTF8);
         }
 
         private static string CreateFilePath(string fileNameWithoutExtension, string extension, bool storeInAppData)
@@ -82,10 +87,9 @@ namespace VisualJsonEditor.Utilities
         private static void CreateSchemaFile<T>(string fileNameWithoutExtension, bool storeInAppData) where T : new()
         {
             var schemaPath = CreateFilePath(fileNameWithoutExtension, SchemaExtension, storeInAppData);
-            var generator = new JsonSchemaGeneratorWithAnnotations();
-            var schema = generator.Generate(typeof(T));
+            var schema = JsonSchema4.FromType<T>();
 
-            File.WriteAllText(schemaPath, schema.ToString(), Encoding.UTF8);
+            File.WriteAllText(schemaPath, schema.ToJson(), Encoding.UTF8);
         }
     }
 }

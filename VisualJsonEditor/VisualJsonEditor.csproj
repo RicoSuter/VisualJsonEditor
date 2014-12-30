@@ -53,7 +53,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NJsonSchema">
+      <HintPath>..\packages\NJsonSchema.0.1.5477.36883\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10\NJsonSchema.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -112,11 +115,10 @@
     <Compile Include="Converters\IndexConverter.cs" />
     <Compile Include="Converters\IntegerConverter.cs" />
     <Compile Include="Converters\IntegerUpDownRangeConverter.cs" />
-    <Compile Include="Converters\JTokenListConverter.cs" />
     <Compile Include="Converters\NumberConverter.cs" />
     <Compile Include="Converters\TimeConverter.cs" />
-    <Compile Include="Models\JsonDocument.cs" />
-    <Compile Include="Models\JsonObject.cs" />
+    <Compile Include="Models\JsonDocumentModel.cs" />
+    <Compile Include="Models\JsonObjectModel.cs" />
     <Compile Include="Localization\LocalizationHelper.cs" />
     <Compile Include="Localization\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -125,11 +127,9 @@
     </Compile>
     <Compile Include="Messages\OpenJsonDocumentMessage.cs" />
     <Compile Include="Messages\SaveJsonDocumentMessage.cs" />
-    <Compile Include="Models\JsonToken.cs" />
-    <Compile Include="Models\JsonValue.cs" />
+    <Compile Include="Models\JsonTokenModel.cs" />
+    <Compile Include="Models\JsonValueModel.cs" />
     <Compile Include="Utilities\JsonApplicationConfiguration.cs" />
-    <Compile Include="Utilities\JsonSchemaExtensions.cs" />
-    <Compile Include="Utilities\JsonSchemaGeneratorWithAnnotations.cs" />
     <Compile Include="ViewModels\MainWindowModel.cs" />
     <Compile Include="ApplicationConfiguration.cs" />
     <Compile Include="Views\AboutWindow.xaml.cs">
@@ -138,7 +138,7 @@
     <Compile Include="Controls\JsonEditor.xaml.cs">
       <DependentUpon>JsonEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\JsonProperty.cs" />
+    <Compile Include="Models\JsonPropertyModel.cs" />
     <Compile Include="Controls\JsonObjectTypeTemplateSelector.cs" />
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>

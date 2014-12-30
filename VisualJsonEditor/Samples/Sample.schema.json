@@ -1,109 +1,88 @@
 {
-  "type": "object",
-  "title": "Person",
-  "properties": {
-    "StringValue": {
-      "required": true,
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": "n/a"
-    },
-    "BoolValue": {
-      "required": true,
-      "type": "boolean"
-    },
-    "NumberValue": {
-      "required": true,
-      "type": "number",
-      "minimum": -1
-    },
-    "DateTimeValue": {
-      "required": true,
-      "type": "string", 
-      "format": "date-time"
-    },
-    "DateValue": {
-      "required": true,
-      "type": "string", 
-      "format": "date"
-    },
-    "TimeValue": {
-      "required": true,
-      "type": "string", 
-      "format": "time"
-    },
-    "IntegerValue": {
-      "required": true,
-      "type": "integer", 
-      "minimum": 0
-    },
-    "Test": {
-      "required": false,
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "Abc": {
-          "required": true,
-          "type": [
-            "string",
-            "null"
-          ]
+    "type": "object",
+    "title": "Person",
+    "required": [
+        "StringValue",
+        "BoolValue",
+        "NumberValue",
+        "DateTimeValue",
+        "DateValue",
+        "TimeValue",
+        "IntegerValue",
+        "Test",
+        "List"
+    ],
+    "properties": {
+        "StringValue": {
+            "type": "string",
+            "default": "n/a"
         },
-        "Def": {
-          "required": true,
-          "type": [
-            "string",
-            "null"
-          ]
+        "BoolValue": {
+            "type": "boolean"
         },
-        "Geh": {
-          "required": true,
-          "type": [
-            "string",
-            "null"
-          ]
+        "NumberValue": {
+            "type": "number",
+            "minimum": -1
+        },
+        "DateTimeValue": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "DateValue": {
+            "type": "string",
+            "format": "date"
+        },
+        "TimeValue": {
+            "type": "string",
+            "format": "time"
+        },
+        "IntegerValue": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "Test": {
+            "type": "object",
+            "required": [
+                "Abc", 
+                "Def", 
+                "Geh"
+            ], 
+            "properties": {
+                "Abc": {
+                    "type": "string"
+                },
+                "Def": {
+                    "type": "string"
+                },
+                "Geh": {
+                    "type": "string"
+                }
+            }
+        },
+        "List": {
+            "type": "array",
+            "required": [
+                "Abc", 
+                "Def", 
+                "Geh"
+            ], 
+            "items": {
+                "type": [
+                    "object",
+                    "null"
+                ],
+                "properties": {
+                    "Abc": {
+                        "type": "string"
+                    },
+                    "Def": {
+                        "type": "string"
+                    },
+                    "Geh": {
+                        "type": "string"
+                    }
+                }
+            }
         }
-      }
-    },
-    "List": {
-      "required": true,
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": [
-          "object",
-          "null"
-        ],
-        "properties": {
-          "Abc": {
-            "required": true,
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "Def": {
-            "required": true,
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "Geh": {
-            "required": true,
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      }
     }
-  }
 }

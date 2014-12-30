@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="JsonDocument.cs" company="Visual JSON Editor">
+// <copyright file="JsonDocumentModel.cs" company="Visual JSON Editor">
 //     Copyright (c) Rico Suter. All rights reserved.
 // </copyright>
 // <license>http://visualjsoneditor.codeplex.com/license</license>
@@ -14,18 +14,19 @@ using MyToolkit.Data;
 using MyToolkit.Model;
 using MyToolkit.Mvvm;
 using Newtonsoft.Json.Schema;
+using NJsonSchema;
 
 namespace VisualJsonEditor.Models
 {
     /// <summary>Represents a JSON document. </summary>
-    public class JsonDocument : ObservableObject
+    public class JsonDocumentModel : ObservableObject
     {
         private string _filePath;
-        private JsonObject _data;
+        private JsonObjectModel _data;
         private bool _isReadOnly;
 
-        /// <summary>Initializes a new instance of the <see cref="JsonDocument"/> class. </summary>
-        protected JsonDocument() { }
+        /// <summary>Initializes a new instance of the <see cref="JsonDocumentModel"/> class. </summary>
+        protected JsonDocumentModel() { }
 
         /// <summary>Gets or sets the document's file path. </summary>
         public string FilePath
@@ -62,7 +63,7 @@ namespace VisualJsonEditor.Models
         }
 
         /// <summary>Gets the JSON data. </summary>
-        public JsonObject Data
+        public JsonObjectModel Data
         {
             get { return _data; }
             private set { Set(ref _data, value); }
@@ -81,7 +82,7 @@ namespace VisualJsonEditor.Models
         /// <summary>Initializes the document. </summary>
         /// <param name="data">The JSON data. </param>
         /// <param name="dispatcher">The UI dispatcher. </param>
-        public void Initialize(JsonObject data, IDispatcher dispatcher)
+        public void Initialize(JsonObjectModel data, IDispatcher dispatcher)
         {
             UndoRedoManager = new UndoRedoManager(data, dispatcher);
             Data = data;
@@ -98,29 +99,29 @@ namespace VisualJsonEditor.Models
             return Path.Combine(directoryName, Path.GetFileNameWithoutExtension(filePath) + ".schema" + Path.GetExtension(filePath));
         }
 
-        /// <summary>Loads a <see cref="JsonDocument"/> from a file path. The schema path is automatically determined. </summary>
+        /// <summary>Loads a <see cref="JsonDocumentModel"/> from a file path. The schema path is automatically determined. </summary>
         /// <param name="filePath">The file path. </param>
         /// <param name="dispatcher">The UI dispatcher. </param>
-        /// <returns>The <see cref="JsonDocument"/>. </returns>
-        public static Task<JsonDocument> LoadAsync(string filePath, IDispatcher dispatcher)
+        /// <returns>The <see cref="JsonDocumentModel"/>. </returns>
+        public static Task<JsonDocumentModel> LoadAsync(string filePath, IDispatcher dispatcher)
         {
             var schemaPath = GetDefaultSchemaPath(filePath);
             return LoadAsync(filePath, schemaPath, dispatcher);
         }
 
-        /// <summary>Loads a <see cref="JsonDocument"/> from a file path and schema path. </summary>
+        /// <summary>Loads a <see cref="JsonDocumentModel"/> from a file path and schema path. </summary>
         /// <param name="filePath">The file path. </param>
         /// <param name="schemaPath">The schema path. </param>
         /// <param name="dispatcher">The UI dispatcher. </param>
-        /// <returns>The <see cref="JsonDocument"/>. </returns>
-        public static Task<JsonDocument> LoadAsync(string filePath, string schemaPath, IDispatcher dispatcher)
+        /// <returns>The <see cref="JsonDocumentModel"/>. </returns>
+        public static Task<JsonDocumentModel> LoadAsync(string filePath, string schemaPath, IDispatcher dispatcher)
         {
             return Task.Run(() =>
             {
-                var schema = JsonSchema.Parse(File.ReadAllText(schemaPath, Encoding.UTF8));
-                var data = JsonObject.FromJson(File.ReadAllText(filePath, Encoding.UTF8), schema); 
+                var schema = JsonSchema4.FromJson(File.ReadAllText(schemaPath, Encoding.UTF8));
+                var data = JsonObjectModel.FromJson(File.ReadAllText(filePath, Encoding.UTF8), schema); 
 
-                var document = new JsonDocument();
+                var document = new JsonDocumentModel();
                 document.Initialize(data, dispatcher);
                 document.FilePath = filePath;
                 document.SchemaPath = schemaPath;
@@ -128,18 +129,18 @@ namespace VisualJsonEditor.Models
             });
         }
 
-        /// <summary>Creates a new <see cref="JsonDocument"/> based on a given schema file path. </summary>
+        /// <summary>Creates a new <see cref="JsonDocumentModel"/> based on a given schema file path. </summary>
         /// <param name="schemaPath">The schema file path. </param>
         /// <param name="dispatcher">The UI dispatcher. </param>
-        /// <returns>The <see cref="JsonDocument"/>. </returns>
-        public static Task<JsonDocument> CreateAsync(string schemaPath, IDispatcher dispatcher)
+        /// <returns>The <see cref="JsonDocumentModel"/>. </returns>
+        public static Task<JsonDocumentModel> CreateAsync(string schemaPath, IDispatcher dispatcher)
         {
             return Task.Run(() =>
             {
-                var schema = JsonSchema.Parse(File.ReadAllText(schemaPath, Encoding.UTF8));
-                var data = JsonObject.FromSchema(schema);
+                var schema = JsonSchema4.FromJson(File.ReadAllText(schemaPath, Encoding.UTF8));
+                var data = JsonObjectModel.FromSchema(schema);
 
-                var document = new JsonDocument();
+                var document = new JsonDocumentModel();
                 document.Initialize(data, dispatcher);
                 return document;
             });
@@ -162,7 +163,7 @@ namespace VisualJsonEditor.Models
                 if (saveSchema)
                 {
                     var schemaPath = GetDefaultSchemaPath(FilePath);
-                    File.WriteAllText(schemaPath, Data.Schema.ToString());
+                    File.WriteAllText(schemaPath, Data.Schema.ToJson());
                 }
             });
 

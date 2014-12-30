@@ -242,4 +242,7 @@
   <data name="LabelAboutComponentFluentRibbon" xml:space="preserve">
     <value>Library with ribbon UI implementation. </value>
   </data>
+  <data name="LabelAboutComponentNJsonSchema" xml:space="preserve">
+    <value>JSON Schema draft v4 reader and generator for .NET</value>
+  </data>
 </root>

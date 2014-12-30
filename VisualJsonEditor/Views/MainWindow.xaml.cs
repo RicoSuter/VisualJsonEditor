@@ -129,7 +129,7 @@ namespace VisualJsonEditor.Views
         private async void OnDocumentClosing(object sender, DocumentClosingEventArgs args)
         {
             args.Cancel = true;
-            await Model.CloseDocumentAsync((JsonDocument)args.Document.Content);
+            await Model.CloseDocumentAsync((JsonDocumentModel)args.Document.Content);
         }
 
         private async void OnWindowClosing(object sender, CancelEventArgs args)

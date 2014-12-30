@@ -1,26 +1,26 @@
 ﻿{
-  "StringValue": "a",
-  "BoolValue": false,
-  "NumberValue": 2.3,
-  "DateTimeValue": "2014-08-13T21:00:00",
-  "DateValue": "2014-08-14T00:00:00",
-  "TimeValue": "02:00:00",
-  "IntegerValue": 1,
-  "Test": {
-    "Abc": "e",
-    "Def": "d",
-    "Geh": "d"
-  },
-  "List": [
-    {
-      "Abc": "asdf",
-      "Def": "d",
-      "Geh": "aa"
+    "StringValue": "a",
+    "BoolValue": false,
+    "NumberValue": 2.3,
+    "DateTimeValue": "2014-08-13T21:00:00",
+    "DateValue": "2014-08-14T00:00:00",
+    "TimeValue": "02:00:00",
+    "IntegerValue": 1,
+    "Test": {
+        "Abc": "e",
+        "Def": "d",
+        "Geh": "d"
     },
-    {
-      "Abc": "asdfddd",
-      "Def": null,
-      "Geh": "d"
-    }
-  ]
+    "List": [
+        {
+            "Abc": "asdf",
+            "Def": "d",
+            "Geh": "aa"
+        },
+        {
+            "Abc": "asdfddd",
+            "Def": null,
+            "Geh": "d"
+        }
+    ]
 }

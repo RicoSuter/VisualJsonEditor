@@ -9,6 +9,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Newtonsoft.Json.Schema;
+using NJsonSchema;
 using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.Controls
@@ -20,45 +21,42 @@ namespace VisualJsonEditor.Controls
         {
             var presenter = (FrameworkElement)container;
 
-            if (item is JsonObject)
+            if (item is JsonObjectModel)
                 return (DataTemplate)presenter.Resources["RootTemplate"];
 
-            JsonSchema schema = null;
-            if (item is JsonToken)
-                schema = ((JsonToken)item).Schema;
+            JsonSchema4 schema = null;
+            if (item is JsonTokenModel)
+                schema = ((JsonTokenModel)item).Schema;
 
-            if (item is JsonProperty)
-                schema = ((JsonProperty)item).Schema;
+            if (item is JsonPropertyModel)
+                schema = ((JsonPropertyModel)item).Schema;
 
-            if (schema != null && schema.Type.HasValue)
-            {
-                var type = schema.Type.Value;
+            var type = schema.Type;
 
-                if (type.HasFlag(JsonSchemaType.String) && schema.Format == "date-time")
-                    return (DataTemplate)presenter.Resources["DateTimeTemplate"];
-                if (type.HasFlag(JsonSchemaType.String) && schema.Format == "date")
-                    return (DataTemplate)presenter.Resources["DateTemplate"];
-                if (type.HasFlag(JsonSchemaType.String) && schema.Format == "time")
-                    return (DataTemplate)presenter.Resources["TimeTemplate"];
-                if (type.HasFlag(JsonSchemaType.String) && schema.Enum != null)
-                    return (DataTemplate)presenter.Resources["EnumTemplate"];
-                if (type.HasFlag(JsonSchemaType.String))
-                    return (DataTemplate)presenter.Resources["StringTemplate"];
+            if (type.HasFlag(JsonObjectType.String) && schema.Format == "date-time")
+                return (DataTemplate)presenter.Resources["DateTimeTemplate"];
+            if (type.HasFlag(JsonObjectType.String) && schema.Format == "date")
+                return (DataTemplate)presenter.Resources["DateTemplate"];
+            if (type.HasFlag(JsonObjectType.String) && schema.Format == "time")
+                return (DataTemplate)presenter.Resources["TimeTemplate"];
+            if (type.HasFlag(JsonObjectType.String) && schema.Enumeration.Count > 0)
+                return (DataTemplate)presenter.Resources["EnumTemplate"];
+            if (type.HasFlag(JsonObjectType.String))
+                return (DataTemplate)presenter.Resources["StringTemplate"];
 
-                if (type.HasFlag(JsonSchemaType.Integer) && schema.Enum != null)
-                    return (DataTemplate)presenter.Resources["EnumTemplate"];
-                if (type.HasFlag(JsonSchemaType.Integer))
-                    return (DataTemplate)presenter.Resources["IntegerTemplate"];
+            if (type.HasFlag(JsonObjectType.Integer) && schema.Enumeration.Count > 0)
+                return (DataTemplate)presenter.Resources["EnumTemplate"];
+            if (type.HasFlag(JsonObjectType.Integer))
+                return (DataTemplate)presenter.Resources["IntegerTemplate"];
 
-                if (type.HasFlag(JsonSchemaType.Float))
-                    return (DataTemplate)presenter.Resources["NumberTemplate"];
-                if (type.HasFlag(JsonSchemaType.Boolean))
-                    return (DataTemplate)presenter.Resources["BooleanTemplate"];
-                if (type.HasFlag(JsonSchemaType.Object))
-                    return (DataTemplate)presenter.Resources["ObjectTemplate"];
-                if (type.HasFlag(JsonSchemaType.Array))
-                    return (DataTemplate)presenter.Resources["ArrayTemplate"];
-            }
+            if (type.HasFlag(JsonObjectType.Number))
+                return (DataTemplate)presenter.Resources["NumberTemplate"];
+            if (type.HasFlag(JsonObjectType.Boolean))
+                return (DataTemplate)presenter.Resources["BooleanTemplate"];
+            if (type.HasFlag(JsonObjectType.Object))
+                return (DataTemplate)presenter.Resources["ObjectTemplate"];
+            if (type.HasFlag(JsonObjectType.Array))
+                return (DataTemplate)presenter.Resources["ArrayTemplate"];
 
             return base.SelectTemplate(item, container);
         }

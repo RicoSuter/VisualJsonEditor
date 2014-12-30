@@ -27,24 +27,24 @@ namespace VisualJsonEditor.ViewModels
 {
     public class MainWindowModel : ViewModelBase
     {
-        private JsonDocument _selectedDocument;
+        private JsonDocumentModel _selectedDocument;
         private ApplicationConfiguration _configuration;
 
         public MainWindowModel()
         {
-            Documents = new ObservableCollection<JsonDocument>();
+            Documents = new ObservableCollection<JsonDocumentModel>();
 
             CreateDocumentCommand = new AsyncRelayCommand(CreateDocumentAsync);
             OpenDocumentCommand = new AsyncRelayCommand(OpenDocumentAsync);
             OpenDocumentFromPathCommand = new AsyncRelayCommand<string>(OpenDocumentAsync);
-            SaveDocumentCommand = new AsyncRelayCommand<JsonDocument>(SaveDocumentAsync, d => d != null && d.UndoRedoManager.CanUndo);
-            SaveDocumentAsCommand = new AsyncRelayCommand<JsonDocument>(SaveDocumentAsAsync, d => d != null);
-            SaveDocumentSchemaAsCommand = new AsyncRelayCommand<JsonDocument>(SaveDocumentSchemaAsAsync, d => d != null);
-            CloseDocumentCommand = new AsyncRelayCommand<JsonDocument>(CloseDocumentAsync, d => d != null);
-            ValidateDocumentCommand = new AsyncRelayCommand<JsonDocument>(ValidateDocumentAsync, d => d != null);
+            SaveDocumentCommand = new AsyncRelayCommand<JsonDocumentModel>(SaveDocumentAsync, d => d != null && d.UndoRedoManager.CanUndo);
+            SaveDocumentAsCommand = new AsyncRelayCommand<JsonDocumentModel>(SaveDocumentAsAsync, d => d != null);
+            SaveDocumentSchemaAsCommand = new AsyncRelayCommand<JsonDocumentModel>(SaveDocumentSchemaAsAsync, d => d != null);
+            CloseDocumentCommand = new AsyncRelayCommand<JsonDocumentModel>(CloseDocumentAsync, d => d != null);
+            ValidateDocumentCommand = new AsyncRelayCommand<JsonDocumentModel>(ValidateDocumentAsync, d => d != null);
 
-            UndoCommand = new RelayCommand<JsonDocument>(d => d.UndoRedoManager.Undo(), d => d != null && d.UndoRedoManager.CanUndo);
-            RedoCommand = new RelayCommand<JsonDocument>(d => d.UndoRedoManager.Redo(), d => d != null && d.UndoRedoManager.CanRedo);
+            UndoCommand = new RelayCommand<JsonDocumentModel>(d => d.UndoRedoManager.Undo(), d => d != null && d.UndoRedoManager.CanUndo);
+            RedoCommand = new RelayCommand<JsonDocumentModel>(d => d.UndoRedoManager.Redo(), d => d != null && d.UndoRedoManager.CanRedo);
         }
 
         public Strings Strings
@@ -63,37 +63,37 @@ namespace VisualJsonEditor.ViewModels
         public AsyncRelayCommand<string> OpenDocumentFromPathCommand { get; set; }
 
         /// <summary>Gets the command to undo the last action. </summary>
-        public RelayCommand<JsonDocument> UndoCommand { get; private set; }
+        public RelayCommand<JsonDocumentModel> UndoCommand { get; private set; }
 
         /// <summary>Gets the command to redo the last action. </summary>
-        public RelayCommand<JsonDocument> RedoCommand { get; set; }
+        public RelayCommand<JsonDocumentModel> RedoCommand { get; set; }
 
         /// <summary>Gets the command to close a document. </summary>
-        public AsyncRelayCommand<JsonDocument> CloseDocumentCommand { get; private set; }
+        public AsyncRelayCommand<JsonDocumentModel> CloseDocumentCommand { get; private set; }
 
         /// <summary>Gets the command to validate a document. </summary>
-        public AsyncRelayCommand<JsonDocument> ValidateDocumentCommand { get; private set; }
+        public AsyncRelayCommand<JsonDocumentModel> ValidateDocumentCommand { get; private set; }
 
         /// <summary>Gets the command to create a new document. </summary>
         public AsyncRelayCommand CreateDocumentCommand { get; private set; }
 
         /// <summary>Gets the command to save a document. </summary>
-        public AsyncRelayCommand<JsonDocument> SaveDocumentCommand { get; private set; }
+        public AsyncRelayCommand<JsonDocumentModel> SaveDocumentCommand { get; private set; }
 
         /// <summary>Gets the command to save a copy of a document. </summary>
-        public AsyncRelayCommand<JsonDocument> SaveDocumentAsCommand { get; private set; }
+        public AsyncRelayCommand<JsonDocumentModel> SaveDocumentAsCommand { get; private set; }
 
         /// <summary>Gets the command to save a copy of a document schema. </summary>
-        public AsyncRelayCommand<JsonDocument> SaveDocumentSchemaAsCommand { get; private set; }
+        public AsyncRelayCommand<JsonDocumentModel> SaveDocumentSchemaAsCommand { get; private set; }
 
         /// <summary>Gets the command to open a document with the file open dialog. </summary>
         public AsyncRelayCommand OpenDocumentCommand { get; private set; }
 
         /// <summary>Gets the list of opened documents. </summary>
-        public ObservableCollection<JsonDocument> Documents { get; private set; }
+        public ObservableCollection<JsonDocumentModel> Documents { get; private set; }
 
         /// <summary>Gets or sets the currently selected document. </summary>
-        public JsonDocument SelectedDocument
+        public JsonDocumentModel SelectedDocument
         {
             get { return _selectedDocument; }
             set
@@ -116,7 +116,7 @@ namespace VisualJsonEditor.ViewModels
         /// <summary>Closes the given document and saves it if needed. </summary>
         /// <param name="document">The document to close. </param>
         /// <returns>The task. </returns>
-        public async Task<bool> CloseDocumentAsync(JsonDocument document)
+        public async Task<bool> CloseDocumentAsync(JsonDocumentModel document)
         {
             if (document.UndoRedoManager.CanUndo)
             {
@@ -142,7 +142,7 @@ namespace VisualJsonEditor.ViewModels
         {
             await RunTaskAsync(async token =>
             {
-                var document = await JsonDocument.CreateAsync(schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
+                var document = await JsonDocumentModel.CreateAsync(schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
                 AddDocument(document);
             });
         }
@@ -178,7 +178,7 @@ namespace VisualJsonEditor.ViewModels
             {
                 await RunTaskAsync(async token =>
                 {
-                    var schemaPath = JsonDocument.GetDefaultSchemaPath(fileName);
+                    var schemaPath = JsonDocumentModel.GetDefaultSchemaPath(fileName);
                     if (!File.Exists(schemaPath))
                     {
                         var result = await Messenger.Default.SendAsync(new OpenJsonDocumentMessage(Strings.OpenJsonSchemaDocumentDialog));
@@ -188,7 +188,7 @@ namespace VisualJsonEditor.ViewModels
                         schemaPath = result.Result;
                     }
 
-                    var document = await JsonDocument.LoadAsync(fileName, schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
+                    var document = await JsonDocumentModel.LoadAsync(fileName, schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
                     document.IsReadOnly = isReadOnly;
 
                     AddDocument(document);
@@ -211,7 +211,7 @@ namespace VisualJsonEditor.ViewModels
                 await CreateDocumentAsync(result.Result);
         }
 
-        private void AddDocument(JsonDocument document)
+        private void AddDocument(JsonDocumentModel document)
         {
             Documents.Add(document);
             SelectedDocument = document;
@@ -219,14 +219,14 @@ namespace VisualJsonEditor.ViewModels
             document.UndoRedoManager.PropertyChanged += UndoRedoManagerOnPropertyChanged;
         }
 
-        private void RemoveDocument(JsonDocument document)
+        private void RemoveDocument(JsonDocumentModel document)
         {
             Documents.Remove(document);
 
             document.UndoRedoManager.PropertyChanged -= UndoRedoManagerOnPropertyChanged;
         }
 
-        private async Task ValidateDocumentAsync(JsonDocument document)
+        private async Task ValidateDocumentAsync(JsonDocumentModel document)
         {
             var errors = await document.Data.ValidateAsync();
             if (errors.Length == 0)
@@ -269,17 +269,17 @@ namespace VisualJsonEditor.ViewModels
                 Configuration.RecentFiles.Remove(Configuration.RecentFiles.Last());
         }
 
-        private Task SaveDocumentAsync(JsonDocument document)
+        private Task SaveDocumentAsync(JsonDocumentModel document)
         {
             return SaveDocumentAsync(document, false);
         }
 
-        private Task SaveDocumentAsAsync(JsonDocument document)
+        private Task SaveDocumentAsAsync(JsonDocumentModel document)
         {
             return SaveDocumentAsync(document, true);
         }
 
-        private async Task SaveDocumentAsync(JsonDocument document, bool saveAs)
+        private async Task SaveDocumentAsync(JsonDocumentModel document, bool saveAs)
         {
             if (!document.HasFileLocation || saveAs)
             {
@@ -303,7 +303,7 @@ namespace VisualJsonEditor.ViewModels
             });
         }
 
-        private async Task SaveDocumentSchemaAsAsync(JsonDocument document)
+        private async Task SaveDocumentSchemaAsAsync(JsonDocumentModel document)
         {
             var fileName = Path.GetFileNameWithoutExtension(document.FilePath) + ".schema.json";
             var result = await Messenger.Default.SendAsync(new SaveJsonDocumentMessage(fileName));
@@ -311,7 +311,7 @@ namespace VisualJsonEditor.ViewModels
             {
                 await RunTaskAsync(async token =>
                 {
-                    await Task.Run(() => File.WriteAllText(result.Result, document.Data.Schema.ToString()), token);
+                    await Task.Run(() => File.WriteAllText(result.Result, document.Data.Schema.ToJson()), token);
                 });
             }
         }
