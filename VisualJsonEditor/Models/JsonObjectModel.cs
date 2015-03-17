@@ -110,9 +110,9 @@ namespace VisualJsonEditor.Models
             if (property.Value.Type.HasFlag(JsonObjectType.Boolean))
                 return false;
 
-            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "date-time")
+            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == JsonFormatStrings.DateTime)
                 return new DateTime();
-            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "date")
+            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "date") // TODO: What to do with date/time?
                 return new DateTime();
             if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "time")
                 return new TimeSpan();

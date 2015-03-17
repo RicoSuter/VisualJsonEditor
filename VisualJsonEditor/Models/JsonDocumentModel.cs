@@ -6,14 +6,12 @@
 // <author>Rico Suter, mail@rsuter.com</author>
 //-----------------------------------------------------------------------
 
-using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using MyToolkit.Data;
 using MyToolkit.Model;
 using MyToolkit.Mvvm;
-using Newtonsoft.Json.Schema;
 using NJsonSchema;
 
 namespace VisualJsonEditor.Models

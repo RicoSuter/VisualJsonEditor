@@ -33,7 +33,7 @@ namespace VisualJsonEditor.Controls
 
             var type = schema.Type;
 
-            if (type.HasFlag(JsonObjectType.String) && schema.Format == "date-time")
+            if (type.HasFlag(JsonObjectType.String) && schema.Format == JsonFormatStrings.DateTime) // TODO: What to do with date/time?
                 return (DataTemplate)presenter.Resources["DateTimeTemplate"];
             if (type.HasFlag(JsonObjectType.String) && schema.Format == "date")
                 return (DataTemplate)presenter.Resources["DateTemplate"];
