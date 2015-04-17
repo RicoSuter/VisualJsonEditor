@@ -15,20 +15,20 @@ namespace VisualJsonEditor.Models
     public class JsonPropertyModel : ObservableObject
     {
         /// <summary>Initializes a new instance of the <see cref="JsonPropertyModel"/> class. </summary>
-        /// <param name="key">The key of the property. </param>
+        /// <param name="name">The name of the property. </param>
         /// <param name="parent">The parent object. </param>
         /// <param name="schema">The property type as schema object. </param>
-        public JsonPropertyModel(string key, JsonObjectModel parent, JsonProperty schema)
+        public JsonPropertyModel(string name, JsonObjectModel parent, JsonProperty schema)
         {
-            Key = key;
+            Name = name;
             Parent = parent;
             Schema = schema;
 
             Parent.PropertyChanged += (sender, args) => RaisePropertyChanged(() => Value);
         }
 
-        /// <summary>Gets the property key. </summary>
-        public string Key { get; private set; }
+        /// <summary>Gets the property name. </summary>
+        public string Name { get; private set; }
 
         /// <summary>Gets the parent object. </summary>
         public JsonObjectModel Parent { get; private set; }
@@ -45,10 +45,10 @@ namespace VisualJsonEditor.Models
         /// <summary>Gets or sets the value of the property. </summary>
         public object Value
         {
-            get { return Parent.ContainsKey(Key) ? Parent[Key] : null; }
+            get { return Parent.ContainsKey(Name) ? Parent[Name] : null; }
             set
             {
-                Parent[Key] = value;
+                Parent[Name] = value;
 
                 RaisePropertyChanged(() => Value);
                 RaisePropertyChanged(() => HasValue);

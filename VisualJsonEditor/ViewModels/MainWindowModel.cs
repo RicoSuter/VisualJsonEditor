@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using MyToolkit.Command;
 using MyToolkit.Composition;
 using MyToolkit.Data;
@@ -239,7 +240,7 @@ namespace VisualJsonEditor.ViewModels
             {
                 await Messenger.Default.SendAsync(
                     new TextMessage(
-                        string.Format(Strings.MessageNotValidDocumentText, document.DisplayTitle, string.Join("\n", errors)),
+                        string.Format(Strings.MessageNotValidDocumentText, document.DisplayTitle, errors),
                         Strings.MessageNotValidDocumentTitle));
             }
         }

@@ -43,10 +43,10 @@
         "Test": {
             "type": "object",
             "required": [
-                "Abc", 
-                "Def", 
+                "Abc",
+                "Def",
                 "Geh"
-            ], 
+            ],
             "properties": {
                 "Abc": {
                     "type": "string"
@@ -62,18 +62,16 @@
         "List": {
             "type": "array",
             "required": [
-                "Abc", 
-                "Def", 
+                "Abc",
+                "Def",
                 "Geh"
-            ], 
+            ],
             "items": {
-                "type": [
-                    "object",
-                    "null"
-                ],
+                "type": "object",
                 "properties": {
                     "Abc": {
-                        "type": "string"
+                        "type": "string", 
+                        "minLength":  1
                     },
                     "Def": {
                         "type": "string"

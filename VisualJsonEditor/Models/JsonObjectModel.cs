@@ -11,10 +11,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NJsonSchema;
+using NJsonSchema.Validation;
 
 namespace VisualJsonEditor.Models
 {
@@ -46,7 +48,7 @@ namespace VisualJsonEditor.Models
                 else
                     obj[property.Key] = GetDefaultValue(property);
             }
-            obj.Schema = schema; 
+            obj.Schema = schema;
             return obj;
         }
 
@@ -98,14 +100,14 @@ namespace VisualJsonEditor.Models
                         result[property.Key] = GetDefaultValue(property);
                 }
             }
-            result.Schema = schema; 
+            result.Schema = schema;
             return result;
         }
 
         private static object GetDefaultValue(KeyValuePair<string, JsonProperty> property)
         {
             if (property.Value.Default != null)
-                return ((JValue) property.Value.Default).Value;
+                return ((JValue)property.Value.Default).Value;
 
             if (property.Value.Type.HasFlag(JsonObjectType.Boolean))
                 return false;
@@ -116,6 +118,8 @@ namespace VisualJsonEditor.Models
                 return new DateTime();
             if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "time")
                 return new TimeSpan();
+            if (property.Value.Type.HasFlag(JsonObjectType.String))
+                return string.Empty;
 
             return null;
         }
@@ -143,18 +147,6 @@ namespace VisualJsonEditor.Models
             }
         }
 
-        /// <summary>Validates the data of the <see cref="JsonObjectModel"/>. </summary>
-        /// <returns>The list of validation errors. </returns>
-        public Task<string[]> ValidateAsync()
-        {
-            return Task.Run(() =>
-            {
-                var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(ToJson())));
-                var errors = Schema.Validate(obj);
-                return errors.Select(e => e.Path + ": " + e.Kind).ToArray();
-            });
-        }
-
         /// <summary>Converts the <see cref="JsonTokenModel"/> to a <see cref="JToken"/>. </summary>
         /// <returns>The <see cref="JToken"/>. </returns>
         public override JToken ToJToken()
@@ -164,7 +156,7 @@ namespace VisualJsonEditor.Models
             {
                 if (pair.Value is ObservableCollection<JsonTokenModel>)
                 {
-                    var array = (ObservableCollection<JsonTokenModel>) pair.Value;
+                    var array = (ObservableCollection<JsonTokenModel>)pair.Value;
                     var jArray = new JArray();
                     foreach (var item in array)
                         jArray.Add(item.ToJToken());
@@ -175,7 +167,38 @@ namespace VisualJsonEditor.Models
                 else
                     obj[pair.Key] = new JValue(pair.Value);
             }
-            return obj; 
+            return obj;
+        }
+
+        /// <summary>Validates the data of the <see cref="JsonObjectModel"/>. </summary>
+        /// <returns>The list of validation errors. </returns>
+        public Task<string> ValidateAsync()
+        {
+            return Task.Run(() =>
+            {
+                var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(ToJson())));
+                var errors = Schema.Validate(obj);
+                return string.Join("\n", ConvertErrors(errors, string.Empty));
+            });
+        }
+
+        private static string[] ConvertErrors(IEnumerable<ValidationError> errors, string padding)
+        {
+            return errors.Select(error =>
+            {
+                var output = new StringBuilder(string.Format("{0}{1}: {2}", padding, error.Path, error.Kind));
+                if (error is ChildSchemaValidationError)
+                {
+                    foreach (var childError in ((ChildSchemaValidationError)error).Errors)
+                    {
+                        var schemaTitle = (!string.IsNullOrEmpty(childError.Key.Title) ? childError.Key.Title : "Schema");
+                        output.Append(string.Format("\n{0}  {1}:", padding, schemaTitle));
+                        foreach (var x in ConvertErrors(childError.Value, padding + "    "))
+                            output.Append(string.Format("\n{0}", x));
+                    }
+                }
+                return output.ToString();
+            }).ToArray();
         }
     }
 }

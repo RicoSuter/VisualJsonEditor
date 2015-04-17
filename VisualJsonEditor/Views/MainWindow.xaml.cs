@@ -69,7 +69,10 @@ namespace VisualJsonEditor.Views
         private void RegisterFileOpenHandler()
         {
             var fileHandler = new FileOpenHandler();
-            fileHandler.FileOpen += (sender, args) => Model.OpenDocumentAsync(args.FileName);
+            fileHandler.FileOpen += (sender, args) =>
+            {
+                Dispatcher.InvokeAsync(() => { Model.OpenDocumentAsync(args.FileName); }); // TODO: Dispatcher.InvokeAsync not needed when using MyToolkit 2.3.31
+            };
             fileHandler.Initialize(this);
         }
 

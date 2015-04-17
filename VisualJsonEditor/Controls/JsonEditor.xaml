@@ -38,7 +38,7 @@
             </DataTemplate>
             <DataTemplate x:Key="StringTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
@@ -47,7 +47,7 @@
             </DataTemplate>
             <DataTemplate x:Key="DateTimeTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" AutoCloseCalendar="True"
@@ -58,7 +58,7 @@
             </DataTemplate>
             <DataTemplate x:Key="DateTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" Format="LongDate" 
@@ -70,7 +70,7 @@
             </DataTemplate>
             <DataTemplate x:Key="TimeTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:TimePicker Margin="0,0,0,8" HorizontalAlignment="Stretch" 
@@ -81,7 +81,7 @@
             </DataTemplate>
             <DataTemplate x:Key="NumberTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:DoubleUpDown Margin="0,0,0,8" TextAlignment="Left"
@@ -94,7 +94,7 @@
             </DataTemplate>
             <DataTemplate x:Key="IntegerTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                            Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:IntegerUpDown Margin="0,0,0,8" TextAlignment="Left" ui:UndoRedoCommandManager.DisableUndoRedo="True"
@@ -107,7 +107,7 @@
             </DataTemplate>
             <DataTemplate x:Key="EnumTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.Enumeration}"
@@ -116,7 +116,7 @@
             </DataTemplate>
             <DataTemplate x:Key="BooleanTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
-                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <CheckBox Content="{Binding Schema.Description}" IsThreeState="False"
                               IsChecked="{Binding Value, Mode=TwoWay, FallbackValue=false}" Margin="0,0,0,8" />
                 </StackPanel>
@@ -128,7 +128,7 @@
                     <controls:ExpandingGroupBox.HeaderTemplate>
                         <DataTemplate>
                             <TextBlock>
-                                <Run Text="{Binding Key, Mode=OneWay}" FontWeight="Bold" />
+                                <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
                                 <Run Text="{Binding Schema.Description}" /><Run Text=" (object) " />
                             </TextBlock>
                         </DataTemplate>
@@ -151,7 +151,7 @@
                     <controls:ExpandingGroupBox.HeaderTemplate>
                         <DataTemplate>
                             <TextBlock>
-                                <Run Text="{Binding Key, Mode=OneWay}" FontWeight="Bold" />
+                                <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
                                 <Run Text="{Binding Schema.Description}" /><Run Text=" (array)" />
                             </TextBlock>
                         </DataTemplate>
