@@ -5,6 +5,7 @@
 **.suo
 **.user
 **.DotSettings
-/VisualJsonEditor.sln.ide
-/UpgradeLog.htm
-/VisualJsonEditor.sln.GhostDoc.xml
+
+/src/VisualJsonEditor.sln.ide
+/src/UpgradeLog.htm
+/src/VisualJsonEditor.sln.GhostDoc.xml
