@@ -4,7 +4,7 @@ Visual JSON Editor is a JSON schema based file editor: When opening a JSON file,
 
 **[Article describing a usage scenario](http://blog.rsuter.com/?p=795)**
 
-Visual JSON Editor is developed by [Rico Suter](http://rsuter.com) using the [MyToolkit](https://github.com/MyToolkit/Core) library. 
+Visual JSON Editor is developed by [Rico Suter](http://rsuter.com) using the [MyToolkit](http://mytoolkit.io) library. 
 
 ![](http://rsuter.com/Projects/VisualJsonEditor/Screenshot02.png)
 
