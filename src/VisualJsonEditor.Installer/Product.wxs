@@ -32,6 +32,10 @@
             <Directory Id="RootDirectory" Name="Visual JSON Editor" />
         </DirectoryRef>
 
+        <InstallExecuteSequence>
+            <RemoveShortcuts>0</RemoveShortcuts>
+        </InstallExecuteSequence>
+
         <DirectoryRef Id="ApplicationProgramsFolder">
             <Component Id="ApplicationComponent">
                 <Shortcut Id="ApplicationStartMenuShortcut"
@@ -48,6 +52,10 @@
                                Key="Software\RicoSuter\VisualJSONEditor"
                                Name="installed" Type="integer"
                                Value="1" KeyPath="yes"/>
+                
+                <RemoveFile Id="RemoveShortcut"
+                            Name="Visual JSON Editor"
+                            On="uninstall" />
 
                 <ProgId Id='JsonFile' Description='JSON file' Icon='fil682A648A9FE07615A18A3968C96B1396'>
                     <Extension Id='json' ContentType='application/json'>

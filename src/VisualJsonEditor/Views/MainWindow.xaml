@@ -49,7 +49,7 @@
                                                     <Button.Content>
                                                         <StackPanel Orientation="Horizontal" Margin="4">
                                                             <Image Source="/Images/ButtonCreateLarge.png" Margin="0,0,4,0" />
-                                                            <StackPanel>
+                                                            <StackPanel Margin="0,-3,0,0">
                                                                 <TextBlock Text="{Binding FileName}" FontSize="16" />
                                                                 <TextBlock Text="{Binding FilePath}" FontSize="10" />
                                                             </StackPanel>
