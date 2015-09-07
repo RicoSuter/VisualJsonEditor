@@ -1,4 +1,5 @@
 # Visual JSON Editor
+### for Windows
 
 [![Build status](https://ci.appveyor.com/api/projects/status/x25686ex1dp8smax?svg=true)](https://ci.appveyor.com/project/rsuter/visualjsoneditor)
 
