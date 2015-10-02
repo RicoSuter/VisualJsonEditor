@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="*" Name="Visual JSON Editor" Language="1033" 
+    <Product Id="*" Name="Visual JSON Editor" Language="1033"
              Version="!(bind.FileVersion.fil7C2CB8648E5AC2C4AFC4BE9A16445461)"
              Manufacturer="Rico Suter" UpgradeCode="8d53cbf3-a345-48f3-b794-49ed73c3ca44">
 
@@ -13,6 +13,24 @@
             <ComponentGroupRef Id="SourceComponentGroup" />
             <ComponentRef Id="ApplicationComponent" />
         </Feature>
+
+        <UI>
+            <UIRef Id="WixUI_InstallDir" />
+            <UIRef Id="WixUI_ErrorProgressText" />
+
+            <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="PrepareDlg" Order="3">1</Publish>
+            <Publish Dialog="PrepareDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="3">1</Publish>
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction"
+                     Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+        </UI>
+
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Visual JSON Editor" />
+
+        <Property Id="WixShellExecTarget" Value="[#fil7C2CB8648E5AC2C4AFC4BE9A16445461]" />
+        <CustomAction Id="LaunchApplication"
+                      BinaryKey="WixCA"
+                      DllEntry="WixShellExec"
+                      Impersonate="yes" />
     </Product>
 
     <Fragment>
@@ -52,7 +70,7 @@
                                Key="Software\RicoSuter\VisualJSONEditor"
                                Name="installed" Type="integer"
                                Value="1" KeyPath="yes"/>
-                
+
                 <RemoveFile Id="RemoveShortcut"
                             Name="Visual JSON Editor"
                             On="uninstall" />
