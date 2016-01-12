@@ -125,7 +125,7 @@ namespace VisualJsonEditor.Views
 
         private async void CheckForApplicationUpdate()
         {
-            var updater = new ApplicationUpdater("VisualJsonEditor.msi", GetType().Assembly, "http://rsuter.com/Projects/VisualJsonEditor/updates.xml");
+            var updater = new ApplicationUpdater("VisualJsonEditor.msi", GetType().Assembly, "http://rsuter.com/Projects/VisualJsonEditor/updates.php");
             await updater.CheckForUpdate(this);
         }
 
