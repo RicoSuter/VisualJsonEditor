@@ -129,7 +129,7 @@
                         <DataTemplate>
                             <TextBlock>
                                 <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
-                                <Run Text="{Binding Schema.Description}" /><Run Text=" (object) " />
+                                <Run Text="{Binding Schema.Description}" /><Run Text=" (Object) " />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>
@@ -152,7 +152,7 @@
                         <DataTemplate>
                             <TextBlock>
                                 <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
-                                <Run Text="{Binding Schema.Description}" /><Run Text=" (array)" />
+                                <Run Text="{Binding Schema.Description}" /><Run Text=" (Array)" />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>
@@ -168,17 +168,20 @@
                                     <DataTemplate>
                                         <Grid Margin="4,0,4,0">
                                             <controls:ExpandingGroupBox BorderBrush="Black" Margin="0,0,0,8" 
+                                                                        Header="{Binding}"
                                                                         Background="#0F000000" MinHeight="36">
-                                                <controls:ExpandingGroupBox.Header>
-                                                    <MultiBinding Converter="{StaticResource IndexConverter}">
-                                                        <Binding />
-                                                        <Binding Path="ItemsSource" RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
-                                                    </MultiBinding>
-                                                </controls:ExpandingGroupBox.Header>
                                                 <controls:ExpandingGroupBox.HeaderTemplate>
                                                     <DataTemplate>
                                                         <TextBlock>
-                                                            <Run Text="{Binding Mode=OneWay}" FontWeight="Bold" /><Run Text=" (object)" />
+                                                            <Run FontWeight="Bold">
+                                                                <Run.Text>
+                                                                    <MultiBinding Converter="{StaticResource IndexConverter}" Mode="OneWay">
+                                                                        <Binding />
+                                                                        <Binding Path="ItemsSource" RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                                                                    </MultiBinding>
+                                                                </Run.Text>
+                                                            </Run> (<Run Text="{Binding Schema.Type, Mode=OneWay}" />)
+                                                            
                                                         </TextBlock>
                                                     </DataTemplate>
                                                 </controls:ExpandingGroupBox.HeaderTemplate>

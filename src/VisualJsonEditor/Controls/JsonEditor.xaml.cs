@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using NJsonSchema;
 using VisualJsonEditor.Models;
 
 namespace VisualJsonEditor.Controls
@@ -46,9 +47,10 @@ namespace VisualJsonEditor.Controls
                 property.Value = new ObservableCollection<JsonTokenModel>();
 
             var list = (ObservableCollection<JsonTokenModel>)property.Value;
-            var schema = property.Schema.Item;
+            var schema = property.Schema.ActualSchema.Item;
 
-            var obj = schema.Properties == null ? (JsonTokenModel)new JsonValueModel { Schema = schema } : JsonObjectModel.FromSchema(schema);
+            var obj = !schema.Type.HasFlag(JsonObjectType.Object) && !schema.Type.HasFlag(JsonObjectType.Array) ? 
+                (JsonTokenModel)new JsonValueModel { Schema = schema } : JsonObjectModel.FromSchema(schema);
             obj.ParentList = list;
 
             list.Add(obj);
@@ -65,7 +67,7 @@ namespace VisualJsonEditor.Controls
             var property = (JsonPropertyModel)((CheckBox)sender).Tag;
             if (property.Parent[property.Name] == null)
             {
-                property.Parent[property.Name] = JsonObjectModel.FromSchema(property.Schema);
+                property.Parent[property.Name] = JsonObjectModel.FromSchema(property.Schema.ActualSchema);
                 property.RaisePropertyChanged<JsonPropertyModel>(i => i.HasValue);
             }
         }
