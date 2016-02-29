@@ -6,9 +6,9 @@
 // <author>Rico Suter, mail@rsuter.com</author>
 //-----------------------------------------------------------------------
 
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using Newtonsoft.Json.Schema;
 using NJsonSchema;
 using VisualJsonEditor.Models;
 
@@ -26,10 +26,11 @@ namespace VisualJsonEditor.Controls
 
             JsonSchema4 schema = null;
             if (item is JsonTokenModel)
-                schema = ((JsonTokenModel)item).Schema;
-
-            if (item is JsonPropertyModel)
-                schema = ((JsonPropertyModel)item).Schema;
+                schema = ((JsonTokenModel)item).Schema.ActualSchema;
+            else if (item is JsonPropertyModel)
+                schema = ((JsonPropertyModel)item).Schema.ActualSchema;
+            else 
+                throw new NotImplementedException("The item given item type is not supported.");
 
             var type = schema.Type;
 
