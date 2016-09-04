@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/x25686ex1dp8smax?svg=true)](https://ci.appveyor.com/project/rsuter/visualjsoneditor)
 
-Visual JSON Editor is a JSON schema based file editor for Windows: When opening a JSON file, the application auto-generates an editor GUI based on the provided JSON schema. The goal is to make JSON editing more effective and easier for users. 
+Visual JSON Editor is a JSON schema draft v4 based file editor for Windows: When opening a JSON file, the application auto-generates an editor GUI based on the provided JSON schema. The goal is to make JSON editing more effective and easier for users. 
 
 **[Download latest Visual JSON Editor installer (MSI)](http://rsuter.com/Projects/VisualJsonEditor/installer.php)**
 
