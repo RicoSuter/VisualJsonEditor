@@ -29,7 +29,9 @@ namespace VisualJsonEditor.Controls
                 schema = ((JsonTokenModel)item).Schema.ActualSchema;
             else if (item is JsonPropertyModel)
                 schema = ((JsonPropertyModel)item).Schema.ActualSchema;
-            else 
+            else if (item == null)
+                return null; 
+            else
                 throw new NotImplementedException("The item given item type is not supported.");
 
             var type = schema.Type;
