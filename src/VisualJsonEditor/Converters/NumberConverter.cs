@@ -16,18 +16,32 @@ namespace VisualJsonEditor.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value != null ? value.ToString() : null;
+            return value?.ToString();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            try
+            if (targetType == typeof(decimal))
             {
-                return double.Parse(value.ToString());
+                try
+                {
+                    return decimal.Parse(value.ToString());
+                }
+                catch
+                {
+                    return default(decimal);
+                }
             }
-            catch
+            else
             {
-                return default(double);
+                try
+                {
+                    return double.Parse(value.ToString());
+                }
+                catch
+                {
+                    return default(double);
+                }
             }
         }
     }

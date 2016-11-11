@@ -19,8 +19,11 @@ namespace VisualJsonEditor.Converters
             if (value == null)
                 return parameter.ToString() == "min" ? int.MinValue : int.MaxValue;
 
+            if (value is decimal)
+                return (int)(decimal)value;
             if (value is double)
-                return (int)((double)value);
+                return (int)(double)value;
+
             return (int)value;
         }
 

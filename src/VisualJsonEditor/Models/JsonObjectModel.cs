@@ -107,7 +107,7 @@ namespace VisualJsonEditor.Models
         private static object GetDefaultValue(KeyValuePair<string, JsonProperty> property)
         {
             if (property.Value.Default != null)
-                return ((JValue)property.Value.Default).Value;
+                return property.Value.Default;
 
             if (property.Value.Type.HasFlag(JsonObjectType.Boolean))
                 return false;

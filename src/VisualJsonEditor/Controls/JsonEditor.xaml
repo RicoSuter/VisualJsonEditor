@@ -20,7 +20,7 @@
         <myConverters:IndexConverter x:Key="IndexConverter" />
         <myConverters:TimeConverter x:Key="TimeConverter" />
         <myConverters:DateConverter x:Key="DateConverter" />
-        <myConverters:DoubleUpDownRangeConverter x:Key="DoubleUpDownRangeConverter" />
+        <myConverters:DecimalUpDownRangeConverter x:Key="DecimalUpDownRangeConverter" />
         <myConverters:IntegerUpDownRangeConverter x:Key="IntegerUpDownRangeConverter" />
     </UserControl.Resources>
 
@@ -85,8 +85,8 @@
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:DoubleUpDown Margin="0,0,0,8" TextAlignment="Left"
-                                       Minimum="{Binding Schema.Minimum, Converter={StaticResource DoubleUpDownRangeConverter}, ConverterParameter=min}"
-                                       Maximum="{Binding Schema.Maximum, Converter={StaticResource DoubleUpDownRangeConverter}, ConverterParameter=max}"
+                                       Minimum="{Binding Schema.Minimum, Converter={StaticResource DecimalUpDownRangeConverter}, ConverterParameter=min}"
+                                       Maximum="{Binding Schema.Maximum, Converter={StaticResource DecimalUpDownRangeConverter}, ConverterParameter=max}"
                                        Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource NumberConverter}}" />
                     <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
                                          Text="{Binding Value, Converter={StaticResource NumberConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
