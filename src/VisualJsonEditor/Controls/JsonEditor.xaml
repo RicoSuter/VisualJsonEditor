@@ -178,6 +178,7 @@
                                                                     <MultiBinding Converter="{StaticResource IndexConverter}" Mode="OneWay">
                                                                         <Binding />
                                                                         <Binding Path="ItemsSource" RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
+                                                                        <Binding Path="Items.Count" RelativeSource="{RelativeSource AncestorType=ItemsControl}" />
                                                                     </MultiBinding>
                                                                 </Run.Text>
                                                             </Run> (<Run Text="{Binding Schema.Type, Mode=OneWay}" />)

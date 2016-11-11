@@ -18,8 +18,12 @@ namespace VisualJsonEditor.Converters
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             var list = (IList)values[1];
-            var index = list.IndexOf(values[0]) + 1; 
-            return targetType == typeof(string) ? index.ToString() : (object)index;
+            if (list != null)
+            {
+                var index = list.IndexOf(values[0]) + 1;
+                return targetType == typeof(string) ? index.ToString() : (object)index;
+            }
+            return null; 
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
