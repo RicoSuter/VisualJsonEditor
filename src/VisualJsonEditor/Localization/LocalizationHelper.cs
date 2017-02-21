@@ -29,7 +29,7 @@ namespace VisualJsonEditor.Localization
         /// <returns>The task. </returns>
         public static async Task ShowErrorAsync(Exception exception)
         {
-            ExceptionBox.Show("An error occured", exception, Application.Current.MainWindow);
+            ExceptionBox.Show("An error has occurred", exception, Application.Current.MainWindow);
         }
     }
 }
