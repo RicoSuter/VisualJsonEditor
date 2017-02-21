@@ -9,6 +9,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using NJsonSchema;
@@ -87,7 +88,7 @@ namespace VisualJsonEditor.Utilities
         private static void CreateSchemaFile<T>(string fileNameWithoutExtension, bool storeInAppData) where T : new()
         {
             var schemaPath = CreateFilePath(fileNameWithoutExtension, SchemaExtension, storeInAppData);
-            var schema = JsonSchema4.FromType<T>();
+            var schema = Task.Run(async () => await JsonSchema4.FromTypeAsync<T>()).GetAwaiter().GetResult();
 
             File.WriteAllText(schemaPath, schema.ToJson(), Encoding.UTF8);
         }

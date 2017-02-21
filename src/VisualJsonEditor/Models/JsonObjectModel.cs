@@ -71,11 +71,12 @@ namespace VisualJsonEditor.Models
             var result = new JsonObjectModel();
             foreach (var property in schema.Properties)
             {
-                if (property.Value.Type.HasFlag(JsonObjectType.Array))
+                var propertySchema = property.Value.ActualPropertySchema;
+                if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
-                    var propertySchema = property.Value.Item;
+                    var propertyItemSchema = propertySchema.Item;
                     var objects = obj[property.Key].Select(o => o is JObject ?
-                        (JsonTokenModel)FromJson((JObject)o, propertySchema) : JsonValueModel.FromJson((JValue)o, propertySchema));
+                        (JsonTokenModel)FromJson((JObject)o, propertyItemSchema) : JsonValueModel.FromJson((JValue)o, propertyItemSchema));
 
                     var list = new ObservableCollection<JsonTokenModel>(objects);
                     foreach (var item in list)
@@ -83,11 +84,11 @@ namespace VisualJsonEditor.Models
 
                     result[property.Key] = list;
                 }
-                else if (property.Value.Type.HasFlag(JsonObjectType.Object))
+                else if (propertySchema.Type.HasFlag(JsonObjectType.Object) || propertySchema.Type.HasFlag(JsonObjectType.None))
                 {
                     var token = obj[property.Key];
                     if (token is JObject)
-                        result[property.Key] = FromJson((JObject)token, property.Value);
+                        result[property.Key] = FromJson((JObject)token, propertySchema);
                     else
                         result[property.Key] = null;
                 }
