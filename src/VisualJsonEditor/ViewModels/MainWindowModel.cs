@@ -17,6 +17,7 @@ using System.Windows;
 using MyToolkit.Command;
 using MyToolkit.Composition;
 using MyToolkit.Data;
+using MyToolkit.Dialogs;
 using MyToolkit.Messaging;
 using MyToolkit.Model;
 using MyToolkit.Mvvm;
@@ -202,7 +203,7 @@ namespace VisualJsonEditor.ViewModels
         /// <param name="exception">The exception. </param>
         public override void HandleException(Exception exception)
         {
-            LocalizationHelper.ShowError(exception);
+            ExceptionBox.Show(Strings.MessageErrorTitle, exception, Application.Current.MainWindow);
         }
 
         private async Task CreateDocumentAsync()

@@ -178,7 +178,7 @@
     <value>{0}</value>
   </data>
   <data name="MessageErrorTitle" xml:space="preserve">
-    <value>An error occured</value>
+    <value>An error has occurred</value>
   </data>
   <data name="MessageNotValidDocumentText" xml:space="preserve">
     <value>The document '{0}' is NOT valid. 
