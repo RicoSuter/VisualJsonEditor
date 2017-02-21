@@ -8,6 +8,8 @@
 
 using System;
 using System.Threading.Tasks;
+using System.Windows;
+using MyToolkit.Dialogs;
 using MyToolkit.Messaging;
 
 namespace VisualJsonEditor.Localization
@@ -25,10 +27,9 @@ namespace VisualJsonEditor.Localization
         /// <summary>Shows an exception in a message box. </summary>
         /// <param name="exception">The exception to show. </param>
         /// <returns>The task. </returns>
-        public static Task ShowErrorAsync(Exception exception)
+        public static async Task ShowErrorAsync(Exception exception)
         {
-            var text = string.Format(Strings.MessageErrorText, exception.Message);
-            return Messenger.Default.SendAsync(new TextMessage(text, Strings.MessageErrorTitle));
+            ExceptionBox.Show("An error occured", exception, Application.Current.MainWindow);
         }
     }
 }
