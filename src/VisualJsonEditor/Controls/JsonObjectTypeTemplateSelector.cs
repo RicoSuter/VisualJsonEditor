@@ -25,10 +25,10 @@ namespace VisualJsonEditor.Controls
                 return (DataTemplate)presenter.Resources["RootTemplate"];
 
             JsonSchema4 schema = null;
-            if (item is JsonTokenModel)
-                schema = ((JsonTokenModel)item).Schema.ActualSchema;
-            else if (item is JsonPropertyModel)
+            if (item is JsonPropertyModel)
                 schema = ((JsonPropertyModel)item).Schema.ActualPropertySchema;
+            else if (item is JsonTokenModel)
+                schema = ((JsonTokenModel)item).Schema.ActualSchema;
             else if (item == null)
                 return null; 
             else
