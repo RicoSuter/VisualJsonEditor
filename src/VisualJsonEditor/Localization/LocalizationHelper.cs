@@ -7,10 +7,8 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 using MyToolkit.Dialogs;
-using MyToolkit.Messaging;
 
 namespace VisualJsonEditor.Localization
 {
@@ -19,15 +17,7 @@ namespace VisualJsonEditor.Localization
     {
         /// <summary>Shows an exception in a message box. </summary>
         /// <param name="exception">The exception to show. </param>
-        public static async void ShowError(Exception exception)
-        {
-            await ShowErrorAsync(exception);
-        }
-
-        /// <summary>Shows an exception in a message box. </summary>
-        /// <param name="exception">The exception to show. </param>
-        /// <returns>The task. </returns>
-        public static async Task ShowErrorAsync(Exception exception)
+        public static void ShowError(Exception exception)
         {
             ExceptionBox.Show("An error has occurred", exception, Application.Current.MainWindow);
         }
