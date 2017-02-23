@@ -165,7 +165,7 @@ namespace VisualJsonEditor.Models
                 }
                 else if (pair.Value is JsonTokenModel)
                     obj[pair.Key] = ((JsonTokenModel)pair.Value).ToJToken();
-                else
+                else if (pair.Value != null || Schema.Properties[pair.Key].IsRequired)
                     obj[pair.Key] = new JValue(pair.Value);
             }
             return obj;
