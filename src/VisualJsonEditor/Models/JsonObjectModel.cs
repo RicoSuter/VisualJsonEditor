@@ -84,13 +84,21 @@ namespace VisualJsonEditor.Models
 
                     result[property.Key] = list;
                 }
-                else if (propertySchema.Type.HasFlag(JsonObjectType.Object) || propertySchema.Type.HasFlag(JsonObjectType.None))
+                else if (propertySchema.Type.HasFlag(JsonObjectType.Object) ||
+                         propertySchema.Type.HasFlag(JsonObjectType.None))
                 {
                     var token = obj[property.Key];
-                    if (token is JObject)
-                        result[property.Key] = FromJson((JObject)token, propertySchema);
+
+                    var jObject = token as JObject;
+                    if (jObject != null)
+                    {
+                        result[property.Key] = FromJson(jObject, propertySchema);
+                    }
                     else
-                        result[property.Key] = null;
+                    {
+                        var jValue = token as JValue;
+                        result[property.Key] = jValue?.Value;
+                    }
                 }
                 else
                 {
