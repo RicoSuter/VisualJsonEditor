@@ -84,7 +84,7 @@ namespace VisualJsonEditor.Models
 
                     result[property.Key] = list;
                 }
-                else if (propertySchema.Type.HasFlag(JsonObjectType.Object) || propertySchema.Type.HasFlag(JsonObjectType.None))
+                else if (propertySchema.Type.HasFlag(JsonObjectType.Object) || propertySchema.Type == JsonObjectType.None)
                 {
                     var token = obj[property.Key];
                     if (token is JObject)
