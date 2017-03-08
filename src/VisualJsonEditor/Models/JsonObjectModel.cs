@@ -75,14 +75,20 @@ namespace VisualJsonEditor.Models
                 if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
                     var propertyItemSchema = propertySchema.Item;
-                    var objects = obj[property.Key].Select(o => o is JObject ?
-                        (JsonTokenModel)FromJson((JObject)o, propertyItemSchema) : JsonValueModel.FromJson((JValue)o, propertyItemSchema));
+                    if (obj[property.Key] != null)
+                    {
+                        var objects = obj[property.Key].Select(o => o is JObject ?
+                            (JsonTokenModel)FromJson((JObject)o, propertyItemSchema) :
+                            JsonValueModel.FromJson((JValue)o, propertyItemSchema));
 
-                    var list = new ObservableCollection<JsonTokenModel>(objects);
-                    foreach (var item in list)
-                        item.ParentList = list;
+                        var list = new ObservableCollection<JsonTokenModel>(objects);
+                        foreach (var item in list)
+                            item.ParentList = list;
 
-                    result[property.Key] = list;
+                        result[property.Key] = list;
+                    }
+                    else
+                        result[property.Key] = null;
                 }
                 else if (propertySchema.Type.HasFlag(JsonObjectType.Object) || propertySchema.Type == JsonObjectType.None)
                 {
