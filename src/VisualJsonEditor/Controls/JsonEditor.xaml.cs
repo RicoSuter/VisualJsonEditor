@@ -49,8 +49,8 @@ namespace VisualJsonEditor.Controls
             var list = (ObservableCollection<JsonTokenModel>)property.Value;
             var schema = property.Schema.ActualPropertySchema.Item;
 
-            var obj = !schema.Type.HasFlag(JsonObjectType.Object) && !schema.Type.HasFlag(JsonObjectType.Array) ? 
-                (JsonTokenModel)new JsonValueModel { Schema = schema } : JsonObjectModel.FromSchema(schema);
+            var obj = !schema.ActualSchema.Type.HasFlag(JsonObjectType.Object) && !schema.ActualSchema.Type.HasFlag(JsonObjectType.Array) ? 
+                (JsonTokenModel)new JsonValueModel { Schema = schema } : JsonObjectModel.FromSchema(schema.ActualSchema);
             obj.ParentList = list;
 
             list.Add(obj);
