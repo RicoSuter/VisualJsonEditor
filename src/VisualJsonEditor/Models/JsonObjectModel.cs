@@ -74,7 +74,7 @@ namespace VisualJsonEditor.Models
                 var propertySchema = property.Value.ActualPropertySchema;
                 if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
-                    var propertyItemSchema = propertySchema.Item;
+                    var propertyItemSchema = propertySchema.Item.ActualSchema;
                     if (obj[property.Key] != null)
                     {
                         var objects = obj[property.Key].Select(o => o is JObject ?
@@ -130,16 +130,19 @@ namespace VisualJsonEditor.Models
 
             return null;
         }
-
+        public bool HasValue
+        {
+            get { return true; }
+        }
         /// <summary>Gets the object's properties. </summary>
         public IEnumerable<JsonPropertyModel> Properties
         {
             get
             {
                 var properties = new List<JsonPropertyModel>();
-                if (Schema.Properties != null)
+                if (Schema.ActualSchema.Properties != null)
                 {
-                    foreach (var propertyInfo in Schema.Properties)
+                    foreach (var propertyInfo in Schema.ActualSchema.Properties)
                     {
                         var property = new JsonPropertyModel(propertyInfo.Key, this, propertyInfo.Value);
                         if (property.Value is ObservableCollection<JsonTokenModel>)
