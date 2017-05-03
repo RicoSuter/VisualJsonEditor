@@ -115,6 +115,7 @@
     </ApplicationDefinition>
     <Compile Include="Controls\ExpandingGroupBox.cs" />
     <Compile Include="Converters\DateConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
     <Compile Include="Converters\DecimalUpDownRangeConverter.cs" />
     <Compile Include="Converters\IndexConverter.cs" />
     <Compile Include="Converters\IntegerConverter.cs" />
