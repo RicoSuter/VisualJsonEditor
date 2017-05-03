@@ -31,9 +31,15 @@ namespace VisualJsonEditor.ViewModels
     {
         private JsonDocumentModel _selectedDocument;
         private ApplicationConfiguration _configuration;
+        private bool _strictEditingMode;
 
         public MainWindowModel()
         {
+            var commandLine = Environment.CommandLine;
+
+            _strictEditingMode = commandLine.ToLowerInvariant().Contains("-strict");
+
+
             Documents = new ObservableCollection<JsonDocumentModel>();
 
             CreateDocumentCommand = new AsyncRelayCommand(CreateDocumentAsync);
@@ -120,8 +126,11 @@ namespace VisualJsonEditor.ViewModels
         /// <returns>The task. </returns>
         public async Task<bool> CloseDocumentAsync(JsonDocumentModel document)
         {
+            bool saveOk = true;
+
             if (document.UndoRedoManager.CanUndo)
             {
+
                 var message = new TextMessage(string.Format(Strings.MessageSaveDocumentText, document.DisplayTitle),
                     Strings.MessageSaveDocumentTitle, MessageButton.YesNoCancel);
 
@@ -130,10 +139,16 @@ namespace VisualJsonEditor.ViewModels
                     return false;
 
                 if (result.Result == MessageResult.Yes)
-                    await SaveDocumentAsync(document);
+                    saveOk = await SaveDocumentAsync(document);
             }
 
-            RemoveDocument(document);
+            if (saveOk)
+                RemoveDocument(document);
+
+            if (_strictEditingMode && saveOk)
+                if (Documents.Count == 0)
+                    Environment.Exit(0);
+
             return true;
         }
 
@@ -195,6 +210,7 @@ namespace VisualJsonEditor.ViewModels
 
                     AddDocument(document);
                     AddRecentFile(fileName);
+
                 });
             }
         }
@@ -246,6 +262,7 @@ namespace VisualJsonEditor.ViewModels
             }
         }
 
+
         private void UndoRedoManagerOnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             if (args.IsProperty<UndoRedoManager>(i => i.CanUndo))
@@ -271,9 +288,28 @@ namespace VisualJsonEditor.ViewModels
                 Configuration.RecentFiles.Remove(Configuration.RecentFiles.Last());
         }
 
-        private Task SaveDocumentAsync(JsonDocumentModel document)
+        private async Task<bool> SaveDocumentAsync(JsonDocumentModel document)
         {
-            return SaveDocumentAsync(document, false);
+            if (_strictEditingMode)
+            {
+                var errors = await document.Data.ValidateAsync();
+
+                if (errors.Count() > 0)
+                {
+                    await Messenger.Default.SendAsync(
+                    new TextMessage(
+                        string.Format(Strings.MessageNotValidDocumentText, document.DisplayTitle, errors),
+                        Strings.MessageNotValidDocumentTitle));
+
+                    return false;
+                }
+                else
+                    await SaveDocumentAsync(document, false);
+            }
+
+            await SaveDocumentAsync(document, false);
+
+            return true;
         }
 
         private Task SaveDocumentAsAsync(JsonDocumentModel document)

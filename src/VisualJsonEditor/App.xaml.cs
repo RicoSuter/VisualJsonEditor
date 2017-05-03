@@ -35,6 +35,9 @@ namespace VisualJsonEditor
         /// <param name="e">A <see cref="T:System.Windows.StartupEventArgs"/> that contains the event data.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
+
+       
+
             ServiceLocator.Default.RegisterSingleton<IDispatcher, UiDispatcher>(new UiDispatcher(Dispatcher));
 
             Messenger.Default.Register(DefaultActions.GetTextMessageAction());
@@ -54,7 +57,7 @@ namespace VisualJsonEditor
 
         private void InitializeTelemetry()
         {
-#if !DEBUG
+#if FALSE
             Telemetry.InstrumentationKey = "471bd0a4-e71d-454a-aa2b-89658b685df3";
             Telemetry.Context.User.Id = ApplicationSettings.GetSetting("TelemetryUserId", Guid.NewGuid().ToString());
             Telemetry.Context.Session.Id = Guid.NewGuid().ToString();
@@ -90,7 +93,7 @@ namespace VisualJsonEditor
         {
             var dlg = new OpenFileDialog();
             dlg.Title = msg.Title;
-            dlg.Filter = Strings.FileDialogFilter; 
+            dlg.Filter = Strings.FileDialogFilter;
             dlg.RestoreDirectory = true;
             if (dlg.ShowDialog() == DialogResult.OK)
             {

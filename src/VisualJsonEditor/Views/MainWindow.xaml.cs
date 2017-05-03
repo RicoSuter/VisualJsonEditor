@@ -19,6 +19,7 @@ using VisualJsonEditor.Models;
 using VisualJsonEditor.Utilities;
 using VisualJsonEditor.ViewModels;
 using Xceed.Wpf.AvalonDock;
+using System;
 
 namespace VisualJsonEditor.Views
 {
@@ -29,6 +30,9 @@ namespace VisualJsonEditor.Views
 
         public MainWindow()
         {
+
+
+
             InitializeComponent();
             ViewModelHelper.RegisterViewModel(Model, this);
 
@@ -36,7 +40,6 @@ namespace VisualJsonEditor.Views
             RegisterShortcuts();
 
             LoadConfiguration();
-            CheckForApplicationUpdate();
 
             Closing += OnWindowClosing;
 
@@ -54,6 +57,8 @@ namespace VisualJsonEditor.Views
             if (Debugger.IsAttached)
                 Dispatcher.InvokeAsync(delegate { Model.OpenDocumentAsync(@"Samples/Sample.json"); });
 #endif
+
+
 
         }
 
@@ -118,13 +123,6 @@ namespace VisualJsonEditor.Views
             _configuration.WindowState = WindowState;
 
             JsonApplicationConfiguration.Save(ConfigurationFileName, _configuration, true);
-        }
-
-        private async void CheckForApplicationUpdate()
-        {
-            var updater = new ApplicationUpdater("VisualJsonEditor.msi", GetType().Assembly, 
-                "http://rsuter.com/Projects/VisualJsonEditor/updates.php");
-            await updater.CheckForUpdate(this);
         }
 
         private async void OnDocumentClosing(object sender, DocumentClosingEventArgs args)
