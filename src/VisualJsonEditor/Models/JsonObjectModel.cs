@@ -79,7 +79,7 @@ namespace VisualJsonEditor.Models
                 var propertySchema = property.Value.ActualPropertySchema;
                 if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
-                    var propertyItemSchema = propertySchema.Item?.ActualSchema;
+                    var propertyItemSchema = propertySchema.Item != null ? propertySchema.Item.ActualSchema : null;
                     if (obj[property.Key] != null)
                     {
                         var objects = obj[property.Key].Select(o => o is JObject ?
@@ -151,7 +151,7 @@ namespace VisualJsonEditor.Models
                         if (property.Value is ObservableCollection<JsonTokenModel>)
                         {
                             foreach (var obj in (ObservableCollection<JsonTokenModel>)property.Value)
-                                obj.Schema = propertyInfo.Value.Item?.ActualSchema;
+                                obj.Schema = propertyInfo.Value.Item != null ? propertyInfo.Value.Item.ActualSchema : null;
                         }
                         properties.Add(property);
                     }
