@@ -47,7 +47,7 @@ namespace VisualJsonEditor.Controls
                 property.Value = new ObservableCollection<JsonTokenModel>();
 
             var list = (ObservableCollection<JsonTokenModel>)property.Value;
-            var schema = property.Schema.ActualPropertySchema.Item;
+            var schema = property.Schema.ActualPropertySchema.Item.ActualSchema;
 
             var obj = !schema.Type.HasFlag(JsonObjectType.Object) && !schema.Type.HasFlag(JsonObjectType.Array) ? 
                 (JsonTokenModel)new JsonValueModel { Schema = schema } : JsonObjectModel.FromSchema(schema);

@@ -28,17 +28,20 @@ namespace VisualJsonEditor.Models
         /// <returns>The <see cref="JsonObjectModel"/>. </returns>
         public static JsonObjectModel FromSchema(JsonSchema4 schema)
         {
+            schema = schema.ActualSchema;
+
             var obj = new JsonObjectModel();
             foreach (var property in schema.Properties)
             {
-                if (property.Value.Type.HasFlag(JsonObjectType.Object))
+                var propertySchema = property.Value.ActualPropertySchema;
+                if (propertySchema.Type.HasFlag(JsonObjectType.Object))
                 {
                     if (property.Value.IsRequired)
-                        obj[property.Key] = FromSchema(property.Value);
+                        obj[property.Key] = FromSchema(propertySchema);
                     else
                         obj[property.Key] = null;
                 }
-                else if (property.Value.Type.HasFlag(JsonObjectType.Array))
+                else if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
                     if (property.Value.IsRequired)
                         obj[property.Key] = new ObservableCollection<JsonTokenModel>();
@@ -68,13 +71,15 @@ namespace VisualJsonEditor.Models
         /// <returns>The <see cref="JsonObjectModel"/>. </returns>
         public static JsonObjectModel FromJson(JObject obj, JsonSchema4 schema)
         {
+            schema = schema.ActualSchema;
+
             var result = new JsonObjectModel();
             foreach (var property in schema.Properties)
             {
                 var propertySchema = property.Value.ActualPropertySchema;
                 if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
-                    var propertyItemSchema = propertySchema.Item;
+                    var propertyItemSchema = propertySchema.Item?.ActualSchema;
                     if (obj[property.Key] != null)
                     {
                         var objects = obj[property.Key].Select(o => o is JObject ?
@@ -113,19 +118,20 @@ namespace VisualJsonEditor.Models
 
         private static object GetDefaultValue(KeyValuePair<string, JsonProperty> property)
         {
-            if (property.Value.Default != null)
-                return property.Value.Default;
+            var propertySchema = property.Value.ActualPropertySchema;
+            if (propertySchema.Default != null)
+                return propertySchema.Default;
 
-            if (property.Value.Type.HasFlag(JsonObjectType.Boolean))
+            if (propertySchema.Type.HasFlag(JsonObjectType.Boolean))
                 return false;
 
-            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == JsonFormatStrings.DateTime)
+            if (propertySchema.Type.HasFlag(JsonObjectType.String) && propertySchema.Format == JsonFormatStrings.DateTime)
                 return new DateTime();
-            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "date") // TODO: What to do with date/time?
+            if (propertySchema.Type.HasFlag(JsonObjectType.String) && propertySchema.Format == "date") // TODO: What to do with date/time?
                 return new DateTime();
-            if (property.Value.Type.HasFlag(JsonObjectType.String) && property.Value.Format == "time")
+            if (propertySchema.Type.HasFlag(JsonObjectType.String) && propertySchema.Format == "time")
                 return new TimeSpan();
-            if (property.Value.Type.HasFlag(JsonObjectType.String))
+            if (propertySchema.Type.HasFlag(JsonObjectType.String))
                 return string.Empty;
 
             return null;
@@ -145,7 +151,7 @@ namespace VisualJsonEditor.Models
                         if (property.Value is ObservableCollection<JsonTokenModel>)
                         {
                             foreach (var obj in (ObservableCollection<JsonTokenModel>)property.Value)
-                                obj.Schema = propertyInfo.Value.Item;
+                                obj.Schema = propertyInfo.Value.Item?.ActualSchema;
                         }
                         properties.Add(property);
                     }

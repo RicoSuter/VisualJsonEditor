@@ -182,7 +182,6 @@
                                                                     </MultiBinding>
                                                                 </Run.Text>
                                                             </Run> (<Run Text="{Binding Schema.Type, Mode=OneWay}" />)
-                                                            
                                                         </TextBlock>
                                                     </DataTemplate>
                                                 </controls:ExpandingGroupBox.HeaderTemplate>
