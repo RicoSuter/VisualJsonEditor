@@ -114,6 +114,15 @@
                               SelectedValue="{Binding Value, Mode=TwoWay}"   />
                 </StackPanel>
             </DataTemplate>
+            <DataTemplate x:Key="EnumTemplate2">
+                <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
+                    <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
+                               Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
+                    <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.Enumeration}"
+                              SelectedValue="{Binding Value, Mode=TwoWay}"   />
+                </StackPanel>
+            </DataTemplate>
             <DataTemplate x:Key="BooleanTemplate">
                 <StackPanel d:DataContext="{d:DesignInstance Type=models:JsonPropertyModel}">
                     <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
