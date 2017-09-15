@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 // <copyright file="JsonObjectTypeTemplateSelector.cs" company="Visual JSON Editor">
 //     Copyright (c) Rico Suter. All rights reserved.
 // </copyright>
@@ -25,23 +25,32 @@ namespace VisualJsonEditor.Controls
                 return (DataTemplate)presenter.Resources["RootTemplate"];
 
             JsonSchema4 schema = null;
-            if (item is JsonPropertyModel)
+            if (item is JsonValueModel)
+            {
+                schema = ((JsonValueModel)item).Schema;
+
+            }
+            else if (item is JsonPropertyModel)
+            {
+
                 schema = ((JsonPropertyModel)item).Schema.ActualPropertySchema;
+            }
             else if (item is JsonTokenModel)
                 schema = ((JsonTokenModel)item).Schema.ActualSchema;
             else if (item == null)
-                return null; 
+                return null;
             else
                 throw new NotImplementedException("The item given item type is not supported.");
 
             var type = schema.Type;
-
             if (type.HasFlag(JsonObjectType.String) && schema.Format == JsonFormatStrings.DateTime) // TODO: What to do with date/time?
                 return (DataTemplate)presenter.Resources["DateTimeTemplate"];
             if (type.HasFlag(JsonObjectType.String) && schema.Format == "date")
                 return (DataTemplate)presenter.Resources["DateTemplate"];
             if (type.HasFlag(JsonObjectType.String) && schema.Format == "time")
                 return (DataTemplate)presenter.Resources["TimeTemplate"];
+            if ((item is JsonValueModel) && type.HasFlag(JsonObjectType.String) && schema.Enumeration.Count > 0)
+                return (DataTemplate)presenter.Resources["EnumTemplate2"];
             if (type.HasFlag(JsonObjectType.String) && schema.Enumeration.Count > 0)
                 return (DataTemplate)presenter.Resources["EnumTemplate"];
             if (type.HasFlag(JsonObjectType.String))
