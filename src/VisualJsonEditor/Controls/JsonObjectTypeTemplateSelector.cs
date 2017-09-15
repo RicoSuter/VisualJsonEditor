@@ -47,6 +47,8 @@ namespace VisualJsonEditor.Controls
             if (type.HasFlag(JsonObjectType.String))
                 return (DataTemplate)presenter.Resources["StringTemplate"];
 
+            if ((item is JsonValueModel) && type.HasFlag(JsonObjectType.Integer) && schema.Enumeration.Count > 0)
+                return (DataTemplate)presenter.Resources["EnumTemplate2"];
             if (type.HasFlag(JsonObjectType.Integer) && schema.Enumeration.Count > 0)
                 return (DataTemplate)presenter.Resources["EnumTemplate"];
             if (type.HasFlag(JsonObjectType.Integer))
