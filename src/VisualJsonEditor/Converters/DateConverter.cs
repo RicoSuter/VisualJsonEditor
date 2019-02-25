@@ -24,7 +24,11 @@ namespace VisualJsonEditor.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (value as DateTime?)?.ToString("yyyy-MM-dd");
+            if (value is DateTime)
+            {
+                return ((DateTime)value).ToString("yyyy-MM-dd");
+            }
+            return null;
         }
     }
 }
