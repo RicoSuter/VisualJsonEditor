@@ -26,7 +26,7 @@ namespace VisualJsonEditor.Controls
 
             JsonSchema4 schema = null;
             if (item is JsonPropertyModel)
-                schema = ((JsonPropertyModel)item).Schema.ActualPropertySchema;
+                schema = ((JsonPropertyModel)item).Schema.ActualSchema;
             else if (item is JsonTokenModel)
                 schema = ((JsonTokenModel)item).Schema.ActualSchema;
             else if (item == null)

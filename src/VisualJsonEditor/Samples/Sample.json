@@ -3,7 +3,7 @@
     "BoolValue": false,
     "NumberValue": 2.3,
     "DateTimeValue": "2014-08-13T21:00:00",
-    "DateValue": "2014-08-14T00:00:00",
+    "DateValue": "2014-08-14",
     "TimeValue": "02:00:00",
     "IntegerValue": 1,
     "Test": {

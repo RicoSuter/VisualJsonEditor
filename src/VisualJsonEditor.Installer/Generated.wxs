@@ -474,176 +474,444 @@
                 <File Id="filEABCE0C3E6A9FBB38D59A1965E694418" KeyPath="yes" Source="$(var.SourcePath)\Newtonsoft.Json.xml" />
             </Component>
             <Component Id="cmpCFDF9B03906A160A23B423DF1D391540" Directory="RootDirectory" Guid="*">
-                <Class Id="{05B13CBA-290D-321F-AA22-C4992282E01E}" Context="InprocServer32" Description="NJsonSchema.Generation.DataToJsonSchemaGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.Generation.DataToJsonSchemaGenerator" Description="NJsonSchema.Generation.DataToJsonSchemaGenerator" />
-                </Class>
-                <Class Id="{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}" Context="InprocServer32" Description="NJsonSchema.Annotations.JsonSchemaAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.Annotations.JsonSchemaAttribute" Description="NJsonSchema.Annotations.JsonSchemaAttribute" />
-                </Class>
-                <Class Id="{1689CA47-C4E1-368B-9D75-99851CA6C8B5}" Context="InprocServer32" Description="NJsonSchema.ConversionUtilities" ThreadingModel="both" ForeignServer="mscoree.dll">
+                <Class Id="{003E24B3-AAF7-3134-8E50-0FB4D30461A1}" Context="InprocServer32" Description="NJsonSchema.ConversionUtilities" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="NJsonSchema.ConversionUtilities" Description="NJsonSchema.ConversionUtilities" />
                 </Class>
-                <Class Id="{5C802486-EEEF-3E9D-BB8D-2460155C8C64}" Context="InprocServer32" Description="NJsonSchema.JsonProperty" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.JsonProperty" Description="NJsonSchema.JsonProperty" />
-                </Class>
-                <Class Id="{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}" Context="InprocServer32" Description="NJsonSchema.Converters.JsonInheritanceConverter" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.Converters.JsonInheritanceConverter" Description="NJsonSchema.Converters.JsonInheritanceConverter" />
-                </Class>
-                <Class Id="{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}" Context="InprocServer32" Description="NJsonSchema.JsonXmlObject" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.JsonXmlObject" Description="NJsonSchema.JsonXmlObject" />
-                </Class>
-                <Class Id="{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}" Context="InprocServer32" Description="NJsonSchema.JsonSchema4" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.JsonSchema4" Description="NJsonSchema.JsonSchema4" />
-                </Class>
-                <Class Id="{B7924CD5-CE50-3125-BC0B-C695E69D00CC}" Context="InprocServer32" Description="NJsonSchema.JsonExtensionObject" ThreadingModel="both" ForeignServer="mscoree.dll">
-                    <ProgId Id="NJsonSchema.JsonExtensionObject" Description="NJsonSchema.JsonExtensionObject" />
-                </Class>
-                <Class Id="{C06EE96C-AC40-3F52-B254-AA7A8C95B382}" Context="InprocServer32" Description="NJsonSchema.Generation.JsonSchemaGeneratorSettings" ThreadingModel="both" ForeignServer="mscoree.dll">
+                <Class Id="{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}" Context="InprocServer32" Description="NJsonSchema.Generation.JsonSchemaGeneratorSettings" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="NJsonSchema.Generation.JsonSchemaGeneratorSettings" Description="NJsonSchema.Generation.JsonSchemaGeneratorSettings" />
                 </Class>
-                <Class Id="{D0EAB8F1-10FF-3723-B041-434349C65770}" Context="InprocServer32" Description="NJsonSchema.DefaultTypeNameGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                <Class Id="{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.HostnameFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.HostnameFormatValidator" Description="NJsonSchema.Validation.FormatValidators.HostnameFormatValidator" />
+                </Class>
+                <Class Id="{0799642A-3F42-3229-BEF7-098DCF14B483}" Context="InprocServer32" Description="NJsonSchema.JsonSchema4" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.JsonSchema4" Description="NJsonSchema.JsonSchema4" />
+                </Class>
+                <Class Id="{0F243C9A-0BE1-3524-A258-334B8F4811E7}" Context="InprocServer32" Description="NJsonSchema.JsonProperty" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.JsonProperty" Description="NJsonSchema.JsonProperty" />
+                </Class>
+                <Class Id="{11A71392-D525-3711-8D65-83BD8E6A34C1}" Context="InprocServer32" Description="NJsonSchema.JsonXmlObject" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.JsonXmlObject" Description="NJsonSchema.JsonXmlObject" />
+                </Class>
+                <Class Id="{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.TimeSpanFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.TimeSpanFormatValidator" Description="NJsonSchema.Validation.FormatValidators.TimeSpanFormatValidator" />
+                </Class>
+                <Class Id="{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}" Context="InprocServer32" Description="NJsonSchema.Annotations.JsonSchemaAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.JsonSchemaAttribute" Description="NJsonSchema.Annotations.JsonSchemaAttribute" />
+                </Class>
+                <Class Id="{45F99662-E4DB-3B62-89C2-4E9219D53702}" Context="InprocServer32" Description="NJsonSchema.DefaultTypeNameGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="NJsonSchema.DefaultTypeNameGenerator" Description="NJsonSchema.DefaultTypeNameGenerator" />
                 </Class>
-                <Class Id="{F34DB2F5-A771-3AAD-A617-3701B1B0345F}" Context="InprocServer32" Description="NJsonSchema.DefaultSchemaNameGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                <Class Id="{4B972B10-44BA-33BA-91C8-389B122D4734}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.UriFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.UriFormatValidator" Description="NJsonSchema.Validation.FormatValidators.UriFormatValidator" />
+                </Class>
+                <Class Id="{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}" Context="InprocServer32" Description="NJsonSchema.Infrastructure.JsonSchemaSerialization" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Infrastructure.JsonSchemaSerialization" Description="NJsonSchema.Infrastructure.JsonSchemaSerialization" />
+                </Class>
+                <Class Id="{552E719D-2094-32BB-85B9-DE7EADAEB3D5}" Context="InprocServer32" Description="NJsonSchema.Generation.DefaultReflectionService" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Generation.DefaultReflectionService" Description="NJsonSchema.Generation.DefaultReflectionService" />
+                </Class>
+                <Class Id="{64903B57-D8B6-3EA9-9F55-5569E229CA3E}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.GuidFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.GuidFormatValidator" Description="NJsonSchema.Validation.FormatValidators.GuidFormatValidator" />
+                </Class>
+                <Class Id="{6F58D905-856C-37AB-9479-2FE394BA9102}" Context="InprocServer32" Description="NJsonSchema.DefaultSchemaNameGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="NJsonSchema.DefaultSchemaNameGenerator" Description="NJsonSchema.DefaultSchemaNameGenerator" />
                 </Class>
-                <Class Id="{F896918E-EA6F-3444-BC73-89A24C81C2D1}" Context="InprocServer32" Description="NJsonSchema.Validation.JsonSchemaValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                <Class Id="{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.DateTimeFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.DateTimeFormatValidator" Description="NJsonSchema.Validation.FormatValidators.DateTimeFormatValidator" />
+                </Class>
+                <Class Id="{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}" Context="InprocServer32" Description="NJsonSchema.Annotations.JsonSchemaDateAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.JsonSchemaDateAttribute" Description="NJsonSchema.Annotations.JsonSchemaDateAttribute" />
+                </Class>
+                <Class Id="{77767BC7-1068-3B48-B7D2-43933D97C6BF}" Context="InprocServer32" Description="NJsonSchema.Annotations.NotNullAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.NotNullAttribute" Description="NJsonSchema.Annotations.NotNullAttribute" />
+                </Class>
+                <Class Id="{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.IpV4FormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.IpV4FormatValidator" Description="NJsonSchema.Validation.FormatValidators.IpV4FormatValidator" />
+                </Class>
+                <Class Id="{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}" Context="InprocServer32" Description="NJsonSchema.JsonExtensionObject" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.JsonExtensionObject" Description="NJsonSchema.JsonExtensionObject" />
+                </Class>
+                <Class Id="{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.DateFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.DateFormatValidator" Description="NJsonSchema.Validation.FormatValidators.DateFormatValidator" />
+                </Class>
+                <Class Id="{905EF362-EF1F-301C-A803-ABD11134B1FC}" Context="InprocServer32" Description="NJsonSchema.Annotations.CanBeNullAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.CanBeNullAttribute" Description="NJsonSchema.Annotations.CanBeNullAttribute" />
+                </Class>
+                <Class Id="{963A4491-ECF6-364A-8EE6-118D8C770BA8}" Context="InprocServer32" Description="NJsonSchema.Converters.JsonReferenceConverter" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Converters.JsonReferenceConverter" Description="NJsonSchema.Converters.JsonReferenceConverter" />
+                </Class>
+                <Class Id="{967020D1-1B63-3023-AABC-A9FF3DDA8133}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.EmailFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.EmailFormatValidator" Description="NJsonSchema.Validation.FormatValidators.EmailFormatValidator" />
+                </Class>
+                <Class Id="{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}" Context="InprocServer32" Description="NJsonSchema.Annotations.JsonSchemaFlattenAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.JsonSchemaFlattenAttribute" Description="NJsonSchema.Annotations.JsonSchemaFlattenAttribute" />
+                </Class>
+                <Class Id="{A9D06F1E-25A0-373B-8CDF-D19B24097433}" Context="InprocServer32" Description="NJsonSchema.Generation.SampleJsonSchemaGenerator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Generation.SampleJsonSchemaGenerator" Description="NJsonSchema.Generation.SampleJsonSchemaGenerator" />
+                </Class>
+                <Class Id="{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.IpV6FormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.IpV6FormatValidator" Description="NJsonSchema.Validation.FormatValidators.IpV6FormatValidator" />
+                </Class>
+                <Class Id="{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}" Context="InprocServer32" Description="NJsonSchema.Validation.JsonSchemaValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
                     <ProgId Id="NJsonSchema.Validation.JsonSchemaValidator" Description="NJsonSchema.Validation.JsonSchemaValidator" />
+                </Class>
+                <Class Id="{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.TimeFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.TimeFormatValidator" Description="NJsonSchema.Validation.FormatValidators.TimeFormatValidator" />
+                </Class>
+                <Class Id="{C8A6748B-468D-3E00-99FB-E315E2AC8267}" Context="InprocServer32" Description="NJsonSchema.Converters.JsonInheritanceConverter" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Converters.JsonInheritanceConverter" Description="NJsonSchema.Converters.JsonInheritanceConverter" />
+                </Class>
+                <Class Id="{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.ByteFormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.ByteFormatValidator" Description="NJsonSchema.Validation.FormatValidators.ByteFormatValidator" />
+                </Class>
+                <Class Id="{CEC31B0E-D723-3A5C-8026-1866B34FA120}" Context="InprocServer32" Description="NJsonSchema.Annotations.JsonSchemaIgnoreAttribute" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Annotations.JsonSchemaIgnoreAttribute" Description="NJsonSchema.Annotations.JsonSchemaIgnoreAttribute" />
+                </Class>
+                <Class Id="{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}" Context="InprocServer32" Description="NJsonSchema.Validation.FormatValidators.Base64FormatValidator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Validation.FormatValidators.Base64FormatValidator" Description="NJsonSchema.Validation.FormatValidators.Base64FormatValidator" />
+                </Class>
+                <Class Id="{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}" Context="InprocServer32" Description="NJsonSchema.OpenApiDiscriminator" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.OpenApiDiscriminator" Description="NJsonSchema.OpenApiDiscriminator" />
+                </Class>
+                <Class Id="{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}" Context="InprocServer32" Description="NJsonSchema.Infrastructure.PropertyRenameAndIgnoreSerializerContractResolver" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="NJsonSchema.Infrastructure.PropertyRenameAndIgnoreSerializerContractResolver" Description="NJsonSchema.Infrastructure.PropertyRenameAndIgnoreSerializerContractResolver" />
                 </Class>
                 <File Id="filE7D2BAF36BE70670FE414AAABB6765E1" KeyPath="yes" Source="$(var.SourcePath)\NJsonSchema.dll" />
                 <ProgId Id="Record" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.Generation.DataToJsonSchemaGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32" Name="Class" Value="NJsonSchema.Generation.DataToJsonSchemaGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{05B13CBA-290D-321F-AA22-C4992282E01E}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaAttribute" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaAttribute" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{12F4C96F-0B3D-3640-82C0-7D9B4EA76097}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.ConversionUtilities" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32" Name="Class" Value="NJsonSchema.ConversionUtilities" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{1689CA47-C4E1-368B-9D75-99851CA6C8B5}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.JsonProperty" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32" Name="Class" Value="NJsonSchema.JsonProperty" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{5C802486-EEEF-3E9D-BB8D-2460155C8C64}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.Converters.JsonInheritanceConverter" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32" Name="Class" Value="NJsonSchema.Converters.JsonInheritanceConverter" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0720D52-68BA-3570-9BEB-26D36F0D8BDF}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.JsonXmlObject" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32" Name="Class" Value="NJsonSchema.JsonXmlObject" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{A0DADB15-F03E-3BCD-A5A7-6337CD826DE5}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.JsonSchema4" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32" Name="Class" Value="NJsonSchema.JsonSchema4" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{AE4C91F7-1A29-3901-92A5-E9EA1FE2DD64}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.JsonExtensionObject" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32" Name="Class" Value="NJsonSchema.JsonExtensionObject" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{B7924CD5-CE50-3125-BC0B-C695E69D00CC}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.Generation.JsonSchemaGeneratorSettings" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32" Name="Class" Value="NJsonSchema.Generation.JsonSchemaGeneratorSettings" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{C06EE96C-AC40-3F52-B254-AA7A8C95B382}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.DefaultTypeNameGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32" Name="Class" Value="NJsonSchema.DefaultTypeNameGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{D0EAB8F1-10FF-3723-B041-434349C65770}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.DefaultSchemaNameGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32" Name="Class" Value="NJsonSchema.DefaultSchemaNameGenerator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F34DB2F5-A771-3AAD-A617-3701B1B0345F}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32\9.2.5.0" Name="Class" Value="NJsonSchema.Validation.JsonSchemaValidator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.JsonSchemaValidator" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="CLSID\{F896918E-EA6F-3444-BC73-89A24C81C2D1}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{8B33DCF5-3EA9-3B3D-A37A-2672D1386765}\9.2.5.0" Name="Class" Value="NJsonSchema.JsonObjectType" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{8B33DCF5-3EA9-3B3D-A37A-2672D1386765}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{8B33DCF5-3EA9-3B3D-A37A-2672D1386765}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{8B33DCF5-3EA9-3B3D-A37A-2672D1386765}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{92F4A087-1AE3-34EF-B896-CBFB4890C790}\9.2.5.0" Name="Class" Value="NJsonSchema.Validation.ValidationErrorKind" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{92F4A087-1AE3-34EF-B896-CBFB4890C790}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{92F4A087-1AE3-34EF-B896-CBFB4890C790}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{92F4A087-1AE3-34EF-B896-CBFB4890C790}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{CBC7DA67-5DC8-31C9-8F55-477F6566B182}\9.2.5.0" Name="Class" Value="NJsonSchema.PropertyNameHandling" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{CBC7DA67-5DC8-31C9-8F55-477F6566B182}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{CBC7DA67-5DC8-31C9-8F55-477F6566B182}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{CBC7DA67-5DC8-31C9-8F55-477F6566B182}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{E6607361-CC6C-3D4F-9AC3-0E8483A40AF0}\9.2.5.0" Name="Class" Value="NJsonSchema.Infrastructure.TypeNameStyle" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{E6607361-CC6C-3D4F-9AC3-0E8483A40AF0}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{E6607361-CC6C-3D4F-9AC3-0E8483A40AF0}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{E6607361-CC6C-3D4F-9AC3-0E8483A40AF0}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F27C4D53-0229-3CFC-89C9-174043AACB7A}\9.2.5.0" Name="Class" Value="NJsonSchema.NullHandling" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F27C4D53-0229-3CFC-89C9-174043AACB7A}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F27C4D53-0229-3CFC-89C9-174043AACB7A}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F27C4D53-0229-3CFC-89C9-174043AACB7A}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F5CB7780-CBC3-3E51-A0B5-6DAE416F1B80}\9.2.5.0" Name="Class" Value="NJsonSchema.EnumHandling" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F5CB7780-CBC3-3E51-A0B5-6DAE416F1B80}\9.2.5.0" Name="Assembly" Value="NJsonSchema, Version=9.2.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F5CB7780-CBC3-3E51-A0B5-6DAE416F1B80}\9.2.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{F5CB7780-CBC3-3E51-A0B5-6DAE416F1B80}\9.2.5.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.ConversionUtilities" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32" Name="Class" Value="NJsonSchema.ConversionUtilities" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{003E24B3-AAF7-3134-8E50-0FB4D30461A1}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Generation.JsonSchemaGeneratorSettings" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32" Name="Class" Value="NJsonSchema.Generation.JsonSchemaGeneratorSettings" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05D26E4E-800B-3EAB-8AFE-ED7C8BA94D58}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.HostnameFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.HostnameFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{05E33C9E-DEA0-3E63-A409-FFD0B30109C3}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.JsonSchema4" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32" Name="Class" Value="NJsonSchema.JsonSchema4" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0799642A-3F42-3229-BEF7-098DCF14B483}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.JsonProperty" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32" Name="Class" Value="NJsonSchema.JsonProperty" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{0F243C9A-0BE1-3524-A258-334B8F4811E7}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.JsonXmlObject" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32" Name="Class" Value="NJsonSchema.JsonXmlObject" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{11A71392-D525-3711-8D65-83BD8E6A34C1}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.TimeSpanFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.TimeSpanFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{1CBAF6A2-FFD8-3316-974D-0FE603FC77C3}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{3C8D487F-E4D2-32A4-88D6-B89FCB6179C8}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.DefaultTypeNameGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32" Name="Class" Value="NJsonSchema.DefaultTypeNameGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{45F99662-E4DB-3B62-89C2-4E9219D53702}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.UriFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.UriFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{4B972B10-44BA-33BA-91C8-389B122D4734}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Infrastructure.JsonSchemaSerialization" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32" Name="Class" Value="NJsonSchema.Infrastructure.JsonSchemaSerialization" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{543B9B4E-7548-3ABF-B135-E81DAC6CCEA6}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Generation.DefaultReflectionService" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32" Name="Class" Value="NJsonSchema.Generation.DefaultReflectionService" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{552E719D-2094-32BB-85B9-DE7EADAEB3D5}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.GuidFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.GuidFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{64903B57-D8B6-3EA9-9F55-5569E229CA3E}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.DefaultSchemaNameGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32" Name="Class" Value="NJsonSchema.DefaultSchemaNameGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F58D905-856C-37AB-9479-2FE394BA9102}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.DateTimeFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.DateTimeFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{6F79D0FF-4F6A-3F8C-9ACE-63B8F7A78D24}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaDateAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaDateAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7168BDB8-5CF0-380C-9E7C-104B1C48AD63}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.NotNullAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.NotNullAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{77767BC7-1068-3B48-B7D2-43933D97C6BF}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.IpV4FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.IpV4FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{79C2ADA0-7F8A-3CA5-9B50-B8C00A968445}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.JsonExtensionObject" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32" Name="Class" Value="NJsonSchema.JsonExtensionObject" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8888C38D-9E71-3617-A2DA-31DF99F0F2C1}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.DateFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.DateFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{8C5B4516-E674-38F8-AB17-83BB80C0B5C3}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.CanBeNullAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.CanBeNullAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{905EF362-EF1F-301C-A803-ABD11134B1FC}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Converters.JsonReferenceConverter" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32" Name="Class" Value="NJsonSchema.Converters.JsonReferenceConverter" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{963A4491-ECF6-364A-8EE6-118D8C770BA8}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.EmailFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.EmailFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{967020D1-1B63-3023-AABC-A9FF3DDA8133}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaFlattenAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaFlattenAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{9A9574B5-13AF-3D8D-8A82-5F05BD3D8E14}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Generation.SampleJsonSchemaGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32" Name="Class" Value="NJsonSchema.Generation.SampleJsonSchemaGenerator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{A9D06F1E-25A0-373B-8CDF-D19B24097433}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.IpV6FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.IpV6FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{AB9535A3-5C02-3F8F-A4A5-DE50CADF9C2D}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.JsonSchemaValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.JsonSchemaValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B62936C2-6EF5-3E2A-B4F1-0042FFF86C23}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.TimeFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.TimeFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{B7104144-7ED8-374C-8FBD-AE1C6D4833AF}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Converters.JsonInheritanceConverter" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32" Name="Class" Value="NJsonSchema.Converters.JsonInheritanceConverter" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{C8A6748B-468D-3E00-99FB-E315E2AC8267}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.ByteFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.ByteFormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CB3FCA69-E9B5-3053-ADEC-11655EF7E52E}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaIgnoreAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32" Name="Class" Value="NJsonSchema.Annotations.JsonSchemaIgnoreAttribute" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{CEC31B0E-D723-3A5C-8026-1866B34FA120}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.FormatValidators.Base64FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32" Name="Class" Value="NJsonSchema.Validation.FormatValidators.Base64FormatValidator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{D154BDFA-C47D-3D8D-A15D-FDDFCF927E8C}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.OpenApiDiscriminator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32" Name="Class" Value="NJsonSchema.OpenApiDiscriminator" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{EC24B543-6F3D-3732-95BE-7404EAC1EB0B}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32\9.13.19.0" Name="Class" Value="NJsonSchema.Infrastructure.PropertyRenameAndIgnoreSerializerContractResolver" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32" Name="Class" Value="NJsonSchema.Infrastructure.PropertyRenameAndIgnoreSerializerContractResolver" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{F2E4255C-3167-3DE9-9532-DCAB5B0F30BC}\InprocServer32" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{2A544857-CEF3-302C-A1F5-A3F9640D59E5}\9.13.19.0" Name="Class" Value="NJsonSchema.JsonObjectType" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{2A544857-CEF3-302C-A1F5-A3F9640D59E5}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{2A544857-CEF3-302C-A1F5-A3F9640D59E5}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{2A544857-CEF3-302C-A1F5-A3F9640D59E5}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{35599849-5D8A-33CC-BFFE-3F75FAD226B0}\9.13.19.0" Name="Class" Value="NJsonSchema.EnumHandling" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{35599849-5D8A-33CC-BFFE-3F75FAD226B0}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{35599849-5D8A-33CC-BFFE-3F75FAD226B0}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{35599849-5D8A-33CC-BFFE-3F75FAD226B0}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{6EE0636F-C654-3331-9C15-7E7688702510}\9.13.19.0" Name="Class" Value="NJsonSchema.PropertyNameHandling" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{6EE0636F-C654-3331-9C15-7E7688702510}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{6EE0636F-C654-3331-9C15-7E7688702510}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{6EE0636F-C654-3331-9C15-7E7688702510}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{81ED5707-1146-370F-85F0-5215CC6DE774}\9.13.19.0" Name="Class" Value="NJsonSchema.Infrastructure.TypeNameStyle" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{81ED5707-1146-370F-85F0-5215CC6DE774}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{81ED5707-1146-370F-85F0-5215CC6DE774}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{81ED5707-1146-370F-85F0-5215CC6DE774}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{825B979D-1BF0-30C7-B420-A75894E18680}\9.13.19.0" Name="Class" Value="NJsonSchema.Validation.ValidationErrorKind" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{825B979D-1BF0-30C7-B420-A75894E18680}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{825B979D-1BF0-30C7-B420-A75894E18680}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{825B979D-1BF0-30C7-B420-A75894E18680}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{CC8510DD-69B1-31CA-A69B-E6BFEA244EAD}\9.13.19.0" Name="Class" Value="NJsonSchema.ReferenceTypeNullHandling" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{CC8510DD-69B1-31CA-A69B-E6BFEA244EAD}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{CC8510DD-69B1-31CA-A69B-E6BFEA244EAD}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{CC8510DD-69B1-31CA-A69B-E6BFEA244EAD}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{D88CB51C-015A-3208-A89C-E171784EC526}\9.13.19.0" Name="Class" Value="NJsonSchema.SchemaType" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{D88CB51C-015A-3208-A89C-E171784EC526}\9.13.19.0" Name="Assembly" Value="NJsonSchema, Version=9.13.19.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{D88CB51C-015A-3208-A89C-E171784EC526}\9.13.19.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{D88CB51C-015A-3208-A89C-E171784EC526}\9.13.19.0" Name="CodeBase" Value="file:///[#filE7D2BAF36BE70670FE414AAABB6765E1]" Type="string" Action="write" />
             </Component>
             <Component Id="cmp1C1136F93E85EEFA43E6D2D9FFB0B6F2" Directory="RootDirectory" Guid="*">
                 <File Id="filD695A73671F7C09A8F5F9B000178428E" KeyPath="yes" Source="$(var.SourcePath)\NJsonSchema.xml" />

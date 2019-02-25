@@ -20,6 +20,7 @@
         <myConverters:IndexConverter x:Key="IndexConverter" />
         <myConverters:TimeConverter x:Key="TimeConverter" />
         <myConverters:DateConverter x:Key="DateConverter" />
+        <myConverters:DateTimeConverter x:Key="DateTimeConverter" />
         <myConverters:DecimalUpDownRangeConverter x:Key="DecimalUpDownRangeConverter" />
         <myConverters:IntegerUpDownRangeConverter x:Key="IntegerUpDownRangeConverter" />
     </UserControl.Resources>
@@ -51,9 +52,7 @@
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
                     <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" AutoCloseCalendar="True"
-                                         Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}}" />
-                    <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
-                                         Text="{Binding Value, Converter={StaticResource DateConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
+                                         Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateTimeConverter}}" />
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="DateTemplate">
@@ -64,8 +63,6 @@
                     <xctk:DateTimePicker Margin="0,0,0,8" TextAlignment="Left" Format="LongDate" 
                                          TimePickerVisibility="Collapsed" TimeFormat="Custom" AutoCloseCalendar="True"
                                          Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}}" />
-                    <!--<TextBox Margin="0,0,0,8" ui:UndoRedoCommandManager.DisableUndoRedo="True"
-                                         Text="{Binding Value, Converter={StaticResource DateConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />-->
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="TimeTemplate">

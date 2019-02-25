@@ -33,7 +33,7 @@ namespace VisualJsonEditor.Models
             var obj = new JsonObjectModel();
             foreach (var property in schema.Properties)
             {
-                var propertySchema = property.Value.ActualPropertySchema;
+                var propertySchema = property.Value.ActualSchema;
                 if (propertySchema.Type.HasFlag(JsonObjectType.Object))
                 {
                     if (property.Value.IsRequired)
@@ -76,7 +76,7 @@ namespace VisualJsonEditor.Models
             var result = new JsonObjectModel();
             foreach (var property in schema.Properties)
             {
-                var propertySchema = property.Value.ActualPropertySchema;
+                var propertySchema = property.Value.ActualSchema;
                 if (propertySchema.Type.HasFlag(JsonObjectType.Array))
                 {
                     var propertyItemSchema = propertySchema.Item != null ? propertySchema.Item.ActualSchema : null;
@@ -118,7 +118,7 @@ namespace VisualJsonEditor.Models
 
         private static object GetDefaultValue(KeyValuePair<string, JsonProperty> property)
         {
-            var propertySchema = property.Value.ActualPropertySchema;
+            var propertySchema = property.Value.ActualSchema;
             if (propertySchema.Default != null)
                 return propertySchema.Default;
 
@@ -189,8 +189,8 @@ namespace VisualJsonEditor.Models
         {
             return Task.Run(() =>
             {
-                var obj = JToken.ReadFrom(new JsonTextReader(new StringReader(ToJson())));
-                var errors = Schema.Validate(obj);
+                var json = ToJson();
+                var errors = Schema.Validate(json);
                 return string.Join("\n", ConvertErrors(errors, string.Empty));
             });
         }

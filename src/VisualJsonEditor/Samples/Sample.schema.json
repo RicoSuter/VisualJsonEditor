@@ -61,11 +61,6 @@
         },
         "List": {
             "type": "array",
-            "required": [
-                "Abc",
-                "Def",
-                "Geh"
-            ],
             "items": {
                 "type": "object",
                 "properties": {
