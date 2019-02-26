@@ -135,7 +135,7 @@ namespace VisualJsonEditor.Models
         {
             return Task.Run(() =>
             {
-                var schema = JsonSchema4.FromJsonAsync(File.ReadAllText(schemaPath, Encoding.UTF8)).GetAwaiter().GetResult();
+                var schema = JsonSchema4.FromFileAsync(schemaPath).GetAwaiter().GetResult();
                 var data = JsonObjectModel.FromSchema(schema);
 
                 var document = new JsonDocumentModel();
