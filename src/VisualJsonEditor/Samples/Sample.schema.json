@@ -1,81 +1,86 @@
 {
-    "type": "object",
-    "title": "Person",
-    "required": [
-        "StringValue",
-        "BoolValue",
-        "NumberValue",
-        "DateTimeValue",
-        "DateValue",
-        "TimeValue",
-        "IntegerValue",
-        "Test",
-        "List"
-    ],
-    "properties": {
-        "StringValue": {
-            "type": "string",
-            "default": "n/a"
+  "type": "object",
+  "title": "Person",
+  "required": [
+    "StringValue",
+    "BoolValue",
+    "NumberValue",
+    "DateTimeValue",
+    "DateValue",
+    "TimeValue",
+    "IntegerValue",
+    "Test",
+    "List"
+  ],
+  "properties": {
+    "StringValue": {
+      "type": "string",
+      "default": "n/a"
+    },
+    "BoolValue": {
+      "type": "boolean"
+    },
+    "NumberValue": {
+      "type": "number",
+      "minimum": -1
+    },
+    "DateTimeValue": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "DateValue": {
+      "type": "string",
+      "format": "date"
+    },
+    "TimeValue": {
+      "type": "string",
+      "format": "time"
+    },
+    "IntegerValue": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "EnumValue": {
+      "type": "string",
+      "enum": [ "one", "two", "three" ],
+      "x-enumNames": ["One", "Two", "Three"]
+    },
+    "Test": {
+      "type": "object",
+      "required": [
+        "Abc",
+        "Def",
+        "Geh"
+      ],
+      "properties": {
+        "Abc": {
+          "type": "string"
         },
-        "BoolValue": {
-            "type": "boolean"
+        "Def": {
+          "type": "string"
         },
-        "NumberValue": {
-            "type": "number",
-            "minimum": -1
-        },
-        "DateTimeValue": {
-            "type": "string",
-            "format": "date-time"
-        },
-        "DateValue": {
-            "type": "string",
-            "format": "date"
-        },
-        "TimeValue": {
-            "type": "string",
-            "format": "time"
-        },
-        "IntegerValue": {
-            "type": "integer",
-            "minimum": 0
-        },
-        "Test": {
-            "type": "object",
-            "required": [
-                "Abc",
-                "Def",
-                "Geh"
-            ],
-            "properties": {
-                "Abc": {
-                    "type": "string"
-                },
-                "Def": {
-                    "type": "string"
-                },
-                "Geh": {
-                    "type": "string"
-                }
-            }
-        },
-        "List": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "Abc": {
-                        "type": "string", 
-                        "minLength":  1
-                    },
-                    "Def": {
-                        "type": "string"
-                    },
-                    "Geh": {
-                        "type": "string"
-                    }
-                }
-            }
+        "Geh": {
+          "type": "string"
         }
+      }
+    },
+    "List": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Abc": {
+            "type": "string",
+            "minLength": 1
+          },
+          "Def": {
+            "type": "string"
+          },
+          "Geh": {
+            "type": "string"
+          }
+        }
+      }
     }
+  }
 }

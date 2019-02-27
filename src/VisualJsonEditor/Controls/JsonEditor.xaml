@@ -107,7 +107,7 @@
                     <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,0,4" />
                     <TextBlock Text="{Binding Schema.Description}" Margin="0,0,0,4"
                                Visibility="{Binding Schema.Description, Converter={StaticResource VisibilityConverter}}" />
-                    <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.ActualPropertySchema.Enumeration}"
+                    <ComboBox Margin="0,0,0,8" ItemsSource="{Binding Schema.ActualSchema.Enumeration}"
                               SelectedValue="{Binding Value, Mode=TwoWay}"   />
                 </StackPanel>
             </DataTemplate>
