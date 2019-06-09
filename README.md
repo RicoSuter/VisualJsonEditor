@@ -6,7 +6,7 @@ Visual JSON Editor is a JSON schema draft v4 based file editor for Windows: When
 
 **[Download latest Visual JSON Editor installer (MSI)](http://rsuter.com/Projects/VisualJsonEditor/installer.php)**
 
-**[Article describing a usage scenario](http://blog.rsuter.com/?p=795)**
+**[Article describing a usage scenario](https://blog.rsuter.com/use-json-files-with-schema-for-application-configuration-2/)**
 
 **Tip:** Use the [NJsonSchema](http://njsonschema.org) library to generate JSON Schemas from your C# classes. 
 
