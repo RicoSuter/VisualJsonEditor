@@ -18,7 +18,7 @@ namespace VisualJsonEditor.Models
     public abstract class JsonTokenModel : ObservableDictionary<string, object>
     {
         /// <summary>Gets or sets the schema of the token. </summary>
-        public JsonSchema4 Schema { get; set; }
+        public JsonSchema Schema { get; set; }
 
         /// <summary>Gets or sets the parent list if applicable (may be null). </summary>
         public ObservableCollection<JsonTokenModel> ParentList { get; set; }

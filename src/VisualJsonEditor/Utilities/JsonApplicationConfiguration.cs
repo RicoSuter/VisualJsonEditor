@@ -88,7 +88,7 @@ namespace VisualJsonEditor.Utilities
         private static void CreateSchemaFile<T>(string fileNameWithoutExtension, bool storeInAppData) where T : new()
         {
             var schemaPath = CreateFilePath(fileNameWithoutExtension, SchemaExtension, storeInAppData);
-            var schema = Task.Run(async () => await JsonSchema4.FromTypeAsync<T>()).GetAwaiter().GetResult();
+            var schema = Task.Run(() => JsonSchema.FromType<T>()).GetAwaiter().GetResult();
 
             File.WriteAllText(schemaPath, schema.ToJson(), Encoding.UTF8);
         }

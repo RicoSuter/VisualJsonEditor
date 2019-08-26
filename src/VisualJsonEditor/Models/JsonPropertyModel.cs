@@ -18,7 +18,7 @@ namespace VisualJsonEditor.Models
         /// <param name="name">The name of the property. </param>
         /// <param name="parent">The parent object. </param>
         /// <param name="schema">The property type as schema object. </param>
-        public JsonPropertyModel(string name, JsonObjectModel parent, JsonProperty schema)
+        public JsonPropertyModel(string name, JsonObjectModel parent, JsonSchemaProperty schema)
         {
             Name = name;
             Parent = parent;
@@ -34,7 +34,7 @@ namespace VisualJsonEditor.Models
         public JsonObjectModel Parent { get; private set; }
 
         /// <summary>Gets the property type as schema. </summary>
-        public JsonProperty Schema { get; private set; }
+        public JsonSchemaProperty Schema { get; private set; }
 
         /// <summary>Gets a value indicating whether the property is required. </summary>
         public bool IsRequired

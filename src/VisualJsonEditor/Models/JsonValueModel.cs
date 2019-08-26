@@ -24,7 +24,7 @@ namespace VisualJsonEditor.Models
         /// <param name="value">The value. </param>
         /// <param name="schema">The schema. </param>
         /// <returns>The <see cref="JsonValueModel"/>. </returns>
-        public static JsonValueModel FromJson(JValue value, JsonSchema4 schema)
+        public static JsonValueModel FromJson(JValue value, JsonSchema schema)
         {
             return new JsonValueModel
             {

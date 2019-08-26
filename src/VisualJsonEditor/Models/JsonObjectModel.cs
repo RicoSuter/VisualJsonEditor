@@ -26,7 +26,7 @@ namespace VisualJsonEditor.Models
         /// <summary>Creates a default <see cref="JsonObjectModel"/> from the given schema. </summary>
         /// <param name="schema">The <see cref="JsonSchema4"/>. </param>
         /// <returns>The <see cref="JsonObjectModel"/>. </returns>
-        public static JsonObjectModel FromSchema(JsonSchema4 schema)
+        public static JsonObjectModel FromSchema(JsonSchema schema)
         {
             schema = schema.ActualSchema;
 
@@ -59,7 +59,7 @@ namespace VisualJsonEditor.Models
         /// <param name="jsonData">The JSON data. </param>
         /// <param name="schema">The <see cref="JsonSchema4"/>. </param>
         /// <returns>The <see cref="JsonObjectModel"/>. </returns>
-        public static JsonObjectModel FromJson(string jsonData, JsonSchema4 schema)
+        public static JsonObjectModel FromJson(string jsonData, JsonSchema schema)
         {
             var json = JsonConvert.DeserializeObject(jsonData);
             return FromJson((JObject)json, schema);
@@ -69,7 +69,7 @@ namespace VisualJsonEditor.Models
         /// <param name="obj">The <see cref="JObject"/>. </param>
         /// <param name="schema">The <see cref="JsonSchema4"/>. </param>
         /// <returns>The <see cref="JsonObjectModel"/>. </returns>
-        public static JsonObjectModel FromJson(JObject obj, JsonSchema4 schema)
+        public static JsonObjectModel FromJson(JObject obj, JsonSchema schema)
         {
             schema = schema.ActualSchema;
 
@@ -116,7 +116,7 @@ namespace VisualJsonEditor.Models
             return result;
         }
 
-        private static object GetDefaultValue(KeyValuePair<string, JsonProperty> property)
+        private static object GetDefaultValue(KeyValuePair<string, JsonSchemaProperty> property)
         {
             var propertySchema = property.Value.ActualSchema;
             if (propertySchema.Default != null)
