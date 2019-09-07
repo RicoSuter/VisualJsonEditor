@@ -40,16 +40,6 @@ namespace VisualJsonEditor.Views
 
             Closing += OnWindowClosing;
 
-            // TODO: How to implement this
-            //Loaded += delegate
-            //{
-            //    foreach (QuickAccessMenuItem menuItem in Ribbon.QuickAccessItems)
-            //    {
-            //        if (!Ribbon.IsInQuickAccessToolBar(menuItem))
-            //            Ribbon.AddToQuickAccessToolBar(menuItem);
-            //    }
-            //};
-
 #if DEBUG
             if (Debugger.IsAttached)
                 Dispatcher.InvokeAsync(delegate { Model.OpenDocumentAsync(@"Samples/Sample.json"); });
@@ -164,6 +154,16 @@ namespace VisualJsonEditor.Views
         private void OnOpenDocument(object sender, RoutedEventArgs e)
         {
             ((Backstage)Ribbon.Menu).IsOpen = false;
+        }
+
+        private void RibbonWindow_ContentRendered(object sender, System.EventArgs e)
+        {
+            // Force to display all Quick Access items
+            foreach (QuickAccessMenuItem menuItem in Ribbon.QuickAccessItems)
+            {
+                if (!Ribbon.IsInQuickAccessToolBar(menuItem))
+                    Ribbon.AddToQuickAccessToolBar(menuItem);
+            }
         }
     }
 }
