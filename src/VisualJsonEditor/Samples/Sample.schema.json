@@ -17,6 +17,11 @@
       "type": "string",
       "default": "n/a"
     },
+    "StringValueEncodedBase64": {
+      "type": "string",
+      "default": "n/a",
+      "contentEncoding": "base64"
+    },
     "BoolValue": {
       "type": "boolean"
     },

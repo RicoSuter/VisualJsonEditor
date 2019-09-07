@@ -6,6 +6,7 @@
 // <author>Rico Suter, mail@rsuter.com</author>
 //-----------------------------------------------------------------------
 
+using System;
 using MyToolkit.Model;
 using NJsonSchema;
 
@@ -42,13 +43,44 @@ namespace VisualJsonEditor.Models
             get { return Schema.IsRequired; }
         }
 
+        /// <summary>Gets the contentEncoding value. </summary>
+        public string GetContentEncoding
+        {
+            get
+            {
+                object value = null;
+                Schema.ExtensionData?.TryGetValue("contentEncoding", out value);
+                return value?.ToString();
+            }
+        }
+
+        /// <summary>Gets the contentEncoding value. </summary>
+        public bool IsBase64ContentEncoding
+        {
+            get { return GetContentEncoding == "base64"; }
+        }
+
         /// <summary>Gets or sets the value of the property. </summary>
         public object Value
         {
-            get { return Parent.ContainsKey(Name) ? Parent[Name] : null; }
+            get
+            {
+                if (Parent.ContainsKey(Name))
+                {
+                    return IsBase64ContentEncoding
+                        ? Base64Decode(Parent[Name].ToString())
+                        : Parent[Name];
+                }
+                else
+                {
+                    return null;
+                }
+            }
             set
             {
-                Parent[Name] = value;
+                Parent[Name] = IsBase64ContentEncoding 
+                    ? Base64Encode(value.ToString()) 
+                    : value;
 
                 RaisePropertyChanged(() => Value);
                 RaisePropertyChanged(() => HasValue);
@@ -59,6 +91,28 @@ namespace VisualJsonEditor.Models
         public bool HasValue
         {
             get { return Value != null; }
+        }
+
+        /// <summary>Encode a string in Base64. </summary>
+        private static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        /// <summary>Decode a string in Base64. </summary>
+        private static string Base64Decode(string base64EncodedData)
+        {
+            try
+            {
+                var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+                return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            }
+            catch(Exception)
+            {
+                // Hide any decode error
+                return "";
+            }
         }
     }
 }

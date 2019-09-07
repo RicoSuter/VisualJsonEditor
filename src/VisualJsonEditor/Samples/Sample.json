@@ -1,5 +1,6 @@
 ﻿{
   "StringValue": "a",
+  "StringValueEncodedBase64": "dGVzdA==",
   "BoolValue": false,
   "NumberValue": 2.3,
   "DateTimeValue": "2014-08-13T21:00:00",
