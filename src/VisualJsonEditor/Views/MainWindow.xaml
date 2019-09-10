@@ -103,6 +103,11 @@
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="Home" KeyTip="H" >
                 <Fluent:RibbonGroupBox Header="{Binding Strings.RibbonGroupFile}">
+                    <Fluent:Button Icon="/Images/ButtonSaveSmall.png" Padding="4,0,4,0"
+                                   LargeIcon="/Images/ButtonSaveLarge.png"
+                                   Header="{Binding Strings.ButtonSave}" 
+                                   ToolTip="{Binding Strings.ShortcutCtrlS}"
+                                   Command="{Binding SaveDocumentCommand}" CommandParameter="{Binding SelectedDocument}" />
                     <Fluent:Button Icon="/Images/ButtonCloseSmall.png" Padding="4,0,4,0"
                                    LargeIcon="/Images/ButtonCloseLarge.png"
                                    Header="{Binding Strings.ButtonClose}" 
