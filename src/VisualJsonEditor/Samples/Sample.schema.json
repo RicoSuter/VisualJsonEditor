@@ -17,6 +17,10 @@
       "type": "string",
       "default": "n/a"
     },
+    "StringValueFormatByte": {
+      "type": "string",
+      "format": "byte"
+    },
     "BoolValue": {
       "type": "boolean"
     },
@@ -43,7 +47,7 @@
     "EnumValue": {
       "type": "string",
       "enum": [ "one", "two", "three" ],
-      "x-enumNames": ["One", "Two", "Three"]
+      "x-enumNames": [ "One", "Two", "Three" ]
     },
     "Test": {
       "type": "object",
