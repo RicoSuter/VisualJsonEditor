@@ -7,6 +7,7 @@
 //-----------------------------------------------------------------------
 
 using System;
+using System.Text;
 using MyToolkit.Model;
 using NJsonSchema;
 
@@ -54,10 +55,15 @@ namespace VisualJsonEditor.Models
             }
         }
 
-        /// <summary>Gets the contentEncoding value. </summary>
-        public bool IsBase64ContentEncoding
+        /// <summary>Indicates if this value is base64 encoded. </summary>
+        public bool IsBase64String
         {
-            get { return GetContentEncoding == "base64"; }
+            get
+            {
+                return Schema.Type == JsonObjectType.String && 
+                    (GetContentEncoding == "base64"
+                     || Schema.Format == JsonFormatStrings.Byte);
+            }
         }
 
         /// <summary>Gets or sets the value of the property. </summary>
@@ -67,7 +73,7 @@ namespace VisualJsonEditor.Models
             {
                 if (Parent.ContainsKey(Name))
                 {
-                    return IsBase64ContentEncoding
+                    return IsBase64String
                         ? Base64Decode(Parent[Name].ToString())
                         : Parent[Name];
                 }
@@ -78,7 +84,7 @@ namespace VisualJsonEditor.Models
             }
             set
             {
-                Parent[Name] = IsBase64ContentEncoding 
+                Parent[Name] = IsBase64String 
                     ? Base64Encode(value.ToString()) 
                     : value;
 
@@ -96,8 +102,8 @@ namespace VisualJsonEditor.Models
         /// <summary>Encode a string in Base64. </summary>
         private static string Base64Encode(string plainText)
         {
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-            return System.Convert.ToBase64String(plainTextBytes);
+            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            return Convert.ToBase64String(plainTextBytes);
         }
 
         /// <summary>Decode a string in Base64. </summary>
@@ -105,8 +111,8 @@ namespace VisualJsonEditor.Models
         {
             try
             {
-                var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
-                return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+                var base64EncodedBytes = Convert.FromBase64String(base64EncodedData);
+                return Encoding.UTF8.GetString(base64EncodedBytes);
             }
             catch(Exception)
             {
