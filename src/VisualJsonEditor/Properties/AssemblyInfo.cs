@@ -7,7 +7,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Rico Suter")]
 [assembly: AssemblyProduct("VisualJsonEditor")]
-[assembly: AssemblyCopyright("Copyright © Rico Suter, 2014")]
+[assembly: AssemblyCopyright("Copyright © Rico Suter, 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,4 +18,4 @@ using System.Windows;
     ResourceDictionaryLocation.SourceAssembly 
 )]
 
-[assembly: AssemblyVersion("2.8.*")]
+[assembly: AssemblyVersion("2.9.*")]
