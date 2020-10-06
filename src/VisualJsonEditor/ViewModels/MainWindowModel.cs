@@ -180,17 +180,31 @@ namespace VisualJsonEditor.ViewModels
             {
                 await RunTaskAsync(async token =>
                 {
-                    var schemaPath = JsonDocumentModel.GetDefaultSchemaPath(fileName);
-                    if (!File.Exists(schemaPath))
+                    JsonDocumentModel document = null;
+
+                    // First try to load the schema from the default location 
+                    var defaultSchemaPath = JsonDocumentModel.GetDefaultSchemaPath(fileName);
+                    if (File.Exists(defaultSchemaPath))
+                        document = await JsonDocumentModel.LoadAsync(fileName, defaultSchemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
+                    
+                    // If no schema was found, check for a "_schema" property on the document
+                    if (document == null)
+                    {
+                        var schemaPropertyPath = JsonObjectModel.GetSchemaProperty(fileName);
+                        if (!String.IsNullOrWhiteSpace(schemaPropertyPath) && File.Exists(schemaPropertyPath))
+                            document = await JsonDocumentModel.LoadAsync(fileName, schemaPropertyPath, ServiceLocator.Default.Resolve<IDispatcher>());
+                    }
+
+                    // If no default schema or no schema property, prompt.
+                    if(document == null)
                     {
                         var result = await Messenger.Default.SendAsync(new OpenJsonDocumentMessage(Strings.OpenJsonSchemaDocumentDialog));
                         if (!result.Success)
                             return;
 
-                        schemaPath = result.Result;
+                        document = await JsonDocumentModel.LoadAsync(fileName, result.Result, ServiceLocator.Default.Resolve<IDispatcher>());
                     }
 
-                    var document = await JsonDocumentModel.LoadAsync(fileName, schemaPath, ServiceLocator.Default.Resolve<IDispatcher>());
                     document.IsReadOnly = isReadOnly;
 
                     AddDocument(document);
@@ -301,7 +315,7 @@ namespace VisualJsonEditor.ViewModels
 
             await RunTaskAsync(async token =>
             {
-                await document.SaveAsync(true);
+                await document.SaveAsync(saveAs);
             });
         }
 

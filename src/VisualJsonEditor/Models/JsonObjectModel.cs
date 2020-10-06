@@ -65,6 +65,23 @@ namespace VisualJsonEditor.Models
             return FromJson((JObject)json, schema);
         }
 
+        /// <summary> Checks the JSON data for a property called "_schema" </summary>
+        /// <param name="filePath">The JSON document file path. </param>
+        /// <returns>The path to the schema file if one is defined as a document property. </returns>
+        public static string GetSchemaProperty(string filePath)
+        {
+            JToken schemaToken;
+
+            var json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(filePath, Encoding.UTF8));
+
+            if (!json.TryGetValue("$schema", out schemaToken))
+                return null;
+
+            var relativeSchemaPath = ((JValue)schemaToken).Value as string;
+            relativeSchemaPath = relativeSchemaPath.Replace('/', Path.DirectorySeparatorChar);
+            return Path.Combine(Path.GetDirectoryName(filePath), relativeSchemaPath);
+        }
+
         /// <summary>Creates a <see cref="JsonObjectModel"/> from the given <see cref="JObject"/> and <see cref="JsonSchema4"/>. </summary>
         /// <param name="obj">The <see cref="JObject"/>. </param>
         /// <param name="schema">The <see cref="JsonSchema4"/>. </param>
