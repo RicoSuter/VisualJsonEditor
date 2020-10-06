@@ -469,14 +469,14 @@
             </Component>
             <Component Id="cmp80C1F81A23B1D9962B8F8C52AC1644DA" Directory="RootDirectory" Guid="*">
                 <File Id="fil915B106EEB513F54E939D601B709F1D7" KeyPath="yes" Source="$(var.SourcePath)\Namotion.Reflection.dll" />
-                <RegistryValue Root="HKCR" Key="Record\{D1EF2346-D580-3264-A498-E894845EC05F}\1.0.6.0" Name="Class" Value="Namotion.Reflection.Nullability" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{D1EF2346-D580-3264-A498-E894845EC05F}\1.0.6.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{D1EF2346-D580-3264-A498-E894845EC05F}\1.0.6.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{D1EF2346-D580-3264-A498-E894845EC05F}\1.0.6.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{EBC4DD2A-C583-38A8-88CB-B410DE7924B1}\1.0.6.0" Name="Class" Value="Namotion.Reflection.TypeNameStyle" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{EBC4DD2A-C583-38A8-88CB-B410DE7924B1}\1.0.6.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{EBC4DD2A-C583-38A8-88CB-B410DE7924B1}\1.0.6.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{EBC4DD2A-C583-38A8-88CB-B410DE7924B1}\1.0.6.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="Class" Value="Namotion.Reflection.Nullability" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="Class" Value="Namotion.Reflection.TypeNameStyle" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
             </Component>
             <Component Id="cmpE13A86BB596CA2EA19256FAD3A9D0D0B" Directory="RootDirectory" Guid="*">
                 <File Id="fil603F8F59718C086011ACE9582B74C292" KeyPath="yes" Source="$(var.SourcePath)\Namotion.Reflection.xml" />
@@ -489,9 +489,6 @@
             </Component>
             <Component Id="cmpCFDF9B03906A160A23B423DF1D391540" Directory="RootDirectory" Guid="*">
                 <File Id="filE7D2BAF36BE70670FE414AAABB6765E1" KeyPath="yes" Source="$(var.SourcePath)\NJsonSchema.dll" />
-            </Component>
-            <Component Id="cmp833FA3F80A11E63F858DDEC12841DC39" Directory="RootDirectory" Guid="*">
-                <File Id="fil74BB26CFEFEFFE17318098E8BF12350A" KeyPath="yes" Source="$(var.SourcePath)\NJsonSchema.pdb" />
             </Component>
             <Component Id="cmp1C1136F93E85EEFA43E6D2D9FFB0B6F2" Directory="RootDirectory" Guid="*">
                 <File Id="filD695A73671F7C09A8F5F9B000178428E" KeyPath="yes" Source="$(var.SourcePath)\NJsonSchema.xml" />
@@ -507,12 +504,6 @@
             </Component>
             <Component Id="cmpC334E421DBF3F57D4199F6E7389B6D1D" Directory="RootDirectory" Guid="*">
                 <File Id="fil46942FED9542E9262557E342722D43CA" KeyPath="yes" Source="$(var.SourcePath)\VisualJsonEditor.pdb" />
-            </Component>
-            <Component Id="cmpCFE315B30F89420255A681F2C9A8A701" Directory="RootDirectory" Guid="*">
-                <File Id="fil09A83372644AB08265417223F34B6C90" KeyPath="yes" Source="$(var.SourcePath)\VisualJsonEditor.vshost.exe" />
-            </Component>
-            <Component Id="cmp43C002B3FBF6948A5D52EBAAB507F47B" Directory="RootDirectory" Guid="*">
-                <File Id="fil858BFCF42246FF8FADB0CA6EE9F88942" KeyPath="yes" Source="$(var.SourcePath)\VisualJsonEditor.vshost.exe.config" />
             </Component>
             <Component Id="cmpEAAEB76AE9A33003FB8599D0DA4712D8" Directory="RootDirectory" Guid="*">
                 <File Id="filFB7A95F6F1CD1966E430B3A075C4E656" KeyPath="yes" Source="$(var.SourcePath)\Xceed.Wpf.AvalonDock.dll" />
@@ -537,6 +528,9 @@
             </Component>
             <Component Id="cmpAB033EE14085613D6BD6672C83948E58" Directory="dirB963C607E527F88F837CD8B2E85EB06F" Guid="*">
                 <File Id="filAA2EF26D088C5F0E19A5B2EAD8349D1F" KeyPath="yes" Source="$(var.SourcePath)\es\Xceed.Wpf.AvalonDock.resources.dll" />
+            </Component>
+            <Component Id="cmpD1BECBAC968FA6396734A8CFB480A211" Directory="dir84B90DCCAE08E985361E0671C65CD153" Guid="*">
+                <File Id="fil6957859F6E6C831C4ED4A60A9D297F27" KeyPath="yes" Source="$(var.SourcePath)\fr\VisualJsonEditor.resources.dll" />
             </Component>
             <Component Id="cmpD3A36FCC861B11F85D1B990DC7175749" Directory="dir84B90DCCAE08E985361E0671C65CD153" Guid="*">
                 <File Id="filF46EADA449ED09A1D8E4124732D8E559" KeyPath="yes" Source="$(var.SourcePath)\fr\Xceed.Wpf.AvalonDock.resources.dll" />
