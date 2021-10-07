@@ -15,3 +15,4 @@ Visual JSON Editor is developed by [Rico Suter](http://rsuter.com) using the [My
 ![](http://rsuter.com/Projects/VisualJsonEditor/Screenshot02.png)
 
 ![](http://rsuter.com/Projects/VisualJsonEditor/Screenshot01.png)
+ 
