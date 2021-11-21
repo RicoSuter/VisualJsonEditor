@@ -245,4 +245,10 @@
   <data name="LabelAboutComponentNJsonSchema" xml:space="preserve">
     <value>JSON Schema draft v4 reader and generator for .NET</value>
   </data>
+  <data name="JsonArray" xml:space="preserve">
+    <value> (Tablica) </value>
+  </data>
+  <data name="JsonObject" xml:space="preserve">
+    <value> (Obiekt) </value>
+  </data>
 </root>

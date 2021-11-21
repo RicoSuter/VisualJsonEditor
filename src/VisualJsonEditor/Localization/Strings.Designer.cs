@@ -205,6 +205,24 @@ namespace VisualJsonEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  (Array).
+        /// </summary>
+        public static string JsonArray {
+            get {
+                return ResourceManager.GetString("JsonArray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  (Object).
+        /// </summary>
+        public static string JsonObject {
+            get {
+                return ResourceManager.GetString("JsonObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Visual JSON Editor has been developed by .
         /// </summary>
         public static string LabelAbout1 {
