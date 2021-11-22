@@ -118,46 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ButtonAbout" xml:space="preserve">
-    <value>A propos</value>
+    <value>O programie</value>
   </data>
   <data name="ButtonAdd" xml:space="preserve">
-    <value>+ Ajouter</value>
+    <value>+ Dodaj</value>
   </data>
   <data name="ButtonClose" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Zamknij</value>
   </data>
   <data name="ButtonExit" xml:space="preserve">
-    <value>Quitter</value>
+    <value>Wyjście</value>
   </data>
   <data name="ButtonNew" xml:space="preserve">
-    <value>Nouveau</value>
+    <value>Nowy</value>
   </data>
   <data name="ButtonOpen" xml:space="preserve">
-    <value>Ouvrir</value>
+    <value>Otwórz</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
-    <value>- Supprimer</value>
+    <value>- Usuń</value>
   </data>
   <data name="ButtonSave" xml:space="preserve">
-    <value>Enregistrer</value>
+    <value>Zapisz</value>
   </data>
   <data name="ButtonSaveAs" xml:space="preserve">
-    <value>Enregistrer sous</value>
+    <value>Zapisz jako</value>
   </data>
   <data name="ButtonValidate" xml:space="preserve">
-    <value>Valider</value>
+    <value>Waliduj</value>
   </data>
   <data name="HeaderAboutWindow" xml:space="preserve">
-    <value>A propos de Visual JSON Editor</value>
+    <value>O programie 'Visual JSON Editor'</value>
   </data>
   <data name="HeaderMainWindow" xml:space="preserve">
     <value>Visual JSON Editor</value>
   </data>
   <data name="HeaderRecentDocuments" xml:space="preserve">
-    <value>Documents récents</value>
+    <value>Ostatnie pliki</value>
   </data>
   <data name="LabelAbout1" xml:space="preserve">
-    <value>Visual JSON Editor a été développé par </value>
+    <value>Visual JSON Editor utworzony przez: </value>
   </data>
   <data name="LabelAboutComponentJsonNet" xml:space="preserve">
     <value>Popular high-performance JSON framework for .NET.</value>
@@ -166,63 +166,63 @@
     <value>.NET library with MVVM classes, controls and more components.</value>
   </data>
   <data name="LabelAboutComponents" xml:space="preserve">
-    <value>Components</value>
+    <value>Komponenty</value>
   </data>
   <data name="LabelAboutComponentWpfToolkit" xml:space="preserve">
-    <value>Controls library.</value>
+    <value>Biblioteka kontrolek</value>
   </data>
   <data name="LabelReadOnly" xml:space="preserve">
-    <value> (lecture seule)</value>
+    <value> (tylko do odczytu)</value>
   </data>
   <data name="MessageErrorText" xml:space="preserve">
     <value>{0}</value>
   </data>
   <data name="MessageErrorTitle" xml:space="preserve">
-    <value>Une erreur est survenue</value>
+    <value>Wystąpił błąd</value>
   </data>
   <data name="MessageNotValidDocumentText" xml:space="preserve">
-    <value>Le document '{0}' n'est PAS valide
+    <value>Plik '{0}' nie jest poprawny. 
 
 {1}</value>
   </data>
   <data name="MessageNotValidDocumentTitle" xml:space="preserve">
-    <value>Document non valide</value>
+    <value>Niepoprawny plik</value>
   </data>
   <data name="MessageSaveDocumentText" xml:space="preserve">
-    <value>Voulez-vous enregistrer le document '{0}' ?</value>
+    <value>Czy chcesz zapisać plik '{0}'?</value>
   </data>
   <data name="MessageSaveDocumentTitle" xml:space="preserve">
-    <value>Enregistrer le document</value>
+    <value>Zapisz plik</value>
   </data>
   <data name="MessageValidDocumentText" xml:space="preserve">
-    <value>Le document '{0}' est valide.</value>
+    <value>Plik '{0}' jest poprawny</value>
   </data>
   <data name="MessageValidDocumentTitle" xml:space="preserve">
-    <value>Document valide</value>
+    <value>Plik poprawny</value>
   </data>
   <data name="OpenJsonDocumentDialog" xml:space="preserve">
-    <value>Ouvrir un document JSON</value>
+    <value>Otwórz plik JSON</value>
   </data>
   <data name="OpenJsonSchemaDocumentDialog" xml:space="preserve">
-    <value>Sélectionner le schéma JSON</value>
+    <value>Wybierz plik JSON Schema</value>
   </data>
   <data name="RibbonGroupFile" xml:space="preserve">
-    <value>Fichier</value>
+    <value>Plik</value>
   </data>
   <data name="RibbonGroupMore" xml:space="preserve">
-    <value>Plus</value>
+    <value>Więcej</value>
   </data>
   <data name="FileDialogFilter" xml:space="preserve">
-    <value>Fichier JSON (*.json)|*.json|Tous les fichiers (*.*)|*.*</value>
+    <value>Pliki JSON (*.json)|*.json|Wszystkie pliki (*.*)|*.*</value>
   </data>
   <data name="LabelAboutComponentAvalonDock" xml:space="preserve">
-    <value>Docking windows control for WPF. </value>
+    <value>Docking windows control for WPF.</value>
   </data>
   <data name="ButtonSaveSchemaAs" xml:space="preserve">
-    <value>Enregistrer le schéma sous</value>
+    <value>Zapisz Schema jako</value>
   </data>
   <data name="DefaultFileName" xml:space="preserve">
-    <value>Sans titre</value>
+    <value>Untitled</value>
   </data>
   <data name="ShortcutCtrlN" xml:space="preserve">
     <value>Ctrl-N</value>
@@ -240,15 +240,15 @@
     <value>Ctrl-W</value>
   </data>
   <data name="LabelAboutComponentFluentRibbon" xml:space="preserve">
-    <value>Library with ribbon UI implementation. </value>
+    <value>Library with ribbon UI implementation.</value>
   </data>
   <data name="LabelAboutComponentNJsonSchema" xml:space="preserve">
     <value>JSON Schema draft v4 reader and generator for .NET</value>
   </data>
   <data name="JsonArray" xml:space="preserve">
-    <value> (Tableau) </value>
+    <value> (Tablica) </value>
   </data>
   <data name="JsonObject" xml:space="preserve">
-    <value> (Objet) </value>
+    <value> (Obiekt) </value>
   </data>
 </root>

@@ -126,7 +126,7 @@
                         <DataTemplate>
                             <TextBlock>
                                 <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
-                                <Run Text="{Binding Schema.Description}" /><Run Text=" (Object) " />
+                                <Run Text="{Binding Schema.Description}" /><Run Text="{x:Static localization:Strings.JsonObject}" />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>
@@ -149,7 +149,7 @@
                         <DataTemplate>
                             <TextBlock>
                                 <Run Text="{Binding Name, Mode=OneWay}" FontWeight="Bold" />
-                                <Run Text="{Binding Schema.Description}" /><Run Text=" (Array)" />
+                                <Run Text="{Binding Schema.Description}" /><Run Text="{x:Static localization:Strings.JsonArray}" />
                             </TextBlock>
                         </DataTemplate>
                     </controls:ExpandingGroupBox.HeaderTemplate>

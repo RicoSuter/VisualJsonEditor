@@ -126,6 +126,11 @@
     <Compile Include="Converters\IntegerUpDownRangeConverter.cs" />
     <Compile Include="Converters\NumberConverter.cs" />
     <Compile Include="Converters\TimeConverter.cs" />
+    <Compile Include="Localization\Strings.pl.Designer.cs">
+      <DependentUpon>Strings.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Localization\Strings.fr.Designer.cs">
       <DependentUpon>Strings.fr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -193,6 +198,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <SplashScreen Include="SplashScreen.png" />
+    <EmbeddedResource Include="Localization\Strings.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Localization\Strings.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
