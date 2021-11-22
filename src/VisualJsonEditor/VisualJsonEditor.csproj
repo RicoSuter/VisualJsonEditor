@@ -55,14 +55,14 @@
       <HintPath>..\packages\MyToolkit.Extended.2.5.16\lib\net45\MyToolkit.Extended.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Namotion.Reflection, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
-      <HintPath>..\packages\Namotion.Reflection.1.0.14\lib\net45\Namotion.Reflection.dll</HintPath>
+    <Reference Include="Namotion.Reflection, Version=2.0.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\packages\Namotion.Reflection.2.0.5\lib\net45\Namotion.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NJsonSchema, Version=10.2.2.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
-      <HintPath>..\packages\NJsonSchema.10.2.2\lib\net45\NJsonSchema.dll</HintPath>
+    <Reference Include="NJsonSchema, Version=10.5.2.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\packages\NJsonSchema.10.5.2\lib\net45\NJsonSchema.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

@@ -7,6 +7,7 @@
             <Directory Id="dir84B90DCCAE08E985361E0671C65CD153" Name="fr" />
             <Directory Id="dir9DA46E6D3DC18DFFE31A8D581A61C7E7" Name="hu" />
             <Directory Id="dirA20DE0C7B6472D9F42246D04E0EE88A4" Name="it" />
+            <Directory Id="dir7795CC77A474903C26E041BFC209C642" Name="pl" />
             <Directory Id="dirB69C127291ED7A6767DE1C07CB710EBD" Name="pt-BR" />
             <Directory Id="dir3DAE8C8F4F58C40E238DCEDFC2A8A9AF" Name="ro" />
             <Directory Id="dir0E6B439779A3C9A9643FB41EDD1B9B9F" Name="ru" />
@@ -469,14 +470,14 @@
             </Component>
             <Component Id="cmp80C1F81A23B1D9962B8F8C52AC1644DA" Directory="RootDirectory" Guid="*">
                 <File Id="fil915B106EEB513F54E939D601B709F1D7" KeyPath="yes" Source="$(var.SourcePath)\Namotion.Reflection.dll" />
-                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="Class" Value="Namotion.Reflection.Nullability" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{33EB2EA9-9397-357B-BD63-7A59B6C4A21A}\1.0.14.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="Class" Value="Namotion.Reflection.TypeNameStyle" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="Assembly" Value="Namotion.Reflection, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
-                <RegistryValue Root="HKCR" Key="Record\{469E933B-398B-3B78-B133-6E840F13E2E6}\1.0.14.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{3C660A15-27AD-3A42-84F5-361602B4D79C}\2.0.5.0" Name="Class" Value="Namotion.Reflection.TypeNameStyle" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{3C660A15-27AD-3A42-84F5-361602B4D79C}\2.0.5.0" Name="Assembly" Value="Namotion.Reflection, Version=2.0.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{3C660A15-27AD-3A42-84F5-361602B4D79C}\2.0.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{3C660A15-27AD-3A42-84F5-361602B4D79C}\2.0.5.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{783B424A-CEEF-336D-8052-CAA0A8E982C1}\2.0.5.0" Name="Class" Value="Namotion.Reflection.Nullability" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{783B424A-CEEF-336D-8052-CAA0A8E982C1}\2.0.5.0" Name="Assembly" Value="Namotion.Reflection, Version=2.0.5.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{783B424A-CEEF-336D-8052-CAA0A8E982C1}\2.0.5.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="Record\{783B424A-CEEF-336D-8052-CAA0A8E982C1}\2.0.5.0" Name="CodeBase" Value="file:///[#fil915B106EEB513F54E939D601B709F1D7]" Type="string" Action="write" />
             </Component>
             <Component Id="cmpE13A86BB596CA2EA19256FAD3A9D0D0B" Directory="RootDirectory" Guid="*">
                 <File Id="fil603F8F59718C086011ACE9582B74C292" KeyPath="yes" Source="$(var.SourcePath)\Namotion.Reflection.xml" />
@@ -540,6 +541,9 @@
             </Component>
             <Component Id="cmp195C8026F8C02FB2985F2ABB73578320" Directory="dirA20DE0C7B6472D9F42246D04E0EE88A4" Guid="*">
                 <File Id="fil214A50C59F02DAD331325B1858E9CF52" KeyPath="yes" Source="$(var.SourcePath)\it\Xceed.Wpf.AvalonDock.resources.dll" />
+            </Component>
+            <Component Id="cmpF81CCFE277AB802F9F3B637D6D0B259C" Directory="dir7795CC77A474903C26E041BFC209C642" Guid="*">
+                <File Id="fil5CAE8E74F6C58875A60278A0994EA339" KeyPath="yes" Source="$(var.SourcePath)\pl\VisualJsonEditor.resources.dll" />
             </Component>
             <Component Id="cmp4D60F7187740255B8F8C8AB5EA3D42D0" Directory="dirB69C127291ED7A6767DE1C07CB710EBD" Guid="*">
                 <File Id="fil51162A0626D9C55CCCDCFC3CADA57688" KeyPath="yes" Source="$(var.SourcePath)\pt-BR\Xceed.Wpf.AvalonDock.resources.dll" />
