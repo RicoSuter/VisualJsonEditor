@@ -217,7 +217,20 @@ namespace VisualJsonEditor.ViewModels
         /// <param name="exception">The exception. </param>
         public override void HandleException(Exception exception)
         {
-            ExceptionBox.Show(Strings.MessageErrorTitle, exception, Application.Current.MainWindow);
+            try
+            {
+                if (Application.Current.MainWindow != null)
+                {
+                    ExceptionBox.Show(Strings.MessageErrorTitle, exception, Application.Current.MainWindow);
+                    return;
+                }
+            }
+            catch
+            {
+                // Ignore any exception here
+            }
+
+            MessageBox.Show(exception.Message, Strings.MessageErrorTitle);
         }
 
         private async Task CreateDocumentAsync()
