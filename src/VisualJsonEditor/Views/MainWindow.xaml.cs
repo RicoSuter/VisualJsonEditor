@@ -8,6 +8,7 @@
 
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -97,7 +98,12 @@ namespace VisualJsonEditor.Views
             if (_configuration.IsFirstStart)
             {
                 _configuration.IsFirstStart = false;
-                await Model.OpenDocumentAsync("Samples/Sample.json", true);
+
+                var sampleJsonPath = "Samples/Sample.json";
+                if (File.Exists(sampleJsonPath))
+                {
+                    await Model.OpenDocumentAsync(sampleJsonPath, true);
+                }
             }
         }
 
