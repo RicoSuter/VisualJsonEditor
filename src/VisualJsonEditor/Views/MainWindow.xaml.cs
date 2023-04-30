@@ -134,9 +134,9 @@ namespace VisualJsonEditor.Views
                     return;
             }
 
-            Closing -= OnWindowClosing;
             SaveConfiguration();
-            await Dispatcher.InvokeAsync(Close);
+
+            Application.Current.Shutdown();
         }
 
         private void OnShowAboutWindow(object sender, RoutedEventArgs e)
